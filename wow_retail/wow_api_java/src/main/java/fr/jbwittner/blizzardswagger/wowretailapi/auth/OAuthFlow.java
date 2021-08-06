@@ -13,7 +13,7 @@
 
 package fr.jbwittner.blizzardswagger.wowretailapi.auth;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-06T22:01:26.900029+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-06T22:10:44.202368+02:00[Europe/Paris]")
 public enum OAuthFlow {
     accessCode, //called authorizationCode  in OpenAPI 3.0
     implicit, 

@@ -31,7 +31,7 @@ import java.util.List;
  * Playable class/race media data
  */
 @ApiModel(description = "Playable class/race media data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-06T22:01:26.900029+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-06T22:10:44.202368+02:00[Europe/Paris]")
 public class PlayableClassRaceMediaDTO {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

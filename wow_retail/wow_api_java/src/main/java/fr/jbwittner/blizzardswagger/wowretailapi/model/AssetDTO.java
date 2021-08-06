@@ -29,7 +29,7 @@ import java.net.URI;
  * Asset of media
  */
 @ApiModel(description = "Asset of media")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-06T22:01:26.900029+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-06T22:10:44.202368+02:00[Europe/Paris]")
 public class AssetDTO {
   /**
    * Type of media
