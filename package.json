@@ -2,9 +2,9 @@
   "name": "blizzardapiswagger",
   "private": true,
   "scripts": {
-    "generate:blizzardapi_java": "openapi-generator-cli generate -i game-data-apis.yaml -g java -o blizzardapi_java --additional-properties=groupId=fr.jbwittner --additional-properties=artifactId=blizzardswagger --additional-properties=apiPackage=fr.jbwittner.blizzardswagger.api --additional-properties=modelPackage=fr.jbwittner.blizzardswagger.model --additional-properties=dateLibrary=java11 --additional-properties=scmConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmDeveloperConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmUrl=https://github.com/jbwittner/BlizzardAPISwagger",
-    "generate": "npm run generate:blizzardapi_java",
-    "delete": "rimraf blizzardapi_java",
+    "generate:wow_api_java": "openapi-generator-cli generate -i wow_retail/wow_game_data.yaml -g java -o wow_retail/wow_api_java --additional-properties=groupId=fr.jbwittner.blizzardswagger --additional-properties=artifactId=wowretailapi --additional-properties=apiPackage=fr.jbwittner.blizzardswagger.wowretailapi.api --additional-properties=modelPackage=fr.jbwittner.blizzardswagger.wowretailapi.model --additional-properties=dateLibrary=java11 --additional-properties=scmConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmDeveloperConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmUrl=https://github.com/jbwittner/BlizzardAPISwagger",
+    "generate": "npm run generate:wow_api_java",
+    "delete": "rimraf wow_retail/wow_api_java",
     "all": "npm ci && npm run delete && npm run generate"
   },
   "devDependencies": {
