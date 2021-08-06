@@ -1,0 +1,630 @@
+openapi: 3.0.1
+info:
+  title: Swagger BLIZZARD Api
+  contact:
+    email: jeanbaptiste.wittner@outlook.com
+  version: 0.3.0
+servers:
+  - url: 'https://eu.api.blizzard.com/'
+  - url: 'https://us.api.blizzard.com/'
+  - url: 'https://kr.api.blizzard.com/'
+  - url: 'https://tw.api.blizzard.com/'
+  - url: 'https://cn.api.blizzard.com/'
+tags:
+  - name: Covenant API
+  - name: Playable Class API
+  - name: Playable Race API
+  - name: Playable Specialization API
+  - name: Realm API
+security:
+  - oAuthSampleEU: []
+  - oAuthSampleUS: []
+  - oAuthSampleAPAC: []
+  - oAuthSampleCN: []
+paths:
+  /data/wow/covenant/index:
+    get:
+      tags:
+        - Covenant API
+      operationId: getCovenantIndex
+      description: Returns an index of covenants.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayCovenantIndexDTO'
+  '/data/wow/media/covenant/{covenantId}':
+    get:
+      tags:
+        - Covenant API
+      operationId: getCovenantMediaById
+      description: Returns media for a covenant by ID.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: covenantId
+          schema:
+            type: integer
+          required: true
+          description: The ID of the covenant.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayAssetDTO'
+  /data/wow/playable-class/index:
+    get:
+      tags:
+        - Playable Class API
+      operationId: getPlayableClassIndex
+      description: Returns an index of playable classes.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayClassesIndexDTO'
+  '/data/wow/playable-class/{classId}':
+    get:
+      tags:
+        - Playable Class API
+      operationId: getPlayableClassById
+      description: Returns a playable class by ID.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: classId
+          schema:
+            type: integer
+          required: true
+          description: The ID of the playable class.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableClassDTO'
+  '/data/wow/media/playable-class/{classId}':
+    get:
+      tags:
+        - Playable Class API
+      operationId: getPlayableClassMediaById
+      description: Returns media for a playable class by ID.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: classId
+          schema:
+            type: integer
+          required: true
+          description: The ID of the playable class.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+  /data/wow/playable-race/index:
+    get:
+      tags:
+        - Playable Race API
+      operationId: getPlayableRaceIndex
+      description: Returns an index of playable races.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayRacesIndexDTO'
+  '/data/wow/playable-race/{raceId}':
+    get:
+      tags:
+        - Playable Race API
+      operationId: getPlayableRaceById
+      description: Returns a playable race by ID.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: raceId
+          schema:
+            type: integer
+          required: true
+          description: The ID of the playable race.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableRaceDTO'
+  /data/wow/playable-specialization/index:
+    get:
+      tags:
+        - Playable Specialization API
+      operationId: getPlayableSpecializationIndex
+      description: Returns an index of playable specializations.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arraySpecializationsIndexDTO'
+  '/data/wow/playable-specialization/{specId}':
+    get:
+      tags:
+        - Playable Specialization API
+      operationId: getPlayableSpecializationById
+      description: Returns a playable specialization by ID.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: specId
+          schema:
+            type: integer
+          required: true
+          description: The ID of the playable specialization.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableRaceDTO'
+  '/data/wow/media/playable-specialization/{specId}':
+    get:
+      tags:
+        - Playable Specialization API
+      operationId: getPlayableSpecializationMediaById
+      description: Returns media for a playable specialization by ID.
+      parameters:
+        - $ref: '#/components/parameters/staticNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: specId
+          schema:
+            type: integer
+          required: true
+          description: The ID of the playable specialization.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+  /data/wow/realm/index:
+    get:
+      tags:
+        - Realm API
+      operationId: getRealmIndex
+      description: Returns an index of realms.
+      parameters:
+        - $ref: '#/components/parameters/dynamicNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayRealmsIndexDTO'
+  '/data/wow/realm/{realmSlug}':
+    get:
+      tags:
+        - Realm API
+      operationId: getRealm
+      description: Returns a single realm by slug or ID.
+      parameters:
+        - $ref: '#/components/parameters/dynamicNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: realmSlug
+          schema:
+            type: string
+          required: true
+          description: The slug of the realm.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/realmDTO'
+components:
+  securitySchemes:
+    oAuthSampleEU:
+      type: oauth2
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://eu.battle.net/oauth/token'
+          scopes: {}
+    oAuthSampleUS:
+      type: oauth2
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://us.battle.net/oauth/token'
+          scopes: {}
+    oAuthSampleAPAC:
+      type: oauth2
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://apac.battle.net/oauth/token'
+          scopes: {}
+    oAuthSampleCN:
+      type: oauth2
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          tokenUrl: 'https://www.battlenet.com.cn/oauth/token'
+          scopes: {}
+  schemas:
+    playableClassDTO:
+      type: object
+      description: Playable class data
+      properties:
+        id:
+          description: Id of the class
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameDTO'
+        gender_name:
+          $ref: '#/components/schemas/genderNameDTO'
+        power_type:
+          $ref: '#/components/schemas/indexDTO'
+        specializations:
+          type: array
+          items:
+            $ref: '#/components/schemas/indexDTO'
+      required:
+        - id
+        - name
+        - gender_name
+        - power_type
+        - specializations
+    playableClassRaceMediaDTO:
+      type: object
+      description: Playable class/race media data
+      properties:
+        id:
+          description: Id of the class
+          type: integer
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/assetDTO'
+      required:
+        - id
+        - assets
+    playableRaceDTO:
+      type: object
+      description: Playable race data
+      properties:
+        id:
+          description: Id of the race
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameDTO'
+        gender_name:
+          $ref: '#/components/schemas/genderNameDTO'
+        faction:
+          $ref: '#/components/schemas/factionDTO'
+        is_selectable:
+          type: boolean
+        is_allied_race:
+          type: boolean
+      required:
+        - id
+        - type
+        - name
+        - gender_name
+        - faction
+        - is_selectable
+        - is_allied_race
+    arrayAssetDTO:
+      type: object
+      description: Array of media asset
+      properties:
+        assets:
+          type: array
+          items:
+            $ref: '#/components/schemas/assetDTO'
+    assetDTO:
+      type: object
+      description: Asset of media
+      properties:
+        key:
+          description: Type of media
+          type: string
+          enum:
+            - icon
+        value:
+          description: Uri of the media
+          type: string
+          format: uri
+        file_data_id:
+          description: File id
+          type: integer
+      required:
+        - key
+        - value
+        - file_data_id
+    factionDTO:
+      type: object
+      description: Faction data
+      properties:
+        type:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+        - type
+        - name
+    genderNameDTO:
+      type: object
+      description: Gender data
+      properties:
+        male:
+          $ref: '#/components/schemas/nameDTO'
+        female:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+        - male
+        - female
+    arrayRacesIndexDTO:
+      type: object
+      description: Array of races index
+      properties:
+        races:
+          type: array
+          items:
+            $ref: '#/components/schemas/indexDTO'
+      required:
+        - races
+    arraySpecializationsIndexDTO:
+      type: object
+      description: Array of specializations index
+      properties:
+        character_specializations:
+          type: array
+          items:
+            $ref: '#/components/schemas/indexDTO'
+      required:
+        - character_specializations
+    arrayCovenantIndexDTO:
+      type: object
+      description: Array of covenant index
+      properties:
+        classes:
+          type: array
+          items:
+            $ref: '#/components/schemas/indexDTO'
+    arrayClassesIndexDTO:
+      type: object
+      description: Array of classes index
+      properties:
+        classes:
+          type: array
+          items:
+            $ref: '#/components/schemas/indexDTO'
+      required:
+        - classes
+    realmDTO:
+      type: object
+      description: Data of realm
+      properties:
+        id:
+          type: integer
+          description: Id of the realm
+        region:
+          $ref: '#/components/schemas/indexDTO'
+        name:
+          $ref: '#/components/schemas/nameDTO'
+        category:
+          $ref: '#/components/schemas/nameDTO'
+        locale:
+          type: string
+          description: Locale of the realm
+        timezone:
+          type: string
+          description: Timezone of the realm
+        type:
+          $ref: '#/components/schemas/realmTypeDTO'
+        is_tournament:
+          type: boolean
+          description: Is true if the realm is a tournament realm
+        slug:
+          type: string
+          description: Slug of the realm
+    realmTypeDTO:
+      type: object
+      description: Type of realm
+      properties:
+        type:
+          type: string
+          description: Type of realm
+        name:
+          $ref: '#/components/schemas/nameDTO'
+    indexDTO:
+      type: object
+      description: Index of data
+      properties:
+        id:
+          type: integer
+          description: Id of the index
+        name:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+        - id
+        - name
+    arrayRealmsIndexDTO:
+      type: object
+      description: Array of classes index
+      properties:
+        realms:
+          type: array
+          items:
+            $ref: '#/components/schemas/realmIndexDTO'
+      required:
+        - realms
+    realmIndexDTO:
+      type: object
+      description: Index of realm
+      properties:
+        id:
+          type: integer
+          description: Id of the index
+        slug:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+        - id
+        - slug
+        - name
+    nameDTO:
+      type: object
+      description: Different translations
+      properties:
+        en_US:
+          type: string
+          description: The locale of English (U.S.)
+        es_MX:
+          type: string
+          description: The locale of mexican Spanish (Mexican)
+        pt_BR:
+          type: string
+          description: The locale of Portuguese (Brazilian)
+        de_DE:
+          type: string
+          description: The locale of German
+        en_GB:
+          type: string
+          description: The locale of English (U.K.)
+        es_ES:
+          type: string
+          description: The locale of Spanish (Modern)
+        fr_FR:
+          type: string
+          description: The locale of French
+        it_IT:
+          type: string
+          description: The locale of Italian
+        ru_RU:
+          type: string
+          description: The locale of Russian
+        ko_KR:
+          type: string
+          description: The locale of Korean
+        zh_TW:
+          type: string
+          description: The locale of Chinese (Taiwan/Traditional)
+        zh_CN:
+          type: string
+          description: The locale of Chinese (Simplified)
+  parameters:
+    staticNamespace:
+      in: query
+      name: namespace
+      required: true
+      description: The namespace to use to locate this document.
+      schema:
+        type: string
+        enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+        example: static-eu
+    dynamicNamespace:
+      in: query
+      name: namespace
+      required: true
+      description: The namespace to use to locate this document.
+      schema:
+        type: string
+        enum:
+          - dynamic-eu
+          - dynamic-us
+          - dynamic-kr
+          - dynamic-tw
+          - dynamic-cn
+        example: dynamic-eu
+    region:
+      in: query
+      name: region
+      required: true
+      description: The region of the data to retrieve.
+      schema:
+        type: string
+        enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+        example: eu
+    locale:
+      in: query
+      name: locale
+      required: false
+      description: >-
+        The locale to reflect in localized data. (If you don't send a value, the
+        API sends you all localized data)
+      schema:
+        type: string
+        enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+        example: en_US

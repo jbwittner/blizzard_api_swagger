@@ -1,0 +1,17 @@
+{
+  "name": "blizzardapiswagger",
+  "private": true,
+  "scripts": {
+    "generate:blizzardapi_java": "openapi-generator-cli generate -i game-data-apis.yaml -g java -o blizzardapi_java --additional-properties=groupId=fr.jbwittner --additional-properties=artifactId=blizzardswagger --additional-properties=apiPackage=fr.jbwittner.blizzardswagger.api --additional-properties=modelPackage=fr.jbwittner.blizzardswagger.model --additional-properties=dateLibrary=java11 --additional-properties=scmConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmDeveloperConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmUrl=https://github.com/jbwittner/BlizzardAPISwagger",
+    "generate": "npm run generate:blizzardapi_java",
+    "delete": "rimraf blizzardapi_java",
+    "all": "npm ci && npm run delete && npm run generate"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.3.2",
+    "cpx": "^1.5.0",
+    "glob-parent": ">=5.1.2",
+    "braces": ">=2.3.1",
+    "rimraf": "^3.0.2"
+  }
+}
