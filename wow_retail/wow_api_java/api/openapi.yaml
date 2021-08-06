@@ -1,0 +1,1745 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: jeanbaptiste.wittner@outlook.com
+  title: Swagger BLIZZARD Api
+  version: 0.1.0
+servers:
+- url: https://eu.api.blizzard.com/
+- url: https://us.api.blizzard.com/
+- url: https://kr.api.blizzard.com/
+- url: https://tw.api.blizzard.com/
+- url: https://cn.api.blizzard.com/
+security:
+- oAuthSampleEU: []
+- oAuthSampleUS: []
+- oAuthSampleAPAC: []
+- oAuthSampleCN: []
+tags:
+- name: Covenant API
+- name: Playable Class API
+- name: Playable Race API
+- name: Playable Specialization API
+- name: Realm API
+paths:
+  /data/wow/covenant/index:
+    get:
+      description: Returns an index of covenants.
+      operationId: getCovenantIndex
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayCovenantIndexDTO'
+          description: successful operation
+      tags:
+      - Covenant API
+      x-accepts: application/json
+  /data/wow/media/covenant/{covenantId}:
+    get:
+      description: Returns media for a covenant by ID.
+      operationId: getCovenantMediaById
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The ID of the covenant.
+        explode: false
+        in: path
+        name: covenantId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayAssetDTO'
+          description: successful operation
+      tags:
+      - Covenant API
+      x-accepts: application/json
+  /data/wow/playable-class/index:
+    get:
+      description: Returns an index of playable classes.
+      operationId: getPlayableClassIndex
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayClassesIndexDTO'
+          description: successful operation
+      tags:
+      - Playable Class API
+      x-accepts: application/json
+  /data/wow/playable-class/{classId}:
+    get:
+      description: Returns a playable class by ID.
+      operationId: getPlayableClassById
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The ID of the playable class.
+        explode: false
+        in: path
+        name: classId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableClassDTO'
+          description: successful operation
+      tags:
+      - Playable Class API
+      x-accepts: application/json
+  /data/wow/media/playable-class/{classId}:
+    get:
+      description: Returns media for a playable class by ID.
+      operationId: getPlayableClassMediaById
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The ID of the playable class.
+        explode: false
+        in: path
+        name: classId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+          description: successful operation
+      tags:
+      - Playable Class API
+      x-accepts: application/json
+  /data/wow/playable-race/index:
+    get:
+      description: Returns an index of playable races.
+      operationId: getPlayableRaceIndex
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayRacesIndexDTO'
+          description: successful operation
+      tags:
+      - Playable Race API
+      x-accepts: application/json
+  /data/wow/playable-race/{raceId}:
+    get:
+      description: Returns a playable race by ID.
+      operationId: getPlayableRaceById
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The ID of the playable race.
+        explode: false
+        in: path
+        name: raceId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableRaceDTO'
+          description: successful operation
+      tags:
+      - Playable Race API
+      x-accepts: application/json
+  /data/wow/playable-specialization/index:
+    get:
+      description: Returns an index of playable specializations.
+      operationId: getPlayableSpecializationIndex
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arraySpecializationsIndexDTO'
+          description: successful operation
+      tags:
+      - Playable Specialization API
+      x-accepts: application/json
+  /data/wow/playable-specialization/{specId}:
+    get:
+      description: Returns a playable specialization by ID.
+      operationId: getPlayableSpecializationById
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The ID of the playable specialization.
+        explode: false
+        in: path
+        name: specId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableRaceDTO'
+          description: successful operation
+      tags:
+      - Playable Specialization API
+      x-accepts: application/json
+  /data/wow/media/playable-specialization/{specId}:
+    get:
+      description: Returns media for a playable specialization by ID.
+      operationId: getPlayableSpecializationMediaById
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - static-eu
+          - static-us
+          - static-kr
+          - static-tw
+          - static-cn
+          example: static-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The ID of the playable specialization.
+        explode: false
+        in: path
+        name: specId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+          description: successful operation
+      tags:
+      - Playable Specialization API
+      x-accepts: application/json
+  /data/wow/realm/index:
+    get:
+      description: Returns an index of realms.
+      operationId: getRealmIndex
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - dynamic-eu
+          - dynamic-us
+          - dynamic-kr
+          - dynamic-tw
+          - dynamic-cn
+          example: dynamic-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/arrayRealmsIndexDTO'
+          description: successful operation
+      tags:
+      - Realm API
+      x-accepts: application/json
+  /data/wow/realm/{realmSlug}:
+    get:
+      description: Returns a single realm by slug or ID.
+      operationId: getRealm
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - dynamic-eu
+          - dynamic-us
+          - dynamic-kr
+          - dynamic-tw
+          - dynamic-cn
+          example: dynamic-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The slug of the realm.
+        explode: false
+        in: path
+        name: realmSlug
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/realmDTO'
+          description: successful operation
+      tags:
+      - Realm API
+      x-accepts: application/json
+components:
+  parameters:
+    staticNamespace:
+      description: The namespace to use to locate this document.
+      explode: true
+      in: query
+      name: namespace
+      required: true
+      schema:
+        enum:
+        - static-eu
+        - static-us
+        - static-kr
+        - static-tw
+        - static-cn
+        example: static-eu
+        type: string
+      style: form
+    dynamicNamespace:
+      description: The namespace to use to locate this document.
+      explode: true
+      in: query
+      name: namespace
+      required: true
+      schema:
+        enum:
+        - dynamic-eu
+        - dynamic-us
+        - dynamic-kr
+        - dynamic-tw
+        - dynamic-cn
+        example: dynamic-eu
+        type: string
+      style: form
+    region:
+      description: The region of the data to retrieve.
+      explode: true
+      in: query
+      name: region
+      required: true
+      schema:
+        enum:
+        - eu
+        - us
+        - kr
+        - tw
+        - cn
+        example: eu
+        type: string
+      style: form
+    locale:
+      description: The locale to reflect in localized data. (If you don't send a value,
+        the API sends you all localized data)
+      explode: true
+      in: query
+      name: locale
+      required: false
+      schema:
+        enum:
+        - en_US
+        - es_MX
+        - pt_BR
+        - de_DE
+        - en_GB
+        - es_ES
+        - fr_FR
+        - it_IT
+        - ru_RU
+        - ko_KR
+        - zh_TW
+        - zh_CN
+        example: en_US
+        type: string
+      style: form
+  schemas:
+    playableClassDTO:
+      description: Playable class data
+      example:
+        specializations:
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        id: 0
+        power_type:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        gender_name:
+          female:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          male:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+      properties:
+        id:
+          description: Id of the class
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameDTO'
+        gender_name:
+          $ref: '#/components/schemas/genderNameDTO'
+        power_type:
+          $ref: '#/components/schemas/indexDTO'
+        specializations:
+          items:
+            $ref: '#/components/schemas/indexDTO'
+          type: array
+      required:
+      - gender_name
+      - id
+      - name
+      - power_type
+      - specializations
+      type: object
+    playableClassRaceMediaDTO:
+      description: Playable class/race media data
+      example:
+        assets:
+        - file_data_id: 0
+          value: https://openapi-generator.tech
+          key: icon
+        - file_data_id: 0
+          value: https://openapi-generator.tech
+          key: icon
+        id: 0
+      properties:
+        id:
+          description: Id of the class
+          type: integer
+        assets:
+          items:
+            $ref: '#/components/schemas/assetDTO'
+          type: array
+      required:
+      - assets
+      - id
+      type: object
+    playableRaceDTO:
+      description: Playable race data
+      example:
+        is_selectable: true
+        is_allied_race: true
+        faction:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          type: type
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        id: 0
+        gender_name:
+          female:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          male:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+      properties:
+        id:
+          description: Id of the race
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameDTO'
+        gender_name:
+          $ref: '#/components/schemas/genderNameDTO'
+        faction:
+          $ref: '#/components/schemas/factionDTO'
+        is_selectable:
+          type: boolean
+        is_allied_race:
+          type: boolean
+      required:
+      - faction
+      - gender_name
+      - id
+      - is_allied_race
+      - is_selectable
+      - name
+      - type
+      type: object
+    arrayAssetDTO:
+      description: Array of media asset
+      example:
+        assets:
+        - file_data_id: 0
+          value: https://openapi-generator.tech
+          key: icon
+        - file_data_id: 0
+          value: https://openapi-generator.tech
+          key: icon
+      properties:
+        assets:
+          items:
+            $ref: '#/components/schemas/assetDTO'
+          type: array
+      type: object
+    assetDTO:
+      description: Asset of media
+      example:
+        file_data_id: 0
+        value: https://openapi-generator.tech
+        key: icon
+      properties:
+        key:
+          description: Type of media
+          enum:
+          - icon
+          type: string
+        value:
+          description: Uri of the media
+          format: uri
+          type: string
+        file_data_id:
+          description: File id
+          type: integer
+      required:
+      - file_data_id
+      - key
+      - value
+      type: object
+    factionDTO:
+      description: Faction data
+      example:
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        type: type
+      properties:
+        type:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+      - name
+      - type
+      type: object
+    genderNameDTO:
+      description: Gender data
+      example:
+        female:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        male:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+      properties:
+        male:
+          $ref: '#/components/schemas/nameDTO'
+        female:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+      - female
+      - male
+      type: object
+    arrayRacesIndexDTO:
+      description: Array of races index
+      example:
+        races:
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+      properties:
+        races:
+          items:
+            $ref: '#/components/schemas/indexDTO'
+          type: array
+      required:
+      - races
+      type: object
+    arraySpecializationsIndexDTO:
+      description: Array of specializations index
+      example:
+        character_specializations:
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+      properties:
+        character_specializations:
+          items:
+            $ref: '#/components/schemas/indexDTO'
+          type: array
+      required:
+      - character_specializations
+      type: object
+    arrayCovenantIndexDTO:
+      description: Array of covenant index
+      example:
+        classes:
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+      properties:
+        classes:
+          items:
+            $ref: '#/components/schemas/indexDTO'
+          type: array
+      type: object
+    arrayClassesIndexDTO:
+      description: Array of classes index
+      example:
+        classes:
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+      properties:
+        classes:
+          items:
+            $ref: '#/components/schemas/indexDTO'
+          type: array
+      required:
+      - classes
+      type: object
+    realmDTO:
+      description: Data of realm
+      example:
+        is_tournament: true
+        timezone: timezone
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        id: 0
+        region:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        category:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        locale: locale
+        type:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          type: type
+        slug: slug
+      properties:
+        id:
+          description: Id of the realm
+          type: integer
+        region:
+          $ref: '#/components/schemas/indexDTO'
+        name:
+          $ref: '#/components/schemas/nameDTO'
+        category:
+          $ref: '#/components/schemas/nameDTO'
+        locale:
+          description: Locale of the realm
+          type: string
+        timezone:
+          description: Timezone of the realm
+          type: string
+        type:
+          $ref: '#/components/schemas/realmTypeDTO'
+        is_tournament:
+          description: Is true if the realm is a tournament realm
+          type: boolean
+        slug:
+          description: Slug of the realm
+          type: string
+      type: object
+    realmTypeDTO:
+      description: Type of realm
+      example:
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        type: type
+      properties:
+        type:
+          description: Type of realm
+          type: string
+        name:
+          $ref: '#/components/schemas/nameDTO'
+      type: object
+    indexDTO:
+      description: Index of data
+      example:
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        id: 0
+      properties:
+        id:
+          description: Id of the index
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+      - id
+      - name
+      type: object
+    arrayRealmsIndexDTO:
+      description: Array of classes index
+      example:
+        realms:
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+          slug: slug
+        - name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+          slug: slug
+      properties:
+        realms:
+          items:
+            $ref: '#/components/schemas/realmIndexDTO'
+          type: array
+      required:
+      - realms
+      type: object
+    realmIndexDTO:
+      description: Index of realm
+      example:
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        id: 0
+        slug: slug
+      properties:
+        id:
+          description: Id of the index
+          type: integer
+        slug:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameDTO'
+      required:
+      - id
+      - name
+      - slug
+      type: object
+    nameDTO:
+      description: Different translations
+      example:
+        it_IT: it_IT
+        ru_RU: ru_RU
+        en_GB: en_GB
+        zh_TW: zh_TW
+        ko_KR: ko_KR
+        en_US: en_US
+        es_MX: es_MX
+        pt_BR: pt_BR
+        es_ES: es_ES
+        zh_CN: zh_CN
+        fr_FR: fr_FR
+        de_DE: de_DE
+      properties:
+        en_US:
+          description: The locale of English (U.S.)
+          type: string
+        es_MX:
+          description: The locale of mexican Spanish (Mexican)
+          type: string
+        pt_BR:
+          description: The locale of Portuguese (Brazilian)
+          type: string
+        de_DE:
+          description: The locale of German
+          type: string
+        en_GB:
+          description: The locale of English (U.K.)
+          type: string
+        es_ES:
+          description: The locale of Spanish (Modern)
+          type: string
+        fr_FR:
+          description: The locale of French
+          type: string
+        it_IT:
+          description: The locale of Italian
+          type: string
+        ru_RU:
+          description: The locale of Russian
+          type: string
+        ko_KR:
+          description: The locale of Korean
+          type: string
+        zh_TW:
+          description: The locale of Chinese (Taiwan/Traditional)
+          type: string
+        zh_CN:
+          description: The locale of Chinese (Simplified)
+          type: string
+      type: object
+  securitySchemes:
+    oAuthSampleEU:
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://eu.battle.net/oauth/token
+      type: oauth2
+    oAuthSampleUS:
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://us.battle.net/oauth/token
+      type: oauth2
+    oAuthSampleAPAC:
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://apac.battle.net/oauth/token
+      type: oauth2
+    oAuthSampleCN:
+      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      flows:
+        clientCredentials:
+          scopes: {}
+          tokenUrl: https://www.battlenet.com.cn/oauth/token
+      type: oauth2
+

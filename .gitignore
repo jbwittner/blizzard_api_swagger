@@ -1,1 +1,6 @@
 node_modules
+
+wow_retail/wow_api_java/.travis.yml
+wow_retail/wow_api_java/*gradle*
+wow_retail/wow_api_java/build.sbt
+wow_retail/wow_api_java/git_push.sh
