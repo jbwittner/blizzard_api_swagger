@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.2.1
+  version: 0.2.2
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -128,7 +128,7 @@ paths:
   /data/wow/playable-race/index:
     get:
       tags:
-        - Playable Race
+        - Playable Race API
       operationId: getPlayableRaceIndex
       description: Returns an index of playable races.
       parameters:
@@ -145,7 +145,7 @@ paths:
   '/data/wow/playable-race/{raceId}':
     get:
       tags:
-        - Playable Race
+        - Playable Race API
       operationId: getPlayableRaceById
       description: Returns a playable race by ID.
       parameters:
@@ -249,7 +249,7 @@ paths:
     get:
       tags:
         - Realm
-      operationId: getRealm
+      operationId: getRealmBySlug
       description: Returns a single realm by slug or ID.
       parameters:
         - $ref: '#/components/parameters/dynamicNamespace'
