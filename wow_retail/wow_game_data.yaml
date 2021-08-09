@@ -128,7 +128,7 @@ paths:
   /data/wow/playable-race/index:
     get:
       tags:
-        - Playable Race API
+        - Playable Race
       operationId: getPlayableRaceIndex
       description: Returns an index of playable races.
       parameters:
@@ -145,7 +145,7 @@ paths:
   '/data/wow/playable-race/{raceId}':
     get:
       tags:
-        - Playable Race API
+        - Playable Race
       operationId: getPlayableRaceById
       description: Returns a playable race by ID.
       parameters:
