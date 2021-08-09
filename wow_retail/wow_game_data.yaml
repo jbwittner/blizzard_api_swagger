@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.2.0
+  version: 0.2.1
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -13,7 +13,7 @@ servers:
 tags:
   - name: Covenant
   - name: Playable Class
-  - name: Playable Race API
+  - name: Playable Race
   - name: Playable Specialization
   - name: Realm
 security:
@@ -527,7 +527,7 @@ components:
       type: object
       description: Array of covenant index
       properties:
-        classes:
+        covenants:
           type: array
           items:
             $ref: '#/components/schemas/indexData'
