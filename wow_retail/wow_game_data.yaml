@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.1.0
+  version: 0.2.0
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -11,11 +11,11 @@ servers:
   - url: 'https://tw.api.blizzard.com/'
   - url: 'https://cn.api.blizzard.com/'
 tags:
-  - name: Covenant API
-  - name: Playable Class API
+  - name: Covenant
+  - name: Playable Class
   - name: Playable Race API
-  - name: Playable Specialization API
-  - name: Realm API
+  - name: Playable Specialization
+  - name: Realm
 security:
   - oAuthSampleEU: []
   - oAuthSampleUS: []
@@ -25,7 +25,7 @@ paths:
   /data/wow/covenant/index:
     get:
       tags:
-        - Covenant API
+        - Covenant
       operationId: getCovenantIndex
       description: Returns an index of covenants.
       parameters:
@@ -38,11 +38,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayCovenantIndexDTO'
+                $ref: '#/components/schemas/arrayCovenantIndexData'
   '/data/wow/media/covenant/{covenantId}':
     get:
       tags:
-        - Covenant API
+        - Covenant
       operationId: getCovenantMediaById
       description: Returns media for a covenant by ID.
       parameters:
@@ -61,11 +61,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayAssetDTO'
+                $ref: '#/components/schemas/arrayAssetData'
   /data/wow/playable-class/index:
     get:
       tags:
-        - Playable Class API
+        - Playable Class
       operationId: getPlayableClassIndex
       description: Returns an index of playable classes.
       parameters:
@@ -78,11 +78,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayClassesIndexDTO'
+                $ref: '#/components/schemas/arrayClassesIndexData'
   '/data/wow/playable-class/{classId}':
     get:
       tags:
-        - Playable Class API
+        - Playable Class
       operationId: getPlayableClassById
       description: Returns a playable class by ID.
       parameters:
@@ -101,11 +101,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableClassDTO'
+                $ref: '#/components/schemas/playableClassData'
   '/data/wow/media/playable-class/{classId}':
     get:
       tags:
-        - Playable Class API
+        - Playable Class
       operationId: getPlayableClassMediaById
       description: Returns media for a playable class by ID.
       parameters:
@@ -124,7 +124,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+                $ref: '#/components/schemas/playableClassRaceMediaData'
   /data/wow/playable-race/index:
     get:
       tags:
@@ -141,7 +141,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayRacesIndexDTO'
+                $ref: '#/components/schemas/arrayRacesIndexData'
   '/data/wow/playable-race/{raceId}':
     get:
       tags:
@@ -164,11 +164,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableRaceDTO'
+                $ref: '#/components/schemas/playableRaceData'
   /data/wow/playable-specialization/index:
     get:
       tags:
-        - Playable Specialization API
+        - Playable Specialization
       operationId: getPlayableSpecializationIndex
       description: Returns an index of playable specializations.
       parameters:
@@ -181,11 +181,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arraySpecializationsIndexDTO'
+                $ref: '#/components/schemas/arraySpecializationsIndexData'
   '/data/wow/playable-specialization/{specId}':
     get:
       tags:
-        - Playable Specialization API
+        - Playable Specialization
       operationId: getPlayableSpecializationById
       description: Returns a playable specialization by ID.
       parameters:
@@ -204,11 +204,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableRaceDTO'
+                $ref: '#/components/schemas/playableSpecializationData'
   '/data/wow/media/playable-specialization/{specId}':
     get:
       tags:
-        - Playable Specialization API
+        - Playable Specialization
       operationId: getPlayableSpecializationMediaById
       description: Returns media for a playable specialization by ID.
       parameters:
@@ -227,11 +227,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+                $ref: '#/components/schemas/playableClassRaceMediaData'
   /data/wow/realm/index:
     get:
       tags:
-        - Realm API
+        - Realm
       operationId: getRealmIndex
       description: Returns an index of realms.
       parameters:
@@ -244,11 +244,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayRealmsIndexDTO'
+                $ref: '#/components/schemas/arrayRealmsIndexData'
   '/data/wow/realm/{realmSlug}':
     get:
       tags:
-        - Realm API
+        - Realm
       operationId: getRealm
       description: Returns a single realm by slug or ID.
       parameters:
@@ -267,7 +267,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/realmDTO'
+                $ref: '#/components/schemas/realmData'
 components:
   securitySchemes:
     oAuthSampleEU:
@@ -299,7 +299,7 @@ components:
           tokenUrl: 'https://www.battlenet.com.cn/oauth/token'
           scopes: {}
   schemas:
-    playableClassDTO:
+    playableClassData:
       type: object
       description: Playable class data
       properties:
@@ -307,22 +307,22 @@ components:
           description: Id of the class
           type: integer
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         gender_name:
-          $ref: '#/components/schemas/genderNameDTO'
+          $ref: '#/components/schemas/genderData'
         power_type:
-          $ref: '#/components/schemas/indexDTO'
+          $ref: '#/components/schemas/indexData'
         specializations:
           type: array
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
       required:
         - id
         - name
         - gender_name
         - power_type
         - specializations
-    playableClassRaceMediaDTO:
+    playableClassRaceMediaData:
       type: object
       description: Playable class/race media data
       properties:
@@ -332,11 +332,11 @@ components:
         assets:
           type: array
           items:
-            $ref: '#/components/schemas/assetDTO'
+            $ref: '#/components/schemas/assetData'
       required:
         - id
         - assets
-    playableRaceDTO:
+    playableRaceData:
       type: object
       description: Playable race data
       properties:
@@ -344,11 +344,11 @@ components:
           description: Id of the race
           type: integer
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         gender_name:
-          $ref: '#/components/schemas/genderNameDTO'
+          $ref: '#/components/schemas/genderData'
         faction:
-          $ref: '#/components/schemas/factionDTO'
+          $ref: '#/components/schemas/factionData'
         is_selectable:
           type: boolean
         is_allied_race:
@@ -361,15 +361,99 @@ components:
         - faction
         - is_selectable
         - is_allied_race
-    arrayAssetDTO:
+    playableSpecializationData:
+      type: object
+      description: Playable specilization data
+      properties:
+        id:
+          description: Id of the specilization
+          type: integer
+        playable_class:
+          $ref: '#/components/schemas/indexData'
+        name:
+          $ref: '#/components/schemas/nameData'
+        gender_description:
+          $ref: '#/components/schemas/genderData'
+        role:
+          $ref: '#/components/schemas/roleData'
+        talent_tiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/pveTalentTiersData'
+        pvp_talents:
+          type: array
+          items:
+            $ref: '#/components/schemas/pvpTalentTiersData'
+    pveTalentTiersData:
+      type: object
+      description: PVE Talent tiers data
+      properties:
+        level:
+          description: Level where the talents are obtained
+          type: integer
+        talents:
+          type: array
+          items:
+            $ref: '#/components/schemas/pveTalentData'
+        tier_index:
+          description: Id of the talent
+          type: integer
+    pvpTalentTiersData:
+      type: object
+      description: PVP Talent tiers data
+      properties:
+        talent:
+          $ref: '#/components/schemas/talentData'
+        spell_tooltip:
+          $ref: '#/components/schemas/pvpSpellDescritpionData'
+    pveTalentData:
+      type: object
+      description: PVE Talent data
+      properties:
+        column_index:
+          description: Id of the talent
+          type: integer
+        talent:
+          $ref: '#/components/schemas/talentData'
+        spell_tooltip:
+          $ref: '#/components/schemas/pveSpellDescritpionData'
+    talentData:
+      type: object
+      description: Talent data
+      properties:
+        id:
+          description: Id of the talent
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameData'
+    pveSpellDescritpionData:
+      type: object
+      description: Description of the pve spell
+      properties:
+        description:
+          $ref: '#/components/schemas/nameData'
+        cast_time:
+          $ref: '#/components/schemas/nameData'
+        column_index:
+          description: Index of the spell
+          type: integer
+    pvpSpellDescritpionData:
+      type: object
+      description: Description of the pvp spell
+      properties:
+        description:
+          $ref: '#/components/schemas/nameData'
+        cast_time:
+          $ref: '#/components/schemas/nameData'
+    arrayAssetData:
       type: object
       description: Array of media asset
       properties:
         assets:
           type: array
           items:
-            $ref: '#/components/schemas/assetDTO'
-    assetDTO:
+            $ref: '#/components/schemas/assetData'
+    assetData:
       type: object
       description: Asset of media
       properties:
@@ -389,67 +473,75 @@ components:
         - key
         - value
         - file_data_id
-    factionDTO:
+    factionData:
       type: object
       description: Faction data
       properties:
         type:
           type: string
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
         - type
         - name
-    genderNameDTO:
+    roleData:
+      type: object
+      description: Role data
+      properties:
+        type:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameData'
+    genderData:
       type: object
       description: Gender data
       properties:
         male:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         female:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
         - male
         - female
-    arrayRacesIndexDTO:
+    arrayRacesIndexData:
       type: object
       description: Array of races index
       properties:
         races:
           type: array
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
       required:
         - races
-    arraySpecializationsIndexDTO:
+    arraySpecializationsIndexData:
       type: object
       description: Array of specializations index
       properties:
         character_specializations:
           type: array
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
       required:
         - character_specializations
-    arrayCovenantIndexDTO:
+    arrayCovenantIndexData:
       type: object
       description: Array of covenant index
       properties:
         classes:
           type: array
           items:
-            $ref: '#/components/schemas/indexDTO'
-    arrayClassesIndexDTO:
+            $ref: '#/components/schemas/indexData'
+    arrayClassesIndexData:
       type: object
       description: Array of classes index
       properties:
         classes:
           type: array
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
       required:
         - classes
-    realmDTO:
+    realmData:
       type: object
       description: Data of realm
       properties:
@@ -457,11 +549,11 @@ components:
           type: integer
           description: Id of the realm
         region:
-          $ref: '#/components/schemas/indexDTO'
+          $ref: '#/components/schemas/indexData'
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         category:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         locale:
           type: string
           description: Locale of the realm
@@ -469,14 +561,14 @@ components:
           type: string
           description: Timezone of the realm
         type:
-          $ref: '#/components/schemas/realmTypeDTO'
+          $ref: '#/components/schemas/realmTypeData'
         is_tournament:
           type: boolean
           description: Is true if the realm is a tournament realm
         slug:
           type: string
           description: Slug of the realm
-    realmTypeDTO:
+    realmTypeData:
       type: object
       description: Type of realm
       properties:
@@ -484,8 +576,8 @@ components:
           type: string
           description: Type of realm
         name:
-          $ref: '#/components/schemas/nameDTO'
-    indexDTO:
+          $ref: '#/components/schemas/nameData'
+    indexData:
       type: object
       description: Index of data
       properties:
@@ -493,21 +585,21 @@ components:
           type: integer
           description: Id of the index
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
         - id
         - name
-    arrayRealmsIndexDTO:
+    arrayRealmsIndexData:
       type: object
       description: Array of classes index
       properties:
         realms:
           type: array
           items:
-            $ref: '#/components/schemas/realmIndexDTO'
+            $ref: '#/components/schemas/realmIndexData'
       required:
         - realms
-    realmIndexDTO:
+    realmIndexData:
       type: object
       description: Index of realm
       properties:
@@ -517,12 +609,12 @@ components:
         slug:
           type: string
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
         - id
         - slug
         - name
-    nameDTO:
+    nameData:
       type: object
       description: Different translations
       properties:
