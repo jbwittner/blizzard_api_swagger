@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.1.0
+  version: 0.2.0
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -204,7 +204,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableRaceDTO'
+                $ref: '#/components/schemas/playableSpecializationDTO'
   '/data/wow/media/playable-specialization/{specId}':
     get:
       tags:
@@ -309,7 +309,7 @@ components:
         name:
           $ref: '#/components/schemas/nameDTO'
         gender_name:
-          $ref: '#/components/schemas/genderNameDTO'
+          $ref: '#/components/schemas/genderDTO'
         power_type:
           $ref: '#/components/schemas/indexDTO'
         specializations:
@@ -346,7 +346,7 @@ components:
         name:
           $ref: '#/components/schemas/nameDTO'
         gender_name:
-          $ref: '#/components/schemas/genderNameDTO'
+          $ref: '#/components/schemas/genderDTO'
         faction:
           $ref: '#/components/schemas/factionDTO'
         is_selectable:
@@ -361,6 +361,90 @@ components:
         - faction
         - is_selectable
         - is_allied_race
+    playableSpecializationDTO:
+      type: object
+      description: Playable specilization data
+      properties:
+        id:
+          description: Id of the specilization
+          type: integer
+        playable_class:
+          $ref: '#/components/schemas/indexDTO'
+        name:
+          $ref: '#/components/schemas/nameDTO'
+        gender_description:
+          $ref: '#/components/schemas/genderDTO'
+        role:
+          $ref: '#/components/schemas/roleDTO'
+        talent_tiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/pveTalentTiersDTO'
+        pvp_talents:
+          type: array
+          items:
+            $ref: '#/components/schemas/pvpTalentTiersDTO'
+    pveTalentTiersDTO:
+      type: object
+      description: PVE Talent tiers data
+      properties:
+        level:
+          description: Level where the talents are obtained
+          type: integer
+        talents:
+          type: array
+          items:
+            $ref: '#/components/schemas/pveTalentDTO'
+        tier_index:
+          description: Id of the talent
+          type: integer
+    pvpTalentTiersDTO:
+      type: object
+      description: PVP Talent tiers data
+      properties:
+        talent:
+          $ref: '#/components/schemas/talentDTO'
+        spell_tooltip:
+          $ref: '#/components/schemas/pvpSpellDescritpionDTO'
+    pveTalentDTO:
+      type: object
+      description: PVE Talent data
+      properties:
+        column_index:
+          description: Id of the talent
+          type: integer
+        talent:
+          $ref: '#/components/schemas/talentDTO'
+        spell_tooltip:
+          $ref: '#/components/schemas/pveSpellDescritpionDTO'
+    talentDTO:
+      type: object
+      description: Talent data
+      properties:
+        id:
+          description: Id of the talent
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameDTO'
+    pveSpellDescritpionDTO:
+      type: object
+      description: Description of the pve spell
+      properties:
+        description:
+          $ref: '#/components/schemas/nameDTO'
+        cast_time:
+          $ref: '#/components/schemas/nameDTO'
+        column_index:
+          description: Index of the spell
+          type: integer
+    pvpSpellDescritpionDTO:
+      type: object
+      description: Description of the pvp spell
+      properties:
+        description:
+          $ref: '#/components/schemas/nameDTO'
+        cast_time:
+          $ref: '#/components/schemas/nameDTO'
     arrayAssetDTO:
       type: object
       description: Array of media asset
@@ -400,7 +484,15 @@ components:
       required:
         - type
         - name
-    genderNameDTO:
+    roleDTO:
+      type: object
+      description: Role data
+      properties:
+        type:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameDTO'
+    genderDTO:
       type: object
       description: Gender data
       properties:
