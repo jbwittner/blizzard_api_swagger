@@ -11,11 +11,11 @@ servers:
   - url: 'https://tw.api.blizzard.com/'
   - url: 'https://cn.api.blizzard.com/'
 tags:
-  - name: Covenant API
-  - name: Playable Class API
+  - name: Covenant
+  - name: Playable Class
   - name: Playable Race API
-  - name: Playable Specialization API
-  - name: Realm API
+  - name: Playable Specialization
+  - name: Realm
 security:
   - oAuthSampleEU: []
   - oAuthSampleUS: []
@@ -25,7 +25,7 @@ paths:
   /data/wow/covenant/index:
     get:
       tags:
-        - Covenant API
+        - Covenant
       operationId: getCovenantIndex
       description: Returns an index of covenants.
       parameters:
@@ -42,7 +42,7 @@ paths:
   '/data/wow/media/covenant/{covenantId}':
     get:
       tags:
-        - Covenant API
+        - Covenant
       operationId: getCovenantMediaById
       description: Returns media for a covenant by ID.
       parameters:
@@ -65,7 +65,7 @@ paths:
   /data/wow/playable-class/index:
     get:
       tags:
-        - Playable Class API
+        - Playable Class
       operationId: getPlayableClassIndex
       description: Returns an index of playable classes.
       parameters:
@@ -82,7 +82,7 @@ paths:
   '/data/wow/playable-class/{classId}':
     get:
       tags:
-        - Playable Class API
+        - Playable Class
       operationId: getPlayableClassById
       description: Returns a playable class by ID.
       parameters:
@@ -105,7 +105,7 @@ paths:
   '/data/wow/media/playable-class/{classId}':
     get:
       tags:
-        - Playable Class API
+        - Playable Class
       operationId: getPlayableClassMediaById
       description: Returns media for a playable class by ID.
       parameters:
@@ -168,7 +168,7 @@ paths:
   /data/wow/playable-specialization/index:
     get:
       tags:
-        - Playable Specialization API
+        - Playable Specialization
       operationId: getPlayableSpecializationIndex
       description: Returns an index of playable specializations.
       parameters:
@@ -185,7 +185,7 @@ paths:
   '/data/wow/playable-specialization/{specId}':
     get:
       tags:
-        - Playable Specialization API
+        - Playable Specialization
       operationId: getPlayableSpecializationById
       description: Returns a playable specialization by ID.
       parameters:
@@ -208,7 +208,7 @@ paths:
   '/data/wow/media/playable-specialization/{specId}':
     get:
       tags:
-        - Playable Specialization API
+        - Playable Specialization
       operationId: getPlayableSpecializationMediaById
       description: Returns media for a playable specialization by ID.
       parameters:
@@ -231,7 +231,7 @@ paths:
   /data/wow/realm/index:
     get:
       tags:
-        - Realm API
+        - Realm
       operationId: getRealmIndex
       description: Returns an index of realms.
       parameters:
@@ -248,7 +248,7 @@ paths:
   '/data/wow/realm/{realmSlug}':
     get:
       tags:
-        - Realm API
+        - Realm
       operationId: getRealm
       description: Returns a single realm by slug or ID.
       parameters:

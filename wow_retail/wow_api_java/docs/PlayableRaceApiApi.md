@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getPlayableRaceById"></a>
 # **getPlayableRaceById**
-> PlayableRaceDTO getPlayableRaceById(namespace, region, raceId, locale)
+> PlayableRaceData getPlayableRaceById(namespace, region, raceId, locale)
 
 
 
@@ -53,7 +53,7 @@ public class Example {
     Integer raceId = 56; // Integer | The ID of the playable race.
     String locale = "en_US"; // String | The locale to reflect in localized data. (If you don't send a value, the API sends you all localized data)
     try {
-      PlayableRaceDTO result = apiInstance.getPlayableRaceById(namespace, region, raceId, locale);
+      PlayableRaceData result = apiInstance.getPlayableRaceById(namespace, region, raceId, locale);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PlayableRaceApiApi#getPlayableRaceById");
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlayableRaceDTO**](PlayableRaceDTO.md)
+[**PlayableRaceData**](PlayableRaceData.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 <a name="getPlayableRaceIndex"></a>
 # **getPlayableRaceIndex**
-> ArrayRacesIndexDTO getPlayableRaceIndex(namespace, region, locale)
+> ArrayRacesIndexData getPlayableRaceIndex(namespace, region, locale)
 
 
 
@@ -137,7 +137,7 @@ public class Example {
     String region = "eu"; // String | The region of the data to retrieve.
     String locale = "en_US"; // String | The locale to reflect in localized data. (If you don't send a value, the API sends you all localized data)
     try {
-      ArrayRacesIndexDTO result = apiInstance.getPlayableRaceIndex(namespace, region, locale);
+      ArrayRacesIndexData result = apiInstance.getPlayableRaceIndex(namespace, region, locale);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PlayableRaceApiApi#getPlayableRaceIndex");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ArrayRacesIndexDTO**](ArrayRacesIndexDTO.md)
+[**ArrayRacesIndexData**](ArrayRacesIndexData.md)
 
 ### Authorization
 

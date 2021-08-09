@@ -3,7 +3,7 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.1.0
+  version: 0.2.0
 servers:
 - url: https://eu.api.blizzard.com/
 - url: https://us.api.blizzard.com/
@@ -16,11 +16,11 @@ security:
 - oAuthSampleAPAC: []
 - oAuthSampleCN: []
 tags:
-- name: Covenant API
-- name: Playable Class API
+- name: Covenant
+- name: Playable Class
 - name: Playable Race API
-- name: Playable Specialization API
-- name: Realm API
+- name: Playable Specialization
+- name: Realm
 paths:
   /data/wow/covenant/index:
     get:
@@ -85,10 +85,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayCovenantIndexDTO'
+                $ref: '#/components/schemas/arrayCovenantIndexData'
           description: successful operation
       tags:
-      - Covenant API
+      - Covenant
       x-accepts: application/json
   /data/wow/media/covenant/{covenantId}:
     get:
@@ -161,10 +161,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayAssetDTO'
+                $ref: '#/components/schemas/arrayAssetData'
           description: successful operation
       tags:
-      - Covenant API
+      - Covenant
       x-accepts: application/json
   /data/wow/playable-class/index:
     get:
@@ -229,10 +229,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayClassesIndexDTO'
+                $ref: '#/components/schemas/arrayClassesIndexData'
           description: successful operation
       tags:
-      - Playable Class API
+      - Playable Class
       x-accepts: application/json
   /data/wow/playable-class/{classId}:
     get:
@@ -305,10 +305,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableClassDTO'
+                $ref: '#/components/schemas/playableClassData'
           description: successful operation
       tags:
-      - Playable Class API
+      - Playable Class
       x-accepts: application/json
   /data/wow/media/playable-class/{classId}:
     get:
@@ -381,10 +381,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+                $ref: '#/components/schemas/playableClassRaceMediaData'
           description: successful operation
       tags:
-      - Playable Class API
+      - Playable Class
       x-accepts: application/json
   /data/wow/playable-race/index:
     get:
@@ -449,7 +449,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayRacesIndexDTO'
+                $ref: '#/components/schemas/arrayRacesIndexData'
           description: successful operation
       tags:
       - Playable Race API
@@ -525,7 +525,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableRaceDTO'
+                $ref: '#/components/schemas/playableRaceData'
           description: successful operation
       tags:
       - Playable Race API
@@ -593,10 +593,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arraySpecializationsIndexDTO'
+                $ref: '#/components/schemas/arraySpecializationsIndexData'
           description: successful operation
       tags:
-      - Playable Specialization API
+      - Playable Specialization
       x-accepts: application/json
   /data/wow/playable-specialization/{specId}:
     get:
@@ -669,10 +669,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableRaceDTO'
+                $ref: '#/components/schemas/playableSpecializationData'
           description: successful operation
       tags:
-      - Playable Specialization API
+      - Playable Specialization
       x-accepts: application/json
   /data/wow/media/playable-specialization/{specId}:
     get:
@@ -745,10 +745,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/playableClassRaceMediaDTO'
+                $ref: '#/components/schemas/playableClassRaceMediaData'
           description: successful operation
       tags:
-      - Playable Specialization API
+      - Playable Specialization
       x-accepts: application/json
   /data/wow/realm/index:
     get:
@@ -813,10 +813,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/arrayRealmsIndexDTO'
+                $ref: '#/components/schemas/arrayRealmsIndexData'
           description: successful operation
       tags:
-      - Realm API
+      - Realm
       x-accepts: application/json
   /data/wow/realm/{realmSlug}:
     get:
@@ -889,10 +889,10 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/realmDTO'
+                $ref: '#/components/schemas/realmData'
           description: successful operation
       tags:
-      - Realm API
+      - Realm
       x-accepts: application/json
 components:
   parameters:
@@ -969,7 +969,7 @@ components:
         type: string
       style: form
   schemas:
-    playableClassDTO:
+    playableClassData:
       description: Playable class data
       example:
         specializations:
@@ -1062,14 +1062,14 @@ components:
           description: Id of the class
           type: integer
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         gender_name:
-          $ref: '#/components/schemas/genderNameDTO'
+          $ref: '#/components/schemas/genderData'
         power_type:
-          $ref: '#/components/schemas/indexDTO'
+          $ref: '#/components/schemas/indexData'
         specializations:
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
           type: array
       required:
       - gender_name
@@ -1078,7 +1078,7 @@ components:
       - power_type
       - specializations
       type: object
-    playableClassRaceMediaDTO:
+    playableClassRaceMediaData:
       description: Playable class/race media data
       example:
         assets:
@@ -1095,13 +1095,13 @@ components:
           type: integer
         assets:
           items:
-            $ref: '#/components/schemas/assetDTO'
+            $ref: '#/components/schemas/assetData'
           type: array
       required:
       - assets
       - id
       type: object
-    playableRaceDTO:
+    playableRaceData:
       description: Playable race data
       example:
         is_selectable: true
@@ -1167,11 +1167,11 @@ components:
           description: Id of the race
           type: integer
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         gender_name:
-          $ref: '#/components/schemas/genderNameDTO'
+          $ref: '#/components/schemas/genderData'
         faction:
-          $ref: '#/components/schemas/factionDTO'
+          $ref: '#/components/schemas/factionData'
         is_selectable:
           type: boolean
         is_allied_race:
@@ -1185,7 +1185,681 @@ components:
       - name
       - type
       type: object
-    arrayAssetDTO:
+    playableSpecializationData:
+      description: Playable specilization data
+      example:
+        pvp_talents:
+        - talent:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            id: 5
+          spell_tooltip:
+            cast_time:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            description:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+        - talent:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            id: 5
+          spell_tooltip:
+            cast_time:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            description:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+        role:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          type: type
+        playable_class:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        talent_tiers:
+        - level: 6
+          tier_index: 2
+          talents:
+          - talent:
+              name:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              id: 5
+            spell_tooltip:
+              cast_time:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              description:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              column_index: 5
+            column_index: 1
+          - talent:
+              name:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              id: 5
+            spell_tooltip:
+              cast_time:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              description:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              column_index: 5
+            column_index: 1
+        - level: 6
+          tier_index: 2
+          talents:
+          - talent:
+              name:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              id: 5
+            spell_tooltip:
+              cast_time:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              description:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              column_index: 5
+            column_index: 1
+          - talent:
+              name:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              id: 5
+            spell_tooltip:
+              cast_time:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              description:
+                it_IT: it_IT
+                ru_RU: ru_RU
+                en_GB: en_GB
+                zh_TW: zh_TW
+                ko_KR: ko_KR
+                en_US: en_US
+                es_MX: es_MX
+                pt_BR: pt_BR
+                es_ES: es_ES
+                zh_CN: zh_CN
+                fr_FR: fr_FR
+                de_DE: de_DE
+              column_index: 5
+            column_index: 1
+        gender_description:
+          female:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          male:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+        id: 0
+      properties:
+        id:
+          description: Id of the specilization
+          type: integer
+        playable_class:
+          $ref: '#/components/schemas/indexData'
+        name:
+          $ref: '#/components/schemas/nameData'
+        gender_description:
+          $ref: '#/components/schemas/genderData'
+        role:
+          $ref: '#/components/schemas/roleData'
+        talent_tiers:
+          items:
+            $ref: '#/components/schemas/pveTalentTiersData'
+          type: array
+        pvp_talents:
+          items:
+            $ref: '#/components/schemas/pvpTalentTiersData'
+          type: array
+      type: object
+    pveTalentTiersData:
+      description: PVE Talent tiers data
+      example:
+        level: 6
+        tier_index: 2
+        talents:
+        - talent:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            id: 5
+          spell_tooltip:
+            cast_time:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            description:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            column_index: 5
+          column_index: 1
+        - talent:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            id: 5
+          spell_tooltip:
+            cast_time:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            description:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            column_index: 5
+          column_index: 1
+      properties:
+        level:
+          description: Level where the talents are obtained
+          type: integer
+        talents:
+          items:
+            $ref: '#/components/schemas/pveTalentData'
+          type: array
+        tier_index:
+          description: Id of the talent
+          type: integer
+      type: object
+    pvpTalentTiersData:
+      description: PVP Talent tiers data
+      example:
+        talent:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 5
+        spell_tooltip:
+          cast_time:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          description:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+      properties:
+        talent:
+          $ref: '#/components/schemas/talentData'
+        spell_tooltip:
+          $ref: '#/components/schemas/pvpSpellDescritpionData'
+      type: object
+    pveTalentData:
+      description: PVE Talent data
+      example:
+        talent:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 5
+        spell_tooltip:
+          cast_time:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          description:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          column_index: 5
+        column_index: 1
+      properties:
+        column_index:
+          description: Id of the talent
+          type: integer
+        talent:
+          $ref: '#/components/schemas/talentData'
+        spell_tooltip:
+          $ref: '#/components/schemas/pveSpellDescritpionData'
+      type: object
+    talentData:
+      description: Talent data
+      example:
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        id: 5
+      properties:
+        id:
+          description: Id of the talent
+          type: integer
+        name:
+          $ref: '#/components/schemas/nameData'
+      type: object
+    pveSpellDescritpionData:
+      description: Description of the pve spell
+      example:
+        cast_time:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        description:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        column_index: 5
+      properties:
+        description:
+          $ref: '#/components/schemas/nameData'
+        cast_time:
+          $ref: '#/components/schemas/nameData'
+        column_index:
+          description: Index of the spell
+          type: integer
+      type: object
+    pvpSpellDescritpionData:
+      description: Description of the pvp spell
+      example:
+        cast_time:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        description:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+      properties:
+        description:
+          $ref: '#/components/schemas/nameData'
+        cast_time:
+          $ref: '#/components/schemas/nameData'
+      type: object
+    arrayAssetData:
       description: Array of media asset
       example:
         assets:
@@ -1198,10 +1872,10 @@ components:
       properties:
         assets:
           items:
-            $ref: '#/components/schemas/assetDTO'
+            $ref: '#/components/schemas/assetData'
           type: array
       type: object
-    assetDTO:
+    assetData:
       description: Asset of media
       example:
         file_data_id: 0
@@ -1225,7 +1899,7 @@ components:
       - key
       - value
       type: object
-    factionDTO:
+    factionData:
       description: Faction data
       example:
         name:
@@ -1246,12 +1920,35 @@ components:
         type:
           type: string
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
       - name
       - type
       type: object
-    genderNameDTO:
+    roleData:
+      description: Role data
+      example:
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        type: type
+      properties:
+        type:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameData'
+      type: object
+    genderData:
       description: Gender data
       example:
         female:
@@ -1282,14 +1979,14 @@ components:
           de_DE: de_DE
       properties:
         male:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         female:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
       - female
       - male
       type: object
-    arrayRacesIndexDTO:
+    arrayRacesIndexData:
       description: Array of races index
       example:
         races:
@@ -1324,12 +2021,12 @@ components:
       properties:
         races:
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
           type: array
       required:
       - races
       type: object
-    arraySpecializationsIndexDTO:
+    arraySpecializationsIndexData:
       description: Array of specializations index
       example:
         character_specializations:
@@ -1364,12 +2061,12 @@ components:
       properties:
         character_specializations:
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
           type: array
       required:
       - character_specializations
       type: object
-    arrayCovenantIndexDTO:
+    arrayCovenantIndexData:
       description: Array of covenant index
       example:
         classes:
@@ -1404,10 +2101,10 @@ components:
       properties:
         classes:
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
           type: array
       type: object
-    arrayClassesIndexDTO:
+    arrayClassesIndexData:
       description: Array of classes index
       example:
         classes:
@@ -1442,12 +2139,12 @@ components:
       properties:
         classes:
           items:
-            $ref: '#/components/schemas/indexDTO'
+            $ref: '#/components/schemas/indexData'
           type: array
       required:
       - classes
       type: object
-    realmDTO:
+    realmData:
       description: Data of realm
       example:
         is_tournament: true
@@ -1516,11 +2213,11 @@ components:
           description: Id of the realm
           type: integer
         region:
-          $ref: '#/components/schemas/indexDTO'
+          $ref: '#/components/schemas/indexData'
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         category:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
         locale:
           description: Locale of the realm
           type: string
@@ -1528,7 +2225,7 @@ components:
           description: Timezone of the realm
           type: string
         type:
-          $ref: '#/components/schemas/realmTypeDTO'
+          $ref: '#/components/schemas/realmTypeData'
         is_tournament:
           description: Is true if the realm is a tournament realm
           type: boolean
@@ -1536,7 +2233,7 @@ components:
           description: Slug of the realm
           type: string
       type: object
-    realmTypeDTO:
+    realmTypeData:
       description: Type of realm
       example:
         name:
@@ -1558,9 +2255,9 @@ components:
           description: Type of realm
           type: string
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       type: object
-    indexDTO:
+    indexData:
       description: Index of data
       example:
         name:
@@ -1582,12 +2279,12 @@ components:
           description: Id of the index
           type: integer
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
       - id
       - name
       type: object
-    arrayRealmsIndexDTO:
+    arrayRealmsIndexData:
       description: Array of classes index
       example:
         realms:
@@ -1624,12 +2321,12 @@ components:
       properties:
         realms:
           items:
-            $ref: '#/components/schemas/realmIndexDTO'
+            $ref: '#/components/schemas/realmIndexData'
           type: array
       required:
       - realms
       type: object
-    realmIndexDTO:
+    realmIndexData:
       description: Index of realm
       example:
         name:
@@ -1654,13 +2351,13 @@ components:
         slug:
           type: string
         name:
-          $ref: '#/components/schemas/nameDTO'
+          $ref: '#/components/schemas/nameData'
       required:
       - id
       - name
       - slug
       type: object
-    nameDTO:
+    nameData:
       description: Different translations
       example:
         it_IT: it_IT
