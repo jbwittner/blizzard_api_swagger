@@ -8,7 +8,7 @@ Array of covenant index
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**classes** | [**List&lt;IndexData&gt;**](IndexData.md) |  |  [optional]
+**covenants** | [**List&lt;IndexData&gt;**](IndexData.md) |  |  [optional]
 
 
 
