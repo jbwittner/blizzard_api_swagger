@@ -679,8 +679,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/characterIndexData'
-        name:
-          $ref: '#/components/schemas/nameData'
       required:
         - id
         - characters
