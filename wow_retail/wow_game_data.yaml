@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.3.0
+  version: 0.4.0
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -17,6 +17,7 @@ tags:
   - name: Playable Specialization
   - name: Realm
   - name: Account Profile
+  - name: Character Profile
 security:
   - oAuthAuthorizationCodeEU: [wow.profile]
   - oAuthAuthorizationCodeUS: [wow.profile]
@@ -286,6 +287,35 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/profileAccountData'
+  /profile/wow/character/{realmSlug}/{characterName}:
+    get:
+      tags:
+        - Character Profile
+      operationId: getCharacter
+      description: Returns a profile summary for a character.
+      parameters:
+        - $ref: '#/components/parameters/profileNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: realmSlug
+          schema:
+            type: string
+          required: true
+          description: The slug of the realm.
+        - in: path
+          name: characterName
+          schema:
+            type: string
+          required: true
+          description: The lowercase name of the character.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/characterData'
 components:
   securitySchemes:
     oAuthAuthorizationCodeEU:
@@ -633,6 +663,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/wowAccountData'
+        name:
+          $ref: '#/components/schemas/nameData'
       required:
         - id
         - wow_accounts
@@ -681,6 +713,105 @@ components:
         - gender
         - faction
         - level
+    characterData:
+      type: object
+      description: Character data
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        gender:
+          $ref: '#/components/schemas/typeData'
+        faction:
+          $ref: '#/components/schemas/typeData'
+        race:
+          $ref: '#/components/schemas/indexData'
+        character_class:
+          $ref: '#/components/schemas/indexData'
+        active_spec:
+          $ref: '#/components/schemas/indexData'
+        realm:
+          $ref: '#/components/schemas/realmIndexData'
+        guild:
+          $ref: '#/components/schemas/guildCharacterIndexData'
+        level:
+          type: integer
+        experience:
+          type: integer
+        achievement_points:
+          type: integer
+        last_login_timestamp:
+          type: integer
+          format: int64
+        average_item_level:
+          type: integer
+        equipped_item_level:
+          type: integer
+        active_title:
+          $ref: '#/components/schemas/titleData'
+        covenant_progress:
+          $ref: '#/components/schemas/covenantProgressData'
+      required:
+        - name
+        - id
+        - gender
+        - faction
+        - race
+        - character_class
+        - active_spec
+        - realm
+        - guild
+        - level
+        - experience
+        - achievement_points
+        - last_login_timestamp
+        - average_item_level
+        - equipped_item_level
+        - active_title
+        - covenant_progress
+    covenantProgressData:
+      type: object
+      description: Covenant progress data
+      properties:
+        chosen_covenant:
+          $ref: '#/components/schemas/typeData'
+        renown_level:
+          type: integer
+      required:
+        - chosen_covenant
+        - renown_level
+    titleData:
+      type: object
+      description: Data of character title
+      properties:
+        name:
+          $ref: '#/components/schemas/nameData'
+        id:
+          type: integer
+        display_string:
+          $ref: '#/components/schemas/nameData'
+      required:
+        - name
+        - id
+        - display_string
+    guildCharacterIndexData:
+      type: object
+      description: Index of guild character
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        realm:
+          $ref: '#/components/schemas/realmIndexData'
+        faction:
+          $ref: '#/components/schemas/typeData'
+      required:
+        - name
+        - id
+        - realm
+        - faction
     typeData:
       type: object
       description: Faction data

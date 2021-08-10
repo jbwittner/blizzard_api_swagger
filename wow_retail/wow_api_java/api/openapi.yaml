@@ -3,7 +3,7 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.3.0
+  version: 0.4.0
 servers:
 - url: https://eu.api.blizzard.com/
 - url: https://us.api.blizzard.com/
@@ -26,6 +26,7 @@ tags:
 - name: Playable Specialization
 - name: Realm
 - name: Account Profile
+- name: Character Profile
 paths:
   /data/wow/covenant/index:
     get:
@@ -966,6 +967,90 @@ paths:
           description: successful operation
       tags:
       - Account Profile
+      x-accepts: application/json
+  /profile/wow/character/{realmSlug}/{characterName}:
+    get:
+      description: Returns a profile summary for a character.
+      operationId: getCharacter
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - profile-eu
+          - profile-us
+          - profile-kr
+          - profile-tw
+          - profile-cn
+          example: profile-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The slug of the realm.
+        explode: false
+        in: path
+        name: realmSlug
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The lowercase name of the character.
+        explode: false
+        in: path
+        name: characterName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/characterData'
+          description: successful operation
+      tags:
+      - Character Profile
       x-accepts: application/json
 components:
   parameters:
@@ -3058,6 +3143,363 @@ components:
       - name
       - playable_class
       - playable_race
+      - realm
+      type: object
+    characterData:
+      description: Character data
+      example:
+        active_spec:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        last_login_timestamp: 2
+        gender:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          type: type
+        race:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        level: 1
+        character_class:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+        achievement_points: 5
+        experience: 5
+        covenant_progress:
+          chosen_covenant:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            type: type
+          renown_level: 2
+        guild:
+          faction:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            type: type
+          name: name
+          realm:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            id: 0
+            slug: slug
+          id: 6
+        average_item_level: 7
+        equipped_item_level: 9
+        active_title:
+          display_string:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 3
+        faction:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          type: type
+        name: name
+        realm:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+          slug: slug
+        id: 0
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        gender:
+          $ref: '#/components/schemas/typeData'
+        faction:
+          $ref: '#/components/schemas/typeData'
+        race:
+          $ref: '#/components/schemas/indexData'
+        character_class:
+          $ref: '#/components/schemas/indexData'
+        active_spec:
+          $ref: '#/components/schemas/indexData'
+        realm:
+          $ref: '#/components/schemas/realmIndexData'
+        guild:
+          $ref: '#/components/schemas/guildCharacterIndexData'
+        level:
+          type: integer
+        experience:
+          type: integer
+        achievement_points:
+          type: integer
+        last_login_timestamp:
+          format: int64
+          type: integer
+        average_item_level:
+          type: integer
+        equipped_item_level:
+          type: integer
+        active_title:
+          $ref: '#/components/schemas/titleData'
+        covenant_progress:
+          $ref: '#/components/schemas/covenantProgressData'
+      required:
+      - achievement_points
+      - active_spec
+      - active_title
+      - average_item_level
+      - character_class
+      - covenant_progress
+      - equipped_item_level
+      - experience
+      - faction
+      - gender
+      - guild
+      - id
+      - last_login_timestamp
+      - level
+      - name
+      - race
+      - realm
+      type: object
+    covenantProgressData:
+      description: Covenant progress data
+      example:
+        chosen_covenant:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          type: type
+        renown_level: 2
+      properties:
+        chosen_covenant:
+          $ref: '#/components/schemas/typeData'
+        renown_level:
+          type: integer
+      required:
+      - chosen_covenant
+      - renown_level
+      type: object
+    titleData:
+      description: Data of character title
+      example:
+        display_string:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        name:
+          it_IT: it_IT
+          ru_RU: ru_RU
+          en_GB: en_GB
+          zh_TW: zh_TW
+          ko_KR: ko_KR
+          en_US: en_US
+          es_MX: es_MX
+          pt_BR: pt_BR
+          es_ES: es_ES
+          zh_CN: zh_CN
+          fr_FR: fr_FR
+          de_DE: de_DE
+        id: 3
+      properties:
+        name:
+          $ref: '#/components/schemas/nameData'
+        id:
+          type: integer
+        display_string:
+          $ref: '#/components/schemas/nameData'
+      required:
+      - display_string
+      - id
+      - name
+      type: object
+    guildCharacterIndexData:
+      description: Index of guild character
+      example:
+        faction:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          type: type
+        name: name
+        realm:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+          slug: slug
+        id: 6
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        realm:
+          $ref: '#/components/schemas/realmIndexData'
+        faction:
+          $ref: '#/components/schemas/typeData'
+      required:
+      - faction
+      - id
+      - name
       - realm
       type: object
     typeData:
