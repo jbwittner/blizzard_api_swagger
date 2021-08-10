@@ -14,8 +14,7 @@
 package fr.jbwittner.blizzardswagger.wowretailapi.api;
 
 import fr.jbwittner.blizzardswagger.wowretailapi.ApiException;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.ArrayRealmsIndexData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.RealmData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.ProfileAccountData;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -25,47 +24,28 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for RealmApi
+ * API tests for AccountProfileApi
  */
 @Ignore
-public class RealmApiTest {
+public class AccountProfileApiTest {
 
-    private final RealmApi api = new RealmApi();
+    private final AccountProfileApi api = new AccountProfileApi();
 
     
     /**
      * 
      *
-     * Returns a single realm by slug or ID.
+     * Account Profile Summary
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getRealmBySlugTest() throws ApiException {
-        String namespace = null;
-        String region = null;
-        String realmSlug = null;
-        String locale = null;
-        RealmData response = api.getRealmBySlug(namespace, region, realmSlug, locale);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * 
-     *
-     * Returns an index of realms.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getRealmIndexTest() throws ApiException {
+    public void getUserProfileTest() throws ApiException {
         String namespace = null;
         String region = null;
         String locale = null;
-        ArrayRealmsIndexData response = api.getRealmIndex(namespace, region, locale);
+        ProfileAccountData response = api.getUserProfile(namespace, region, locale);
 
         // TODO: test validations
     }
