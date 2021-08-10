@@ -13,9 +13,13 @@ docs/ArrayRacesIndexData.md
 docs/ArrayRealmsIndexData.md
 docs/ArraySpecializationsIndexData.md
 docs/AssetData.md
+docs/CharacterData.md
 docs/CharacterIndexData.md
+docs/CharacterProfileApi.md
 docs/CovenantApi.md
+docs/CovenantProgressData.md
 docs/GenderData.md
+docs/GuildCharacterIndexData.md
 docs/IndexData.md
 docs/NameData.md
 docs/PlayableClassApi.md
@@ -35,6 +39,7 @@ docs/RealmApi.md
 docs/RealmData.md
 docs/RealmIndexData.md
 docs/TalentData.md
+docs/TitleData.md
 docs/TypeData.md
 docs/WowAccountData.md
 git_push.sh
@@ -60,6 +65,7 @@ src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/ServerConfiguration.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/ServerVariable.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/StringUtil.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/api/AccountProfileApi.java
+src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/api/CharacterProfileApi.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/api/CovenantApi.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/api/PlayableClassApi.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/api/PlayableRaceApiApi.java
@@ -80,8 +86,11 @@ src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/ArrayRacesIndexDat
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/ArrayRealmsIndexData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/ArraySpecializationsIndexData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/AssetData.java
+src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterIndexData.java
+src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CovenantProgressData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GenderData.java
+src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GuildCharacterIndexData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/IndexData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/NameData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/PlayableClassData.java
@@ -97,9 +106,11 @@ src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/PvpTalentTiersData
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/RealmData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/RealmIndexData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/TalentData.java
+src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/TitleData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/TypeData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/WowAccountData.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/api/AccountProfileApiTest.java
+src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/api/CharacterProfileApiTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/api/CovenantApiTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/api/PlayableClassApiTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/api/PlayableRaceApiApiTest.java
@@ -112,8 +123,11 @@ src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/ArrayRacesIndexDat
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/ArrayRealmsIndexDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/ArraySpecializationsIndexDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/AssetDataTest.java
+src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterIndexDataTest.java
+src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CovenantProgressDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GenderDataTest.java
+src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GuildCharacterIndexDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/IndexDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/NameDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/PlayableClassDataTest.java
@@ -129,5 +143,6 @@ src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/PvpTalentTiersData
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/RealmDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/RealmIndexDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/TalentDataTest.java
+src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/TitleDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/TypeDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/WowAccountDataTest.java
