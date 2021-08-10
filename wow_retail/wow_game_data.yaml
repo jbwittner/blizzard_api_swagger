@@ -633,8 +633,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/wowAccountData'
-        name:
-          $ref: '#/components/schemas/nameData'
       required:
         - id
         - wow_accounts
