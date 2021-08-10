@@ -775,7 +775,7 @@ components:
       description: Covenant progress data
       properties:
         chosen_covenant:
-          $ref: '#/components/schemas/typeData'
+          $ref: '#/components/schemas/indexData'
         renown_level:
           type: integer
       required:
