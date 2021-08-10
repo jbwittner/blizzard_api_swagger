@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.2.1
+  version: 0.3.0
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -16,11 +16,12 @@ tags:
   - name: Playable Race
   - name: Playable Specialization
   - name: Realm
+  - name: Account Profile
 security:
-  - oAuthSampleEU: []
-  - oAuthSampleUS: []
-  - oAuthSampleAPAC: []
-  - oAuthSampleCN: []
+  - oAuthAuthorizationCodeEU: [wow.profile]
+  - oAuthAuthorizationCodeUS: [wow.profile]
+  - oAuthAuthorizationCodeAPAC: [wow.profile]
+  - oAuthAuthorizationCodeCN: [wow.profile]
 paths:
   /data/wow/covenant/index:
     get:
@@ -249,7 +250,7 @@ paths:
     get:
       tags:
         - Realm
-      operationId: getRealm
+      operationId: getRealmBySlug
       description: Returns a single realm by slug or ID.
       parameters:
         - $ref: '#/components/parameters/dynamicNamespace'
@@ -268,36 +269,61 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/realmData'
+  /profile/user/wow:
+    get:
+      tags:
+        - Account Profile
+      operationId: getUserProfile
+      description: Account Profile Summary
+      parameters:
+        - $ref: '#/components/parameters/profileNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/profileAccountData'
 components:
   securitySchemes:
-    oAuthSampleEU:
+    oAuthAuthorizationCodeEU:
       type: oauth2
-      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      description: This API uses OAuth 2 with the authorization code grant flow (eu).
       flows:
-        clientCredentials:
-          tokenUrl: 'https://eu.battle.net/oauth/token'
-          scopes: {}
-    oAuthSampleUS:
+        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
+          authorizationUrl: https://eu.battle.net/oauth/authorize
+          tokenUrl: https://eu.battle.net/oauth/token
+          scopes: 
+            wow.profile : wow profile
+    oAuthAuthorizationCodeUS:
       type: oauth2
-      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      description: This API uses OAuth 2 with the authorization code grant flow (us).
       flows:
-        clientCredentials:
-          tokenUrl: 'https://us.battle.net/oauth/token'
-          scopes: {}
-    oAuthSampleAPAC:
+        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
+          authorizationUrl: https://us.battle.net/oauth/authorize
+          tokenUrl: https://us.battle.net/oauth/token
+          scopes: 
+            wow.profile : wow profile
+    oAuthAuthorizationCodeAPAC:
       type: oauth2
-      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      description: This API uses OAuth 2 with the authorization code grant flow (apac).
       flows:
-        clientCredentials:
-          tokenUrl: 'https://apac.battle.net/oauth/token'
-          scopes: {}
-    oAuthSampleCN:
+        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
+          authorizationUrl: https://apac.battle.net/oauth/authorize
+          tokenUrl: https://apac.battle.net/oauth/token
+          scopes: 
+            wow.profile : wow profile
+    oAuthAuthorizationCodeCN:
       type: oauth2
-      description: This API uses OAuth 2 with the implicit grant flow (eu).
+      description: This API uses OAuth 2 with the authorization code grant flow (CN).
       flows:
-        clientCredentials:
-          tokenUrl: 'https://www.battlenet.com.cn/oauth/token'
-          scopes: {}
+        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
+          authorizationUrl: https://cn.battle.net/oauth/authorize
+          tokenUrl: https://cn.battle.net/oauth/token
+          scopes: 
+            wow.profile : wow profile
   schemas:
     playableClassData:
       type: object
@@ -348,7 +374,7 @@ components:
         gender_name:
           $ref: '#/components/schemas/genderData'
         faction:
-          $ref: '#/components/schemas/factionData'
+          $ref: '#/components/schemas/typeData'
         is_selectable:
           type: boolean
         is_allied_race:
@@ -375,7 +401,7 @@ components:
         gender_description:
           $ref: '#/components/schemas/genderData'
         role:
-          $ref: '#/components/schemas/roleData'
+          $ref: '#/components/schemas/typeData'
         talent_tiers:
           type: array
           items:
@@ -473,25 +499,6 @@ components:
         - key
         - value
         - file_data_id
-    factionData:
-      type: object
-      description: Faction data
-      properties:
-        type:
-          type: string
-        name:
-          $ref: '#/components/schemas/nameData'
-      required:
-        - type
-        - name
-    roleData:
-      type: object
-      description: Role data
-      properties:
-        type:
-          type: string
-        name:
-          $ref: '#/components/schemas/nameData'
     genderData:
       type: object
       description: Gender data
@@ -561,22 +568,23 @@ components:
           type: string
           description: Timezone of the realm
         type:
-          $ref: '#/components/schemas/realmTypeData'
+          $ref: '#/components/schemas/typeData'
         is_tournament:
           type: boolean
           description: Is true if the realm is a tournament realm
         slug:
           type: string
           description: Slug of the realm
-    realmTypeData:
-      type: object
-      description: Type of realm
-      properties:
-        type:
-          type: string
-          description: Type of realm
-        name:
-          $ref: '#/components/schemas/nameData'
+      required:
+        - id
+        - region
+        - name
+        - category
+        - locale
+        - timezone
+        - type
+        - is_tournament
+        - slug
     indexData:
       type: object
       description: Index of data
@@ -614,6 +622,78 @@ components:
         - id
         - slug
         - name
+    profileAccountData:
+      type: object
+      description: Data of wow accounnt
+      properties:
+        id:
+          type: integer
+          description: Id of the accounnt
+        wow_accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/wowAccountData'
+        name:
+          $ref: '#/components/schemas/nameData'
+      required:
+        - id
+        - wow_accounts
+    wowAccountData:
+      type: object
+      description: Data of wow accounnt
+      properties:
+        id:
+          type: integer
+          description: Id of the accounnt
+        characters:
+          type: array
+          items:
+            $ref: '#/components/schemas/characterIndexData'
+        name:
+          $ref: '#/components/schemas/nameData'
+      required:
+        - id
+        - characters
+    characterIndexData:
+      type: object
+      description: Index of character
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        realm:
+          $ref: '#/components/schemas/realmIndexData'
+        playable_class:
+          $ref: '#/components/schemas/indexData'
+        playable_race:
+          $ref: '#/components/schemas/indexData'
+        gender:
+          $ref: '#/components/schemas/typeData'
+        faction:
+          $ref: '#/components/schemas/typeData'
+        level:
+          type: integer
+      required:
+        - name
+        - id
+        - realm
+        - playable_class
+        - playable_race
+        - gender
+        - faction
+        - level
+    typeData:
+      type: object
+      description: Faction data
+      properties:
+        type:
+          type: string
+        name:
+          $ref: '#/components/schemas/nameData'
+      required:
+        - type
+        - name 
     nameData:
       type: object
       description: Different translations
@@ -683,6 +763,20 @@ components:
           - dynamic-tw
           - dynamic-cn
         example: dynamic-eu
+    profileNamespace:
+      in: query
+      name: namespace
+      required: true
+      description: The namespace to use to locate this document.
+      schema:
+        type: string
+        enum:
+          - profile-eu
+          - profile-us
+          - profile-kr
+          - profile-tw
+          - profile-cn
+        example: profile-eu
     region:
       in: query
       name: region

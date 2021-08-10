@@ -18,50 +18,29 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.GenderData;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.IndexData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.PveTalentTiersData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.PvpTalentTiersData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.RealmIndexData;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.TypeData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for PlayableSpecializationData
+ * Model tests for CharacterIndexData
  */
-public class PlayableSpecializationDataTest {
-    private final PlayableSpecializationData model = new PlayableSpecializationData();
+public class CharacterIndexDataTest {
+    private final CharacterIndexData model = new CharacterIndexData();
 
     /**
-     * Model tests for PlayableSpecializationData
+     * Model tests for CharacterIndexData
      */
     @Test
-    public void testPlayableSpecializationData() {
-        // TODO: test PlayableSpecializationData
-    }
-
-    /**
-     * Test the property 'id'
-     */
-    @Test
-    public void idTest() {
-        // TODO: test id
-    }
-
-    /**
-     * Test the property 'playableClass'
-     */
-    @Test
-    public void playableClassTest() {
-        // TODO: test playableClass
+    public void testCharacterIndexData() {
+        // TODO: test CharacterIndexData
     }
 
     /**
@@ -73,35 +52,59 @@ public class PlayableSpecializationDataTest {
     }
 
     /**
-     * Test the property 'genderDescription'
+     * Test the property 'id'
      */
     @Test
-    public void genderDescriptionTest() {
-        // TODO: test genderDescription
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
-     * Test the property 'role'
+     * Test the property 'realm'
      */
     @Test
-    public void roleTest() {
-        // TODO: test role
+    public void realmTest() {
+        // TODO: test realm
     }
 
     /**
-     * Test the property 'talentTiers'
+     * Test the property 'playableClass'
      */
     @Test
-    public void talentTiersTest() {
-        // TODO: test talentTiers
+    public void playableClassTest() {
+        // TODO: test playableClass
     }
 
     /**
-     * Test the property 'pvpTalents'
+     * Test the property 'playableRace'
      */
     @Test
-    public void pvpTalentsTest() {
-        // TODO: test pvpTalents
+    public void playableRaceTest() {
+        // TODO: test playableRace
+    }
+
+    /**
+     * Test the property 'gender'
+     */
+    @Test
+    public void genderTest() {
+        // TODO: test gender
+    }
+
+    /**
+     * Test the property 'faction'
+     */
+    @Test
+    public void factionTest() {
+        // TODO: test faction
+    }
+
+    /**
+     * Test the property 'level'
+     */
+    @Test
+    public void levelTest() {
+        // TODO: test level
     }
 
 }

@@ -1,14 +1,15 @@
 
 
-# RealmTypeData
+# WowAccountData
 
-Type of realm
+Data of wow accounnt
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | Type of realm |  [optional]
+**id** | **Integer** | Id of the accounnt | 
+**characters** | [**List&lt;CharacterIndexData&gt;**](CharacterIndexData.md) |  | 
 **name** | [**NameData**](NameData.md) |  |  [optional]
 
 

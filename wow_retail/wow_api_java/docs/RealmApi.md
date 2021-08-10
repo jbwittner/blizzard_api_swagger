@@ -4,13 +4,13 @@ All URIs are relative to *https://eu.api.blizzard.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getRealm**](RealmApi.md#getRealm) | **GET** /data/wow/realm/{realmSlug} | 
+[**getRealmBySlug**](RealmApi.md#getRealmBySlug) | **GET** /data/wow/realm/{realmSlug} | 
 [**getRealmIndex**](RealmApi.md#getRealmIndex) | **GET** /data/wow/realm/index | 
 
 
-<a name="getRealm"></a>
-# **getRealm**
-> RealmData getRealm(namespace, region, realmSlug, locale)
+<a name="getRealmBySlug"></a>
+# **getRealmBySlug**
+> RealmData getRealmBySlug(namespace, region, realmSlug, locale)
 
 
 
@@ -31,21 +31,21 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://eu.api.blizzard.com");
     
-    // Configure OAuth2 access token for authorization: oAuthSampleAPAC
-    OAuth oAuthSampleAPAC = (OAuth) defaultClient.getAuthentication("oAuthSampleAPAC");
-    oAuthSampleAPAC.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeAPAC
+    OAuth oAuthAuthorizationCodeAPAC = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeAPAC");
+    oAuthAuthorizationCodeAPAC.setAccessToken("YOUR ACCESS TOKEN");
 
-    // Configure OAuth2 access token for authorization: oAuthSampleCN
-    OAuth oAuthSampleCN = (OAuth) defaultClient.getAuthentication("oAuthSampleCN");
-    oAuthSampleCN.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeCN
+    OAuth oAuthAuthorizationCodeCN = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeCN");
+    oAuthAuthorizationCodeCN.setAccessToken("YOUR ACCESS TOKEN");
 
-    // Configure OAuth2 access token for authorization: oAuthSampleEU
-    OAuth oAuthSampleEU = (OAuth) defaultClient.getAuthentication("oAuthSampleEU");
-    oAuthSampleEU.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeEU
+    OAuth oAuthAuthorizationCodeEU = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeEU");
+    oAuthAuthorizationCodeEU.setAccessToken("YOUR ACCESS TOKEN");
 
-    // Configure OAuth2 access token for authorization: oAuthSampleUS
-    OAuth oAuthSampleUS = (OAuth) defaultClient.getAuthentication("oAuthSampleUS");
-    oAuthSampleUS.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeUS
+    OAuth oAuthAuthorizationCodeUS = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeUS");
+    oAuthAuthorizationCodeUS.setAccessToken("YOUR ACCESS TOKEN");
 
     RealmApi apiInstance = new RealmApi(defaultClient);
     String namespace = "dynamic-eu"; // String | The namespace to use to locate this document.
@@ -53,10 +53,10 @@ public class Example {
     String realmSlug = "realmSlug_example"; // String | The slug of the realm.
     String locale = "en_US"; // String | The locale to reflect in localized data. (If you don't send a value, the API sends you all localized data)
     try {
-      RealmData result = apiInstance.getRealm(namespace, region, realmSlug, locale);
+      RealmData result = apiInstance.getRealmBySlug(namespace, region, realmSlug, locale);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling RealmApi#getRealm");
+      System.err.println("Exception when calling RealmApi#getRealmBySlug");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oAuthSampleAPAC](../README.md#oAuthSampleAPAC), [oAuthSampleCN](../README.md#oAuthSampleCN), [oAuthSampleEU](../README.md#oAuthSampleEU), [oAuthSampleUS](../README.md#oAuthSampleUS)
+[oAuthAuthorizationCodeAPAC](../README.md#oAuthAuthorizationCodeAPAC), [oAuthAuthorizationCodeCN](../README.md#oAuthAuthorizationCodeCN), [oAuthAuthorizationCodeEU](../README.md#oAuthAuthorizationCodeEU), [oAuthAuthorizationCodeUS](../README.md#oAuthAuthorizationCodeUS)
 
 ### HTTP request headers
 
@@ -116,21 +116,21 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://eu.api.blizzard.com");
     
-    // Configure OAuth2 access token for authorization: oAuthSampleAPAC
-    OAuth oAuthSampleAPAC = (OAuth) defaultClient.getAuthentication("oAuthSampleAPAC");
-    oAuthSampleAPAC.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeAPAC
+    OAuth oAuthAuthorizationCodeAPAC = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeAPAC");
+    oAuthAuthorizationCodeAPAC.setAccessToken("YOUR ACCESS TOKEN");
 
-    // Configure OAuth2 access token for authorization: oAuthSampleCN
-    OAuth oAuthSampleCN = (OAuth) defaultClient.getAuthentication("oAuthSampleCN");
-    oAuthSampleCN.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeCN
+    OAuth oAuthAuthorizationCodeCN = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeCN");
+    oAuthAuthorizationCodeCN.setAccessToken("YOUR ACCESS TOKEN");
 
-    // Configure OAuth2 access token for authorization: oAuthSampleEU
-    OAuth oAuthSampleEU = (OAuth) defaultClient.getAuthentication("oAuthSampleEU");
-    oAuthSampleEU.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeEU
+    OAuth oAuthAuthorizationCodeEU = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeEU");
+    oAuthAuthorizationCodeEU.setAccessToken("YOUR ACCESS TOKEN");
 
-    // Configure OAuth2 access token for authorization: oAuthSampleUS
-    OAuth oAuthSampleUS = (OAuth) defaultClient.getAuthentication("oAuthSampleUS");
-    oAuthSampleUS.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeUS
+    OAuth oAuthAuthorizationCodeUS = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeUS");
+    oAuthAuthorizationCodeUS.setAccessToken("YOUR ACCESS TOKEN");
 
     RealmApi apiInstance = new RealmApi(defaultClient);
     String namespace = "dynamic-eu"; // String | The namespace to use to locate this document.
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oAuthSampleAPAC](../README.md#oAuthSampleAPAC), [oAuthSampleCN](../README.md#oAuthSampleCN), [oAuthSampleEU](../README.md#oAuthSampleEU), [oAuthSampleUS](../README.md#oAuthSampleUS)
+[oAuthAuthorizationCodeAPAC](../README.md#oAuthAuthorizationCodeAPAC), [oAuthAuthorizationCodeCN](../README.md#oAuthAuthorizationCodeCN), [oAuthAuthorizationCodeEU](../README.md#oAuthAuthorizationCodeEU), [oAuthAuthorizationCodeUS](../README.md#oAuthAuthorizationCodeUS)
 
 ### HTTP request headers
 

@@ -1,15 +1,15 @@
 
 
-# RoleData
+# TypeData
 
-Role data
+Faction data
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** |  |  [optional]
-**name** | [**NameData**](NameData.md) |  |  [optional]
+**type** | **String** |  | 
+**name** | [**NameData**](NameData.md) |  | 
 
 
 
