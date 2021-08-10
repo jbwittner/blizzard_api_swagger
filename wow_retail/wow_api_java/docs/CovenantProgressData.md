@@ -8,7 +8,7 @@ Covenant progress data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**chosenCovenant** | [**TypeData**](TypeData.md) |  | 
+**chosenCovenant** | [**IndexData**](IndexData.md) |  | 
 **renownLevel** | **Integer** |  | 
 
 

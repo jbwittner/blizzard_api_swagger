@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.4.0
+  version: 0.4.1
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -679,8 +679,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/characterIndexData'
-        name:
-          $ref: '#/components/schemas/nameData'
       required:
         - id
         - characters
@@ -775,7 +773,7 @@ components:
       description: Covenant progress data
       properties:
         chosen_covenant:
-          $ref: '#/components/schemas/typeData'
+          $ref: '#/components/schemas/indexData'
         renown_level:
           type: integer
       required:

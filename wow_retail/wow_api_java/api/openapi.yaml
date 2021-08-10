@@ -3,7 +3,7 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.4.0
+  version: 0.4.1
 servers:
 - url: https://eu.api.blizzard.com/
 - url: https://us.api.blizzard.com/
@@ -2631,19 +2631,6 @@ components:
                 fr_FR: fr_FR
                 de_DE: de_DE
               id: 0
-          name:
-            it_IT: it_IT
-            ru_RU: ru_RU
-            en_GB: en_GB
-            zh_TW: zh_TW
-            ko_KR: ko_KR
-            en_US: en_US
-            es_MX: es_MX
-            pt_BR: pt_BR
-            es_ES: es_ES
-            zh_CN: zh_CN
-            fr_FR: fr_FR
-            de_DE: de_DE
           id: 6
         - characters:
           - playable_class:
@@ -2804,19 +2791,6 @@ components:
                 fr_FR: fr_FR
                 de_DE: de_DE
               id: 0
-          name:
-            it_IT: it_IT
-            ru_RU: ru_RU
-            en_GB: en_GB
-            zh_TW: zh_TW
-            ko_KR: ko_KR
-            en_US: en_US
-            es_MX: es_MX
-            pt_BR: pt_BR
-            es_ES: es_ES
-            zh_CN: zh_CN
-            fr_FR: fr_FR
-            de_DE: de_DE
           id: 6
         name:
           it_IT: it_IT
@@ -3008,19 +2982,6 @@ components:
               fr_FR: fr_FR
               de_DE: de_DE
             id: 0
-        name:
-          it_IT: it_IT
-          ru_RU: ru_RU
-          en_GB: en_GB
-          zh_TW: zh_TW
-          ko_KR: ko_KR
-          en_US: en_US
-          es_MX: es_MX
-          pt_BR: pt_BR
-          es_ES: es_ES
-          zh_CN: zh_CN
-          fr_FR: fr_FR
-          de_DE: de_DE
         id: 6
       properties:
         id:
@@ -3030,8 +2991,6 @@ components:
           items:
             $ref: '#/components/schemas/characterIndexData'
           type: array
-        name:
-          $ref: '#/components/schemas/nameData'
       required:
       - characters
       - id
@@ -3227,7 +3186,7 @@ components:
               zh_CN: zh_CN
               fr_FR: fr_FR
               de_DE: de_DE
-            type: type
+            id: 0
           renown_level: 2
         guild:
           faction:
@@ -3398,11 +3357,11 @@ components:
             zh_CN: zh_CN
             fr_FR: fr_FR
             de_DE: de_DE
-          type: type
+          id: 0
         renown_level: 2
       properties:
         chosen_covenant:
-          $ref: '#/components/schemas/typeData'
+          $ref: '#/components/schemas/indexData'
         renown_level:
           type: integer
       required:

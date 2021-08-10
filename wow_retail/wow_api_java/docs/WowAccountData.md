@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | Id of the accounnt | 
 **characters** | [**List&lt;CharacterIndexData&gt;**](CharacterIndexData.md) |  | 
-**name** | [**NameData**](NameData.md) |  |  [optional]
 
 
 
