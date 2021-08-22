@@ -5,7 +5,7 @@
     <artifactId>wowretailapi</artifactId>
     <packaging>jar</packaging>
     <name>wowretailapi</name>
-    <version>0.5.0</version>
+    <version>0.5.1</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
@@ -278,13 +278,4 @@
         <junit-version>4.13.1</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>GitHub jbwittner Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/jbwittner/blizzard_api_swagger</url>
-        </repository>
-    </distributionManagement>
-
 </project>

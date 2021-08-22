@@ -18,7 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.RealmIndexData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -28,33 +28,41 @@ import org.junit.Test;
 
 
 /**
- * Model tests for GenderData
+ * Model tests for CharacterMediaIndex
  */
-public class GenderDataTest {
-    private final GenderData model = new GenderData();
+public class CharacterMediaIndexTest {
+    private final CharacterMediaIndex model = new CharacterMediaIndex();
 
     /**
-     * Model tests for GenderData
+     * Model tests for CharacterMediaIndex
      */
     @Test
-    public void testGenderData() {
-        // TODO: test GenderData
+    public void testCharacterMediaIndex() {
+        // TODO: test CharacterMediaIndex
     }
 
     /**
-     * Test the property 'male'
+     * Test the property 'name'
      */
     @Test
-    public void maleTest() {
-        // TODO: test male
+    public void nameTest() {
+        // TODO: test name
     }
 
     /**
-     * Test the property 'female'
+     * Test the property 'id'
      */
     @Test
-    public void femaleTest() {
-        // TODO: test female
+    public void idTest() {
+        // TODO: test id
+    }
+
+    /**
+     * Test the property 'realm'
+     */
+    @Test
+    public void realmTest() {
+        // TODO: test realm
     }
 
 }

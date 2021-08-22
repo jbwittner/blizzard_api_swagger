@@ -17,6 +17,7 @@ docs/CharacterData.md
 docs/CharacterIndexData.md
 docs/CharacterMediaApi.md
 docs/CharacterMediaData.md
+docs/CharacterMediaIndex.md
 docs/CharacterProfileApi.md
 docs/CovenantApi.md
 docs/CovenantProgressData.md
@@ -92,6 +93,7 @@ src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/AssetData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterIndexData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterMediaData.java
+src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterMediaIndex.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CovenantProgressData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GenderData.java
 src/main/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GuildCharacterIndexData.java
@@ -131,6 +133,7 @@ src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/AssetDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterIndexDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterMediaDataTest.java
+src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CharacterMediaIndexTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/CovenantProgressDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GenderDataTest.java
 src/test/java/fr/jbwittner/blizzardswagger/wowretailapi/model/GuildCharacterIndexDataTest.java

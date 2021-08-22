@@ -20,39 +20,63 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.CharacterIndexData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.RealmIndexData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * Data of wow accounnt
+ * Character media data
  */
-@ApiModel(description = "Data of wow accounnt")
+@ApiModel(description = "Character media data")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T22:07:13.231088+02:00[Europe/Paris]")
-public class WowAccountData {
+public class CharacterMediaIndex {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
+
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   private Integer id;
 
-  public static final String SERIALIZED_NAME_CHARACTERS = "characters";
-  @SerializedName(SERIALIZED_NAME_CHARACTERS)
-  private List<CharacterIndexData> characters = new ArrayList<CharacterIndexData>();
+  public static final String SERIALIZED_NAME_REALM = "realm";
+  @SerializedName(SERIALIZED_NAME_REALM)
+  private RealmIndexData realm;
 
 
-  public WowAccountData id(Integer id) {
+  public CharacterMediaIndex name(String name) {
+    
+    this.name = name;
+    return this;
+  }
+
+   /**
+   * Get name
+   * @return name
+  **/
+  @ApiModelProperty(required = true, value = "")
+
+  public String getName() {
+    return name;
+  }
+
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+
+  public CharacterMediaIndex id(Integer id) {
     
     this.id = id;
     return this;
   }
 
    /**
-   * Id of the accounnt
+   * Get id
    * @return id
   **/
-  @ApiModelProperty(required = true, value = "Id of the accounnt")
+  @ApiModelProperty(required = true, value = "")
 
   public Integer getId() {
     return id;
@@ -64,30 +88,25 @@ public class WowAccountData {
   }
 
 
-  public WowAccountData characters(List<CharacterIndexData> characters) {
+  public CharacterMediaIndex realm(RealmIndexData realm) {
     
-    this.characters = characters;
-    return this;
-  }
-
-  public WowAccountData addCharactersItem(CharacterIndexData charactersItem) {
-    this.characters.add(charactersItem);
+    this.realm = realm;
     return this;
   }
 
    /**
-   * Get characters
-   * @return characters
+   * Get realm
+   * @return realm
   **/
   @ApiModelProperty(required = true, value = "")
 
-  public List<CharacterIndexData> getCharacters() {
-    return characters;
+  public RealmIndexData getRealm() {
+    return realm;
   }
 
 
-  public void setCharacters(List<CharacterIndexData> characters) {
-    this.characters = characters;
+  public void setRealm(RealmIndexData realm) {
+    this.realm = realm;
   }
 
 
@@ -99,22 +118,24 @@ public class WowAccountData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    WowAccountData wowAccountData = (WowAccountData) o;
-    return Objects.equals(this.id, wowAccountData.id) &&
-        Objects.equals(this.characters, wowAccountData.characters);
+    CharacterMediaIndex characterMediaIndex = (CharacterMediaIndex) o;
+    return Objects.equals(this.name, characterMediaIndex.name) &&
+        Objects.equals(this.id, characterMediaIndex.id) &&
+        Objects.equals(this.realm, characterMediaIndex.realm);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, characters);
+    return Objects.hash(name, id, realm);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class WowAccountData {\n");
+    sb.append("class CharacterMediaIndex {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    characters: ").append(toIndentedString(characters)).append("\n");
+    sb.append("    realm: ").append(toIndentedString(realm)).append("\n");
     sb.append("}");
     return sb.toString();
   }
