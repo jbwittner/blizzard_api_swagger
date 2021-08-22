@@ -9,7 +9,10 @@ Character media data
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **character** | [**CharacterMediaIndex**](CharacterMediaIndex.md) |  | 
-**assets** | [**List&lt;AssetData&gt;**](AssetData.md) |  | 
+**avatarUrl** | **String** |  |  [optional]
+**bustUrl** | **String** |  |  [optional]
+**renderUrl** | **String** |  |  [optional]
+**assets** | [**List&lt;AssetData&gt;**](AssetData.md) |  |  [optional]
 
 
 
