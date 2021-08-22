@@ -3,7 +3,7 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.5.1
+  version: 0.5.2
 servers:
 - url: https://eu.api.blizzard.com/
 - url: https://us.api.blizzard.com/
@@ -3574,18 +3574,19 @@ components:
             slug: slug
           id: 0
         assets:
-          assets:
-          - file_data_id: 0
-            value: https://openapi-generator.tech
-            key: avatar
-          - file_data_id: 0
-            value: https://openapi-generator.tech
-            key: avatar
+        - file_data_id: 0
+          value: https://openapi-generator.tech
+          key: avatar
+        - file_data_id: 0
+          value: https://openapi-generator.tech
+          key: avatar
       properties:
         character:
           $ref: '#/components/schemas/characterMediaIndex'
         assets:
-          $ref: '#/components/schemas/arrayAssetData'
+          items:
+            $ref: '#/components/schemas/assetData'
+          type: array
       required:
       - assets
       - character

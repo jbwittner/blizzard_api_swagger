@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.5.1
+  version: 0.5.2
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -857,7 +857,9 @@ components:
         character:
           $ref: '#/components/schemas/characterMediaIndex'
         assets:
-          $ref: '#/components/schemas/arrayAssetData'
+          type: array
+          items:
+            $ref: '#/components/schemas/assetData'
       required:
         - character
         - assets
