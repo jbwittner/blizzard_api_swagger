@@ -3,7 +3,7 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.5.0
+  version: 0.5.1
 servers:
 - url: https://eu.api.blizzard.com/
 - url: https://us.api.blizzard.com/
@@ -3554,6 +3554,25 @@ components:
     characterMediaData:
       description: Character media data
       example:
+        character:
+          name: name
+          realm:
+            name:
+              it_IT: it_IT
+              ru_RU: ru_RU
+              en_GB: en_GB
+              zh_TW: zh_TW
+              ko_KR: ko_KR
+              en_US: en_US
+              es_MX: es_MX
+              pt_BR: pt_BR
+              es_ES: es_ES
+              zh_CN: zh_CN
+              fr_FR: fr_FR
+              de_DE: de_DE
+            id: 0
+            slug: slug
+          id: 0
         assets:
           assets:
           - file_data_id: 0
@@ -3563,8 +3582,46 @@ components:
             value: https://openapi-generator.tech
             key: avatar
       properties:
+        character:
+          $ref: '#/components/schemas/characterMediaIndex'
         assets:
           $ref: '#/components/schemas/arrayAssetData'
+      required:
+      - assets
+      - character
+      type: object
+    characterMediaIndex:
+      description: Character media data
+      example:
+        name: name
+        realm:
+          name:
+            it_IT: it_IT
+            ru_RU: ru_RU
+            en_GB: en_GB
+            zh_TW: zh_TW
+            ko_KR: ko_KR
+            en_US: en_US
+            es_MX: es_MX
+            pt_BR: pt_BR
+            es_ES: es_ES
+            zh_CN: zh_CN
+            fr_FR: fr_FR
+            de_DE: de_DE
+          id: 0
+          slug: slug
+        id: 0
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        realm:
+          $ref: '#/components/schemas/realmIndexData'
+      required:
+      - id
+      - name
+      - realm
       type: object
     typeData:
       description: Faction data

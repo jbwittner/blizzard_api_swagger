@@ -8,7 +8,8 @@ Character media data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assets** | [**ArrayAssetData**](ArrayAssetData.md) |  |  [optional]
+**character** | [**CharacterMediaIndex**](CharacterMediaIndex.md) |  | 
+**assets** | [**ArrayAssetData**](ArrayAssetData.md) |  | 
 
 
 
