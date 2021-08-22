@@ -3,7 +3,7 @@ info:
   title: Swagger BLIZZARD Api
   contact:
     email: jeanbaptiste.wittner@outlook.com
-  version: 0.4.1
+  version: 0.5.0
 servers:
   - url: 'https://eu.api.blizzard.com/'
   - url: 'https://us.api.blizzard.com/'
@@ -18,11 +18,16 @@ tags:
   - name: Realm
   - name: Account Profile
   - name: Character Profile
+  - name: Character Media
 security:
-  - oAuthAuthorizationCodeEU: [wow.profile]
-  - oAuthAuthorizationCodeUS: [wow.profile]
-  - oAuthAuthorizationCodeAPAC: [wow.profile]
-  - oAuthAuthorizationCodeCN: [wow.profile]
+  - oAuthAuthorizationCodeEU:
+      - wow.profile
+  - oAuthAuthorizationCodeUS:
+      - wow.profile
+  - oAuthAuthorizationCodeAPAC:
+      - wow.profile
+  - oAuthAuthorizationCodeCN:
+      - wow.profile
 paths:
   /data/wow/covenant/index:
     get:
@@ -130,7 +135,7 @@ paths:
   /data/wow/playable-race/index:
     get:
       tags:
-        - Playable Race API
+        - Playable Race
       operationId: getPlayableRaceIndex
       description: Returns an index of playable races.
       parameters:
@@ -147,7 +152,7 @@ paths:
   '/data/wow/playable-race/{raceId}':
     get:
       tags:
-        - Playable Race API
+        - Playable Race
       operationId: getPlayableRaceById
       description: Returns a playable race by ID.
       parameters:
@@ -287,7 +292,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/profileAccountData'
-  /profile/wow/character/{realmSlug}/{characterName}:
+  '/profile/wow/character/{realmSlug}/{characterName}':
     get:
       tags:
         - Character Profile
@@ -316,44 +321,75 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/characterData'
+  '/profile/wow/character/{realmSlug}/{characterName}/character-media':
+    get:
+      tags:
+        - Character Media
+      operationId: getCharacterMedia
+      description: >-
+        Returns a summary of the media assets available for a character (such as
+        an avatar render).
+      parameters:
+        - $ref: '#/components/parameters/profileNamespace'
+        - $ref: '#/components/parameters/region'
+        - $ref: '#/components/parameters/locale'
+        - in: path
+          name: realmSlug
+          schema:
+            type: string
+          required: true
+          description: The slug of the realm.
+        - in: path
+          name: characterName
+          schema:
+            type: string
+          required: true
+          description: The lowercase name of the character.
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/characterMediaData'
 components:
   securitySchemes:
     oAuthAuthorizationCodeEU:
       type: oauth2
       description: This API uses OAuth 2 with the authorization code grant flow (eu).
       flows:
-        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
-          authorizationUrl: https://eu.battle.net/oauth/authorize
-          tokenUrl: https://eu.battle.net/oauth/token
-          scopes: 
-            wow.profile : wow profile
+        authorizationCode:
+          authorizationUrl: 'https://eu.battle.net/oauth/authorize'
+          tokenUrl: 'https://eu.battle.net/oauth/token'
+          scopes:
+            wow.profile: wow profile
     oAuthAuthorizationCodeUS:
       type: oauth2
       description: This API uses OAuth 2 with the authorization code grant flow (us).
       flows:
-        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
-          authorizationUrl: https://us.battle.net/oauth/authorize
-          tokenUrl: https://us.battle.net/oauth/token
-          scopes: 
-            wow.profile : wow profile
+        authorizationCode:
+          authorizationUrl: 'https://us.battle.net/oauth/authorize'
+          tokenUrl: 'https://us.battle.net/oauth/token'
+          scopes:
+            wow.profile: wow profile
     oAuthAuthorizationCodeAPAC:
       type: oauth2
       description: This API uses OAuth 2 with the authorization code grant flow (apac).
       flows:
-        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
-          authorizationUrl: https://apac.battle.net/oauth/authorize
-          tokenUrl: https://apac.battle.net/oauth/token
-          scopes: 
-            wow.profile : wow profile
+        authorizationCode:
+          authorizationUrl: 'https://apac.battle.net/oauth/authorize'
+          tokenUrl: 'https://apac.battle.net/oauth/token'
+          scopes:
+            wow.profile: wow profile
     oAuthAuthorizationCodeCN:
       type: oauth2
       description: This API uses OAuth 2 with the authorization code grant flow (CN).
       flows:
-        authorizationCode:   # <---- OAuth flow(authorizationCode, implicit, password or clientCredentials)
-          authorizationUrl: https://cn.battle.net/oauth/authorize
-          tokenUrl: https://cn.battle.net/oauth/token
-          scopes: 
-            wow.profile : wow profile
+        authorizationCode:
+          authorizationUrl: 'https://cn.battle.net/oauth/authorize'
+          tokenUrl: 'https://cn.battle.net/oauth/token'
+          scopes:
+            wow.profile: wow profile
   schemas:
     playableClassData:
       type: object
@@ -517,6 +553,10 @@ components:
           description: Type of media
           type: string
           enum:
+            - avatar
+            - inset
+            - main
+            - main-raw
             - icon
         value:
           description: Uri of the media
@@ -810,6 +850,12 @@ components:
         - id
         - realm
         - faction
+    characterMediaData:
+      type: object
+      description: Character media data
+      properties:
+        assets:
+          $ref: '#/components/schemas/arrayAssetData'
     typeData:
       type: object
       description: Faction data
@@ -820,7 +866,7 @@ components:
           $ref: '#/components/schemas/nameData'
       required:
         - type
-        - name 
+        - name
     nameData:
       type: object
       description: Different translations
@@ -861,6 +907,19 @@ components:
         zh_CN:
           type: string
           description: The locale of Chinese (Simplified)
+      required:
+        - en_US
+        - es_MX
+        - pt_BR
+        - de_DE
+        - en_GB
+        - es_ES
+        - fr_FR
+        - it_IT
+        - ru_RU
+        - ko_KR
+        - zh_TW
+        - zh_CN
   parameters:
     staticNamespace:
       in: query

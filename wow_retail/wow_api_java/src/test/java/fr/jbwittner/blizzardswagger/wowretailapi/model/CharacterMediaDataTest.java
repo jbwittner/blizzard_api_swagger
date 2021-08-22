@@ -18,8 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.PvpSpellDescritpionData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.TalentData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.ArrayAssetData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -29,33 +28,25 @@ import org.junit.Test;
 
 
 /**
- * Model tests for PvpTalentTiersData
+ * Model tests for CharacterMediaData
  */
-public class PvpTalentTiersDataTest {
-    private final PvpTalentTiersData model = new PvpTalentTiersData();
+public class CharacterMediaDataTest {
+    private final CharacterMediaData model = new CharacterMediaData();
 
     /**
-     * Model tests for PvpTalentTiersData
+     * Model tests for CharacterMediaData
      */
     @Test
-    public void testPvpTalentTiersData() {
-        // TODO: test PvpTalentTiersData
+    public void testCharacterMediaData() {
+        // TODO: test CharacterMediaData
     }
 
     /**
-     * Test the property 'talent'
+     * Test the property 'assets'
      */
     @Test
-    public void talentTest() {
-        // TODO: test talent
-    }
-
-    /**
-     * Test the property 'spellTooltip'
-     */
-    @Test
-    public void spellTooltipTest() {
-        // TODO: test spellTooltip
+    public void assetsTest() {
+        // TODO: test assets
     }
 
 }

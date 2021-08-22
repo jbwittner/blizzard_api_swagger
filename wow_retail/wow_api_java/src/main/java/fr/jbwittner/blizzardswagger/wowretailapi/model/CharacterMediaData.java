@@ -20,69 +20,42 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.ArrayAssetData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Talent data
+ * Character media data
  */
-@ApiModel(description = "Talent data")
+@ApiModel(description = "Character media data")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T18:57:03.260882+02:00[Europe/Paris]")
-public class TalentData {
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private Integer id;
-
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private NameData name;
+public class CharacterMediaData {
+  public static final String SERIALIZED_NAME_ASSETS = "assets";
+  @SerializedName(SERIALIZED_NAME_ASSETS)
+  private ArrayAssetData assets;
 
 
-  public TalentData id(Integer id) {
+  public CharacterMediaData assets(ArrayAssetData assets) {
     
-    this.id = id;
+    this.assets = assets;
     return this;
   }
 
    /**
-   * Id of the talent
-   * @return id
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Id of the talent")
-
-  public Integer getId() {
-    return id;
-  }
-
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-
-  public TalentData name(NameData name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
+   * Get assets
+   * @return assets
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public NameData getName() {
-    return name;
+  public ArrayAssetData getAssets() {
+    return assets;
   }
 
 
-  public void setName(NameData name) {
-    this.name = name;
+  public void setAssets(ArrayAssetData assets) {
+    this.assets = assets;
   }
 
 
@@ -94,22 +67,20 @@ public class TalentData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TalentData talentData = (TalentData) o;
-    return Objects.equals(this.id, talentData.id) &&
-        Objects.equals(this.name, talentData.name);
+    CharacterMediaData characterMediaData = (CharacterMediaData) o;
+    return Objects.equals(this.assets, characterMediaData.assets);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name);
+    return Objects.hash(assets);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TalentData {\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("class CharacterMediaData {\n");
+    sb.append("    assets: ").append(toIndentedString(assets)).append("\n");
     sb.append("}");
     return sb.toString();
   }

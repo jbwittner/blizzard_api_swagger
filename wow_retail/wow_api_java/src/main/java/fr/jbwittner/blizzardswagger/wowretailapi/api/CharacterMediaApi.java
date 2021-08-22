@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import fr.jbwittner.blizzardswagger.wowretailapi.model.ProfileAccountData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.CharacterMediaData;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -35,14 +35,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AccountProfileApi {
+public class CharacterMediaApi {
     private ApiClient localVarApiClient;
 
-    public AccountProfileApi() {
+    public CharacterMediaApi() {
         this(Configuration.getDefaultApiClient());
     }
 
-    public AccountProfileApi(ApiClient apiClient) {
+    public CharacterMediaApi(ApiClient apiClient) {
         this.localVarApiClient = apiClient;
     }
 
@@ -55,9 +55,11 @@ public class AccountProfileApi {
     }
 
     /**
-     * Build call for getUserProfile
+     * Build call for getCharacterMedia
      * @param namespace The namespace to use to locate this document. (required)
      * @param region The region of the data to retrieve. (required)
+     * @param realmSlug The slug of the realm. (required)
+     * @param characterName The lowercase name of the character. (required)
      * @param locale The locale to reflect in localized data. (If you don&#39;t send a value, the API sends you all localized data) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -68,11 +70,13 @@ public class AccountProfileApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserProfileCall(String namespace, String region, String locale, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCharacterMediaCall(String namespace, String region, String realmSlug, String characterName, String locale, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/profile/user/wow";
+        String localVarPath = "/profile/wow/character/{realmSlug}/{characterName}/character-media"
+            .replaceAll("\\{" + "realmSlug" + "\\}", localVarApiClient.escapeString(realmSlug.toString()))
+            .replaceAll("\\{" + "characterName" + "\\}", localVarApiClient.escapeString(characterName.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -111,31 +115,43 @@ public class AccountProfileApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getUserProfileValidateBeforeCall(String namespace, String region, String locale, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCharacterMediaValidateBeforeCall(String namespace, String region, String realmSlug, String characterName, String locale, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'namespace' is set
         if (namespace == null) {
-            throw new ApiException("Missing the required parameter 'namespace' when calling getUserProfile(Async)");
+            throw new ApiException("Missing the required parameter 'namespace' when calling getCharacterMedia(Async)");
         }
         
         // verify the required parameter 'region' is set
         if (region == null) {
-            throw new ApiException("Missing the required parameter 'region' when calling getUserProfile(Async)");
+            throw new ApiException("Missing the required parameter 'region' when calling getCharacterMedia(Async)");
+        }
+        
+        // verify the required parameter 'realmSlug' is set
+        if (realmSlug == null) {
+            throw new ApiException("Missing the required parameter 'realmSlug' when calling getCharacterMedia(Async)");
+        }
+        
+        // verify the required parameter 'characterName' is set
+        if (characterName == null) {
+            throw new ApiException("Missing the required parameter 'characterName' when calling getCharacterMedia(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getUserProfileCall(namespace, region, locale, _callback);
+        okhttp3.Call localVarCall = getCharacterMediaCall(namespace, region, realmSlug, characterName, locale, _callback);
         return localVarCall;
 
     }
 
     /**
      * 
-     * Account Profile Summary
+     * Returns a summary of the media assets available for a character (such as an avatar render).
      * @param namespace The namespace to use to locate this document. (required)
      * @param region The region of the data to retrieve. (required)
+     * @param realmSlug The slug of the realm. (required)
+     * @param characterName The lowercase name of the character. (required)
      * @param locale The locale to reflect in localized data. (If you don&#39;t send a value, the API sends you all localized data) (optional)
-     * @return ProfileAccountData
+     * @return CharacterMediaData
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -143,18 +159,20 @@ public class AccountProfileApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ProfileAccountData getUserProfile(String namespace, String region, String locale) throws ApiException {
-        ApiResponse<ProfileAccountData> localVarResp = getUserProfileWithHttpInfo(namespace, region, locale);
+    public CharacterMediaData getCharacterMedia(String namespace, String region, String realmSlug, String characterName, String locale) throws ApiException {
+        ApiResponse<CharacterMediaData> localVarResp = getCharacterMediaWithHttpInfo(namespace, region, realmSlug, characterName, locale);
         return localVarResp.getData();
     }
 
     /**
      * 
-     * Account Profile Summary
+     * Returns a summary of the media assets available for a character (such as an avatar render).
      * @param namespace The namespace to use to locate this document. (required)
      * @param region The region of the data to retrieve. (required)
+     * @param realmSlug The slug of the realm. (required)
+     * @param characterName The lowercase name of the character. (required)
      * @param locale The locale to reflect in localized data. (If you don&#39;t send a value, the API sends you all localized data) (optional)
-     * @return ApiResponse&lt;ProfileAccountData&gt;
+     * @return ApiResponse&lt;CharacterMediaData&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -162,17 +180,19 @@ public class AccountProfileApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProfileAccountData> getUserProfileWithHttpInfo(String namespace, String region, String locale) throws ApiException {
-        okhttp3.Call localVarCall = getUserProfileValidateBeforeCall(namespace, region, locale, null);
-        Type localVarReturnType = new TypeToken<ProfileAccountData>(){}.getType();
+    public ApiResponse<CharacterMediaData> getCharacterMediaWithHttpInfo(String namespace, String region, String realmSlug, String characterName, String locale) throws ApiException {
+        okhttp3.Call localVarCall = getCharacterMediaValidateBeforeCall(namespace, region, realmSlug, characterName, locale, null);
+        Type localVarReturnType = new TypeToken<CharacterMediaData>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
-     * Account Profile Summary
+     * Returns a summary of the media assets available for a character (such as an avatar render).
      * @param namespace The namespace to use to locate this document. (required)
      * @param region The region of the data to retrieve. (required)
+     * @param realmSlug The slug of the realm. (required)
+     * @param characterName The lowercase name of the character. (required)
      * @param locale The locale to reflect in localized data. (If you don&#39;t send a value, the API sends you all localized data) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -183,10 +203,10 @@ public class AccountProfileApi {
         <tr><td> 200 </td><td> successful operation </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getUserProfileAsync(String namespace, String region, String locale, final ApiCallback<ProfileAccountData> _callback) throws ApiException {
+    public okhttp3.Call getCharacterMediaAsync(String namespace, String region, String realmSlug, String characterName, String locale, final ApiCallback<CharacterMediaData> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getUserProfileValidateBeforeCall(namespace, region, locale, _callback);
-        Type localVarReturnType = new TypeToken<ProfileAccountData>(){}.getType();
+        okhttp3.Call localVarCall = getCharacterMediaValidateBeforeCall(namespace, region, realmSlug, characterName, locale, _callback);
+        Type localVarReturnType = new TypeToken<CharacterMediaData>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

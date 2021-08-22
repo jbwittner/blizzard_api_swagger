@@ -18,6 +18,10 @@ Name | Type | Description | Notes
 
 Name | Value
 ---- | -----
+AVATAR | &quot;avatar&quot;
+INSET | &quot;inset&quot;
+MAIN | &quot;main&quot;
+MAIN_RAW | &quot;main-raw&quot;
 ICON | &quot;icon&quot;
 
 
