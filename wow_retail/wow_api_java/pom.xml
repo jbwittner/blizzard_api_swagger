@@ -278,4 +278,13 @@
         <junit-version>4.13.1</junit-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub jbwittner Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/jbwittner/blizzard_api_swagger</url>
+        </repository>
+    </distributionManagement>
+
 </project>
