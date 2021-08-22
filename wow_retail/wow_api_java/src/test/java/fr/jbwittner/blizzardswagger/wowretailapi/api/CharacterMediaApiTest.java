@@ -14,7 +14,7 @@
 package fr.jbwittner.blizzardswagger.wowretailapi.api;
 
 import fr.jbwittner.blizzardswagger.wowretailapi.ApiException;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.CharacterData;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.CharacterMediaData;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -24,30 +24,30 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * API tests for CharacterProfileApi
+ * API tests for CharacterMediaApi
  */
 @Ignore
-public class CharacterProfileApiTest {
+public class CharacterMediaApiTest {
 
-    private final CharacterProfileApi api = new CharacterProfileApi();
+    private final CharacterMediaApi api = new CharacterMediaApi();
 
     
     /**
      * 
      *
-     * Returns a profile summary for a character.
+     * Returns a summary of the media assets available for a character (such as an avatar render).
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getCharacterTest() throws ApiException {
+    public void getCharacterMediaTest() throws ApiException {
         String namespace = null;
         String region = null;
         String realmSlug = null;
         String characterName = null;
         String locale = null;
-        CharacterData response = api.getCharacter(namespace, region, realmSlug, characterName, locale);
+        CharacterMediaData response = api.getCharacterMedia(namespace, region, realmSlug, characterName, locale);
 
         // TODO: test validations
     }

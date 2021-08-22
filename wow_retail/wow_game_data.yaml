@@ -907,7 +907,7 @@ components:
         zh_CN:
           type: string
           description: The locale of Chinese (Simplified)
-        required:
+      required:
         - en_US
         - es_MX
         - pt_BR

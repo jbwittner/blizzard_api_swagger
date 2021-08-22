@@ -3,7 +3,7 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.4.1
+  version: 0.5.0
 servers:
 - url: https://eu.api.blizzard.com/
 - url: https://us.api.blizzard.com/
@@ -27,6 +27,7 @@ tags:
 - name: Realm
 - name: Account Profile
 - name: Character Profile
+- name: Character Media
 paths:
   /data/wow/covenant/index:
     get:
@@ -458,7 +459,7 @@ paths:
                 $ref: '#/components/schemas/arrayRacesIndexData'
           description: successful operation
       tags:
-      - Playable Race API
+      - Playable Race
       x-accepts: application/json
   /data/wow/playable-race/{raceId}:
     get:
@@ -534,7 +535,7 @@ paths:
                 $ref: '#/components/schemas/playableRaceData'
           description: successful operation
       tags:
-      - Playable Race API
+      - Playable Race
       x-accepts: application/json
   /data/wow/playable-specialization/index:
     get:
@@ -1052,6 +1053,91 @@ paths:
       tags:
       - Character Profile
       x-accepts: application/json
+  /profile/wow/character/{realmSlug}/{characterName}/character-media:
+    get:
+      description: Returns a summary of the media assets available for a character
+        (such as an avatar render).
+      operationId: getCharacterMedia
+      parameters:
+      - description: The namespace to use to locate this document.
+        explode: true
+        in: query
+        name: namespace
+        required: true
+        schema:
+          enum:
+          - profile-eu
+          - profile-us
+          - profile-kr
+          - profile-tw
+          - profile-cn
+          example: profile-eu
+          type: string
+        style: form
+      - description: The region of the data to retrieve.
+        explode: true
+        in: query
+        name: region
+        required: true
+        schema:
+          enum:
+          - eu
+          - us
+          - kr
+          - tw
+          - cn
+          example: eu
+          type: string
+        style: form
+      - description: The locale to reflect in localized data. (If you don't send a
+          value, the API sends you all localized data)
+        explode: true
+        in: query
+        name: locale
+        required: false
+        schema:
+          enum:
+          - en_US
+          - es_MX
+          - pt_BR
+          - de_DE
+          - en_GB
+          - es_ES
+          - fr_FR
+          - it_IT
+          - ru_RU
+          - ko_KR
+          - zh_TW
+          - zh_CN
+          example: en_US
+          type: string
+        style: form
+      - description: The slug of the realm.
+        explode: false
+        in: path
+        name: realmSlug
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The lowercase name of the character.
+        explode: false
+        in: path
+        name: characterName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/characterMediaData'
+          description: successful operation
+      tags:
+      - Character Media
+      x-accepts: application/json
 components:
   parameters:
     staticNamespace:
@@ -1258,10 +1344,10 @@ components:
         assets:
         - file_data_id: 0
           value: https://openapi-generator.tech
-          key: icon
+          key: avatar
         - file_data_id: 0
           value: https://openapi-generator.tech
-          key: icon
+          key: avatar
         id: 0
       properties:
         id:
@@ -2039,10 +2125,10 @@ components:
         assets:
         - file_data_id: 0
           value: https://openapi-generator.tech
-          key: icon
+          key: avatar
         - file_data_id: 0
           value: https://openapi-generator.tech
-          key: icon
+          key: avatar
       properties:
         assets:
           items:
@@ -2054,11 +2140,15 @@ components:
       example:
         file_data_id: 0
         value: https://openapi-generator.tech
-        key: icon
+        key: avatar
       properties:
         key:
           description: Type of media
           enum:
+          - avatar
+          - inset
+          - main
+          - main-raw
           - icon
           type: string
         value:
@@ -3461,6 +3551,21 @@ components:
       - name
       - realm
       type: object
+    characterMediaData:
+      description: Character media data
+      example:
+        assets:
+          assets:
+          - file_data_id: 0
+            value: https://openapi-generator.tech
+            key: avatar
+          - file_data_id: 0
+            value: https://openapi-generator.tech
+            key: avatar
+      properties:
+        assets:
+          $ref: '#/components/schemas/arrayAssetData'
+      type: object
     typeData:
       description: Faction data
       example:
@@ -3539,6 +3644,19 @@ components:
         zh_CN:
           description: The locale of Chinese (Simplified)
           type: string
+      required:
+      - de_DE
+      - en_GB
+      - en_US
+      - es_ES
+      - es_MX
+      - fr_FR
+      - it_IT
+      - ko_KR
+      - pt_BR
+      - ru_RU
+      - zh_CN
+      - zh_TW
       type: object
   securitySchemes:
     oAuthAuthorizationCodeEU:
