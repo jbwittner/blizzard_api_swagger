@@ -2,7 +2,7 @@
   "name": "@jbwittner/blizzardswagger_wow-retail-api_typescript-axios",
   "description": "",
   "main": "index.js",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "scripts": {
     "generate": "openapi-generator-cli generate -i ../wow_game_data.yaml -g typescript-axios",
     "clean": "rimraf dist && rimraf node_modules",

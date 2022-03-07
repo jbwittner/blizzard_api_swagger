@@ -19,20 +19,28 @@ To install lerna use : `npm install -g lerna`
 
 # Publish
 
+## Update source
+
 Launch `lerna run delete`
 Change version on swagger specification.
 Change version in package.json
-Launch `lerna bootstrap`
 Launch `lerna run generate`
+
+## Build
+
+Launch `lerna bootstrap`
 Launch `lerna run build`
+
+## Publish
+
 Launch `lerna run deploy`
 
-## NPM
+# NPM
 
 To publish a npm package you need to register with `npm adduser --registry=https://npm.pkg.github.com --scope=@jbwittner`
 The password are a [token](https://github.com/settings/tokens)
 
-## Maven
+# Maven
 
 To publis a maven package you need this settings.xml :
 
