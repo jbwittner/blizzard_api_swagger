@@ -29,7 +29,7 @@ import java.io.IOException;
  * Data of character title
  */
 @ApiModel(description = "Data of character title")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TitleData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -43,6 +43,8 @@ public class TitleData {
   @SerializedName(SERIALIZED_NAME_DISPLAY_STRING)
   private NameData displayString;
 
+  public TitleData() { 
+  }
 
   public TitleData name(NameData name) {
     
@@ -54,6 +56,7 @@ public class TitleData {
    * Get name
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public NameData getName() {
@@ -76,6 +79,7 @@ public class TitleData {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public Integer getId() {
@@ -98,6 +102,7 @@ public class TitleData {
    * Get displayString
    * @return displayString
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public NameData getDisplayString() {

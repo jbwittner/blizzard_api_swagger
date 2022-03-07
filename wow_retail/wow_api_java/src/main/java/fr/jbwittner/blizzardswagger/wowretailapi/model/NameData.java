@@ -28,7 +28,7 @@ import java.io.IOException;
  * Different translations
  */
 @ApiModel(description = "Different translations")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class NameData {
   public static final String SERIALIZED_NAME_EN_U_S = "en_US";
   @SerializedName(SERIALIZED_NAME_EN_U_S)
@@ -78,6 +78,8 @@ public class NameData {
   @SerializedName(SERIALIZED_NAME_ZH_C_N)
   private String zhCN;
 
+  public NameData() { 
+  }
 
   public NameData enUS(String enUS) {
     
@@ -89,6 +91,7 @@ public class NameData {
    * The locale of English (U.S.)
    * @return enUS
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of English (U.S.)")
 
   public String getEnUS() {
@@ -111,6 +114,7 @@ public class NameData {
    * The locale of mexican Spanish (Mexican)
    * @return esMX
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of mexican Spanish (Mexican)")
 
   public String getEsMX() {
@@ -133,6 +137,7 @@ public class NameData {
    * The locale of Portuguese (Brazilian)
    * @return ptBR
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of Portuguese (Brazilian)")
 
   public String getPtBR() {
@@ -155,6 +160,7 @@ public class NameData {
    * The locale of German
    * @return deDE
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of German")
 
   public String getDeDE() {
@@ -177,6 +183,7 @@ public class NameData {
    * The locale of English (U.K.)
    * @return enGB
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of English (U.K.)")
 
   public String getEnGB() {
@@ -199,6 +206,7 @@ public class NameData {
    * The locale of Spanish (Modern)
    * @return esES
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of Spanish (Modern)")
 
   public String getEsES() {
@@ -221,6 +229,7 @@ public class NameData {
    * The locale of French
    * @return frFR
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of French")
 
   public String getFrFR() {
@@ -243,6 +252,7 @@ public class NameData {
    * The locale of Italian
    * @return itIT
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of Italian")
 
   public String getItIT() {
@@ -265,6 +275,7 @@ public class NameData {
    * The locale of Russian
    * @return ruRU
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of Russian")
 
   public String getRuRU() {
@@ -287,6 +298,7 @@ public class NameData {
    * The locale of Korean
    * @return koKR
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of Korean")
 
   public String getKoKR() {
@@ -309,6 +321,7 @@ public class NameData {
    * The locale of Chinese (Taiwan/Traditional)
    * @return zhTW
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of Chinese (Taiwan/Traditional)")
 
   public String getZhTW() {
@@ -331,6 +344,7 @@ public class NameData {
    * The locale of Chinese (Simplified)
    * @return zhCN
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "The locale of Chinese (Simplified)")
 
   public String getZhCN() {

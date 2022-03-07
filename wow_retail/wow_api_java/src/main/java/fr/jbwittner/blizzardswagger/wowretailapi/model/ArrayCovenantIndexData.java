@@ -31,12 +31,14 @@ import java.util.List;
  * Array of covenant index
  */
 @ApiModel(description = "Array of covenant index")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ArrayCovenantIndexData {
   public static final String SERIALIZED_NAME_COVENANTS = "covenants";
   @SerializedName(SERIALIZED_NAME_COVENANTS)
   private List<IndexData> covenants = null;
 
+  public ArrayCovenantIndexData() { 
+  }
 
   public ArrayCovenantIndexData covenants(List<IndexData> covenants) {
     

@@ -30,7 +30,7 @@ import java.io.IOException;
  * PVP Talent tiers data
  */
 @ApiModel(description = "PVP Talent tiers data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PvpTalentTiersData {
   public static final String SERIALIZED_NAME_TALENT = "talent";
   @SerializedName(SERIALIZED_NAME_TALENT)
@@ -40,6 +40,8 @@ public class PvpTalentTiersData {
   @SerializedName(SERIALIZED_NAME_SPELL_TOOLTIP)
   private PvpSpellDescritpionData spellTooltip;
 
+  public PvpTalentTiersData() { 
+  }
 
   public PvpTalentTiersData talent(TalentData talent) {
     

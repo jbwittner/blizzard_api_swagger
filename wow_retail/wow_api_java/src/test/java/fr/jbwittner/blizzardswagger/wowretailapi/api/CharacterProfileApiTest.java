@@ -47,8 +47,7 @@ public class CharacterProfileApiTest {
         String realmSlug = null;
         String characterName = null;
         String locale = null;
-        CharacterData response = api.getCharacter(namespace, region, realmSlug, characterName, locale);
-
+                CharacterData response = api.getCharacter(namespace, region, realmSlug, characterName, locale);
         // TODO: test validations
     }
     

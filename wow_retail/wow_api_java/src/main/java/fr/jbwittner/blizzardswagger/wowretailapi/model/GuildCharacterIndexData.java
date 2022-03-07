@@ -30,7 +30,7 @@ import java.io.IOException;
  * Index of guild character
  */
 @ApiModel(description = "Index of guild character")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class GuildCharacterIndexData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -48,6 +48,8 @@ public class GuildCharacterIndexData {
   @SerializedName(SERIALIZED_NAME_FACTION)
   private TypeData faction;
 
+  public GuildCharacterIndexData() { 
+  }
 
   public GuildCharacterIndexData name(String name) {
     
@@ -59,6 +61,7 @@ public class GuildCharacterIndexData {
    * Get name
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public String getName() {
@@ -81,6 +84,7 @@ public class GuildCharacterIndexData {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public Integer getId() {
@@ -103,6 +107,7 @@ public class GuildCharacterIndexData {
    * Get realm
    * @return realm
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public RealmIndexData getRealm() {
@@ -125,6 +130,7 @@ public class GuildCharacterIndexData {
    * Get faction
    * @return faction
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public TypeData getFaction() {

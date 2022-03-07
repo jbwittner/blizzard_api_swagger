@@ -29,7 +29,7 @@ import java.io.IOException;
  * Covenant progress data
  */
 @ApiModel(description = "Covenant progress data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CovenantProgressData {
   public static final String SERIALIZED_NAME_CHOSEN_COVENANT = "chosen_covenant";
   @SerializedName(SERIALIZED_NAME_CHOSEN_COVENANT)
@@ -39,6 +39,8 @@ public class CovenantProgressData {
   @SerializedName(SERIALIZED_NAME_RENOWN_LEVEL)
   private Integer renownLevel;
 
+  public CovenantProgressData() { 
+  }
 
   public CovenantProgressData chosenCovenant(IndexData chosenCovenant) {
     
@@ -50,6 +52,7 @@ public class CovenantProgressData {
    * Get chosenCovenant
    * @return chosenCovenant
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public IndexData getChosenCovenant() {
@@ -72,6 +75,7 @@ public class CovenantProgressData {
    * Get renownLevel
    * @return renownLevel
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public Integer getRenownLevel() {

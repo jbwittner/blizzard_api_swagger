@@ -29,7 +29,7 @@ import java.io.IOException;
  * Faction data
  */
 @ApiModel(description = "Faction data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class TypeData {
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
@@ -39,6 +39,8 @@ public class TypeData {
   @SerializedName(SERIALIZED_NAME_NAME)
   private NameData name;
 
+  public TypeData() { 
+  }
 
   public TypeData type(String type) {
     
@@ -50,6 +52,7 @@ public class TypeData {
    * Get type
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public String getType() {
@@ -72,6 +75,7 @@ public class TypeData {
    * Get name
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public NameData getName() {

@@ -31,7 +31,7 @@ import java.util.List;
  * Data of wow accounnt
  */
 @ApiModel(description = "Data of wow accounnt")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class WowAccountData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -41,6 +41,8 @@ public class WowAccountData {
   @SerializedName(SERIALIZED_NAME_CHARACTERS)
   private List<CharacterIndexData> characters = new ArrayList<CharacterIndexData>();
 
+  public WowAccountData() { 
+  }
 
   public WowAccountData id(Integer id) {
     
@@ -52,6 +54,7 @@ public class WowAccountData {
    * Id of the accounnt
    * @return id
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Id of the accounnt")
 
   public Integer getId() {
@@ -79,6 +82,7 @@ public class WowAccountData {
    * Get characters
    * @return characters
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<CharacterIndexData> getCharacters() {

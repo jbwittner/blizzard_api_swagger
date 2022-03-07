@@ -47,8 +47,7 @@ public class PlayableRaceApiTest {
         String region = null;
         Integer raceId = null;
         String locale = null;
-        PlayableRaceData response = api.getPlayableRaceById(namespace, region, raceId, locale);
-
+                PlayableRaceData response = api.getPlayableRaceById(namespace, region, raceId, locale);
         // TODO: test validations
     }
     
@@ -65,8 +64,7 @@ public class PlayableRaceApiTest {
         String namespace = null;
         String region = null;
         String locale = null;
-        ArrayRacesIndexData response = api.getPlayableRaceIndex(namespace, region, locale);
-
+                ArrayRacesIndexData response = api.getPlayableRaceIndex(namespace, region, locale);
         // TODO: test validations
     }
     

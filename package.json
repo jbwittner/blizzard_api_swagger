@@ -1,17 +1,17 @@
 {
-  "name": "blizzardapiswagger",
+  "name": "root",
   "private": true,
-  "scripts": {
-    "generate:wow_api_java": "openapi-generator-cli generate -i wow_retail/wow_game_data.yaml -g java -o wow_retail/wow_api_java --additional-properties=groupId=fr.jbwittner.blizzardswagger --additional-properties=artifactId=wowretailapi --additional-properties=apiPackage=fr.jbwittner.blizzardswagger.wowretailapi.api --additional-properties=modelPackage=fr.jbwittner.blizzardswagger.wowretailapi.model --additional-properties=dateLibrary=java11 --additional-properties=scmConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmDeveloperConnection=scm:git:git@github.com:jbwittner/BlizzardAPISwagger.git --additional-properties=scmUrl=https://github.com/jbwittner/BlizzardAPISwagger",
-    "generate": "npm run generate:wow_api_java",
-    "delete": "rimraf wow_retail/wow_api_java",
-    "all": "npm ci && npm run delete && npm run generate"
-  },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.3.2",
-    "cpx": "^1.5.0",
-    "glob-parent": ">=5.1.2",
-    "braces": ">=2.3.1",
-    "rimraf": "^3.0.2"
+    "@openapitools/openapi-generator-cli": "^2.4.26",
+    "lerna": "^4.0.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.6.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/jbwittner/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbwittner/blizzard_api_swagger"
   }
 }

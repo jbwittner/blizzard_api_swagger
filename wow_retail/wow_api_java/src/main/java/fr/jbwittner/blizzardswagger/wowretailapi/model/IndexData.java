@@ -29,7 +29,7 @@ import java.io.IOException;
  * Index of data
  */
 @ApiModel(description = "Index of data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class IndexData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -39,6 +39,8 @@ public class IndexData {
   @SerializedName(SERIALIZED_NAME_NAME)
   private NameData name;
 
+  public IndexData() { 
+  }
 
   public IndexData id(Integer id) {
     
@@ -50,6 +52,7 @@ public class IndexData {
    * Id of the index
    * @return id
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Id of the index")
 
   public Integer getId() {
@@ -72,6 +75,7 @@ public class IndexData {
    * Get name
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public NameData getName() {

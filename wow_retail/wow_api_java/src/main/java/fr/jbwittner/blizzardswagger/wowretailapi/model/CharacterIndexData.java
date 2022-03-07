@@ -31,7 +31,7 @@ import java.io.IOException;
  * Index of character
  */
 @ApiModel(description = "Index of character")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CharacterIndexData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -65,6 +65,8 @@ public class CharacterIndexData {
   @SerializedName(SERIALIZED_NAME_LEVEL)
   private Integer level;
 
+  public CharacterIndexData() { 
+  }
 
   public CharacterIndexData name(String name) {
     
@@ -76,6 +78,7 @@ public class CharacterIndexData {
    * Get name
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public String getName() {
@@ -98,6 +101,7 @@ public class CharacterIndexData {
    * Get id
    * @return id
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public Integer getId() {
@@ -120,6 +124,7 @@ public class CharacterIndexData {
    * Get realm
    * @return realm
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public RealmIndexData getRealm() {
@@ -142,6 +147,7 @@ public class CharacterIndexData {
    * Get playableClass
    * @return playableClass
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public IndexData getPlayableClass() {
@@ -164,6 +170,7 @@ public class CharacterIndexData {
    * Get playableRace
    * @return playableRace
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public IndexData getPlayableRace() {
@@ -186,6 +193,7 @@ public class CharacterIndexData {
    * Get gender
    * @return gender
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public TypeData getGender() {
@@ -208,6 +216,7 @@ public class CharacterIndexData {
    * Get faction
    * @return faction
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public TypeData getFaction() {
@@ -230,6 +239,7 @@ public class CharacterIndexData {
    * Get level
    * @return level
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public Integer getLevel() {

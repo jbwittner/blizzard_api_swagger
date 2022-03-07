@@ -46,8 +46,7 @@ public class CovenantApiTest {
         String namespace = null;
         String region = null;
         String locale = null;
-        ArrayCovenantIndexData response = api.getCovenantIndex(namespace, region, locale);
-
+                ArrayCovenantIndexData response = api.getCovenantIndex(namespace, region, locale);
         // TODO: test validations
     }
     
@@ -65,8 +64,7 @@ public class CovenantApiTest {
         String region = null;
         Integer covenantId = null;
         String locale = null;
-        ArrayAssetData response = api.getCovenantMediaById(namespace, region, covenantId, locale);
-
+                ArrayAssetData response = api.getCovenantMediaById(namespace, region, covenantId, locale);
         // TODO: test validations
     }
     

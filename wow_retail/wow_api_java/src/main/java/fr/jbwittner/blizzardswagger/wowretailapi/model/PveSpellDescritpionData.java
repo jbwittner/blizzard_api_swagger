@@ -29,7 +29,7 @@ import java.io.IOException;
  * Description of the pve spell
  */
 @ApiModel(description = "Description of the pve spell")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PveSpellDescritpionData {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -43,6 +43,8 @@ public class PveSpellDescritpionData {
   @SerializedName(SERIALIZED_NAME_COLUMN_INDEX)
   private Integer columnIndex;
 
+  public PveSpellDescritpionData() { 
+  }
 
   public PveSpellDescritpionData description(NameData description) {
     

@@ -32,7 +32,7 @@ import java.util.List;
  * Character media data
  */
 @ApiModel(description = "Character media data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class CharacterMediaData {
   public static final String SERIALIZED_NAME_CHARACTER = "character";
   @SerializedName(SERIALIZED_NAME_CHARACTER)
@@ -54,6 +54,8 @@ public class CharacterMediaData {
   @SerializedName(SERIALIZED_NAME_ASSETS)
   private List<AssetData> assets = null;
 
+  public CharacterMediaData() { 
+  }
 
   public CharacterMediaData character(CharacterMediaIndex character) {
     
@@ -65,6 +67,7 @@ public class CharacterMediaData {
    * Get character
    * @return character
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public CharacterMediaIndex getCharacter() {

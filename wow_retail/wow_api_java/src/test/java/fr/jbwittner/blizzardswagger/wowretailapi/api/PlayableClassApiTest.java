@@ -48,8 +48,7 @@ public class PlayableClassApiTest {
         String region = null;
         Integer classId = null;
         String locale = null;
-        PlayableClassData response = api.getPlayableClassById(namespace, region, classId, locale);
-
+                PlayableClassData response = api.getPlayableClassById(namespace, region, classId, locale);
         // TODO: test validations
     }
     
@@ -66,8 +65,7 @@ public class PlayableClassApiTest {
         String namespace = null;
         String region = null;
         String locale = null;
-        ArrayClassesIndexData response = api.getPlayableClassIndex(namespace, region, locale);
-
+                ArrayClassesIndexData response = api.getPlayableClassIndex(namespace, region, locale);
         // TODO: test validations
     }
     
@@ -85,8 +83,7 @@ public class PlayableClassApiTest {
         String region = null;
         Integer classId = null;
         String locale = null;
-        PlayableClassRaceMediaData response = api.getPlayableClassMediaById(namespace, region, classId, locale);
-
+                PlayableClassRaceMediaData response = api.getPlayableClassMediaById(namespace, region, classId, locale);
         // TODO: test validations
     }
     

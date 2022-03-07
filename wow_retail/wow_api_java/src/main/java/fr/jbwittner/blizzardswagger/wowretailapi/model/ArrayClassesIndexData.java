@@ -31,12 +31,14 @@ import java.util.List;
  * Array of classes index
  */
 @ApiModel(description = "Array of classes index")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ArrayClassesIndexData {
   public static final String SERIALIZED_NAME_CLASSES = "classes";
   @SerializedName(SERIALIZED_NAME_CLASSES)
   private List<IndexData> classes = new ArrayList<IndexData>();
 
+  public ArrayClassesIndexData() { 
+  }
 
   public ArrayClassesIndexData classes(List<IndexData> classes) {
     
@@ -53,6 +55,7 @@ public class ArrayClassesIndexData {
    * Get classes
    * @return classes
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<IndexData> getClasses() {

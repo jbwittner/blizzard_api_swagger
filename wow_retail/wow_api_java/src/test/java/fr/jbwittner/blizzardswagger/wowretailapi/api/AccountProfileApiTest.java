@@ -45,8 +45,7 @@ public class AccountProfileApiTest {
         String namespace = null;
         String region = null;
         String locale = null;
-        ProfileAccountData response = api.getUserProfile(namespace, region, locale);
-
+                ProfileAccountData response = api.getUserProfile(namespace, region, locale);
         // TODO: test validations
     }
     

@@ -30,7 +30,7 @@ import java.io.IOException;
  * PVE Talent data
  */
 @ApiModel(description = "PVE Talent data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PveTalentData {
   public static final String SERIALIZED_NAME_COLUMN_INDEX = "column_index";
   @SerializedName(SERIALIZED_NAME_COLUMN_INDEX)
@@ -44,6 +44,8 @@ public class PveTalentData {
   @SerializedName(SERIALIZED_NAME_SPELL_TOOLTIP)
   private PveSpellDescritpionData spellTooltip;
 
+  public PveTalentData() { 
+  }
 
   public PveTalentData columnIndex(Integer columnIndex) {
     

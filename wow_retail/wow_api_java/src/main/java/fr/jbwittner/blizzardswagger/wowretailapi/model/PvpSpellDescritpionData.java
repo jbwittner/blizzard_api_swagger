@@ -29,7 +29,7 @@ import java.io.IOException;
  * Description of the pvp spell
  */
 @ApiModel(description = "Description of the pvp spell")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class PvpSpellDescritpionData {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -39,6 +39,8 @@ public class PvpSpellDescritpionData {
   @SerializedName(SERIALIZED_NAME_CAST_TIME)
   private NameData castTime;
 
+  public PvpSpellDescritpionData() { 
+  }
 
   public PvpSpellDescritpionData description(NameData description) {
     

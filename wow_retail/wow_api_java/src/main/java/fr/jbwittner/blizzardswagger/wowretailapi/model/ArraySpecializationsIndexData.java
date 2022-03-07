@@ -31,12 +31,14 @@ import java.util.List;
  * Array of specializations index
  */
 @ApiModel(description = "Array of specializations index")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ArraySpecializationsIndexData {
   public static final String SERIALIZED_NAME_CHARACTER_SPECIALIZATIONS = "character_specializations";
   @SerializedName(SERIALIZED_NAME_CHARACTER_SPECIALIZATIONS)
   private List<IndexData> characterSpecializations = new ArrayList<IndexData>();
 
+  public ArraySpecializationsIndexData() { 
+  }
 
   public ArraySpecializationsIndexData characterSpecializations(List<IndexData> characterSpecializations) {
     
@@ -53,6 +55,7 @@ public class ArraySpecializationsIndexData {
    * Get characterSpecializations
    * @return characterSpecializations
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<IndexData> getCharacterSpecializations() {

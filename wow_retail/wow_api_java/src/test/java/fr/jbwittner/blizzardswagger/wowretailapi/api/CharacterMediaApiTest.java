@@ -47,8 +47,7 @@ public class CharacterMediaApiTest {
         String realmSlug = null;
         String characterName = null;
         String locale = null;
-        CharacterMediaData response = api.getCharacterMedia(namespace, region, realmSlug, characterName, locale);
-
+                CharacterMediaData response = api.getCharacterMedia(namespace, region, realmSlug, characterName, locale);
         // TODO: test validations
     }
     

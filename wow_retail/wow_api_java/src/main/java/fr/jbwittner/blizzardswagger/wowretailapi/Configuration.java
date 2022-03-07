@@ -13,7 +13,7 @@
 
 package fr.jbwittner.blizzardswagger.wowretailapi;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 

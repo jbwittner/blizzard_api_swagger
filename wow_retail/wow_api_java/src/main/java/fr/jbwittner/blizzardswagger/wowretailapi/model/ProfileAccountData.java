@@ -32,7 +32,7 @@ import java.util.List;
  * Data of wow accounnt
  */
 @ApiModel(description = "Data of wow accounnt")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-08-22T23:11:12.419220+02:00[Europe/Paris]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
 public class ProfileAccountData {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -46,6 +46,8 @@ public class ProfileAccountData {
   @SerializedName(SERIALIZED_NAME_NAME)
   private NameData name;
 
+  public ProfileAccountData() { 
+  }
 
   public ProfileAccountData id(Integer id) {
     
@@ -57,6 +59,7 @@ public class ProfileAccountData {
    * Id of the accounnt
    * @return id
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Id of the accounnt")
 
   public Integer getId() {
@@ -84,6 +87,7 @@ public class ProfileAccountData {
    * Get wowAccounts
    * @return wowAccounts
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<WowAccountData> getWowAccounts() {

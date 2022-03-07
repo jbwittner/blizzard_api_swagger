@@ -1,0 +1,23 @@
+{
+  "name": "@jbwittner/blizzardswagger_wow-retail-api_typescript-axios",
+  "description": "",
+  "main": "index.js",
+  "version": "0.5.3",
+  "scripts": {
+    "generate": "openapi-generator-cli generate -i ../wow_game_data.yaml -g typescript-axios",
+    "clean": "rimraf dist && rimraf node_modules",
+    "delete": "npm run clean && rimraf *.ts && rimraf .npmignore && rimraf .openapi-generator-ignore && rimraf .openapi-generator && rimraf .gitignore",
+    "build": "tsc",
+    "deploy": "npm publish"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/jbwittner/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbwittner/blizzard_api_swagger"
+  }
+}

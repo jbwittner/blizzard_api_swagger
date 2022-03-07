@@ -6,10 +6,6 @@ info:
   version: 0.5.3
 servers:
   - url: 'https://eu.api.blizzard.com/'
-  - url: 'https://us.api.blizzard.com/'
-  - url: 'https://kr.api.blizzard.com/'
-  - url: 'https://tw.api.blizzard.com/'
-  - url: 'https://cn.api.blizzard.com/'
 tags:
   - name: Covenant
   - name: Playable Class
@@ -20,13 +16,7 @@ tags:
   - name: Character Profile
   - name: Character Media
 security:
-  - oAuthAuthorizationCodeEU:
-      - wow.profile
-  - oAuthAuthorizationCodeUS:
-      - wow.profile
-  - oAuthAuthorizationCodeAPAC:
-      - wow.profile
-  - oAuthAuthorizationCodeCN:
+  - oAuthAuthorizationCode:
       - wow.profile
 paths:
   /data/wow/covenant/index:
@@ -354,40 +344,13 @@ paths:
                 $ref: '#/components/schemas/characterMediaData'
 components:
   securitySchemes:
-    oAuthAuthorizationCodeEU:
+    oAuthAuthorizationCode:
       type: oauth2
-      description: This API uses OAuth 2 with the authorization code grant flow (eu).
+      description: This API uses OAuth 2 with the authorization code grant flow.
       flows:
         authorizationCode:
           authorizationUrl: 'https://eu.battle.net/oauth/authorize'
           tokenUrl: 'https://eu.battle.net/oauth/token'
-          scopes:
-            wow.profile: wow profile
-    oAuthAuthorizationCodeUS:
-      type: oauth2
-      description: This API uses OAuth 2 with the authorization code grant flow (us).
-      flows:
-        authorizationCode:
-          authorizationUrl: 'https://us.battle.net/oauth/authorize'
-          tokenUrl: 'https://us.battle.net/oauth/token'
-          scopes:
-            wow.profile: wow profile
-    oAuthAuthorizationCodeAPAC:
-      type: oauth2
-      description: This API uses OAuth 2 with the authorization code grant flow (apac).
-      flows:
-        authorizationCode:
-          authorizationUrl: 'https://apac.battle.net/oauth/authorize'
-          tokenUrl: 'https://apac.battle.net/oauth/token'
-          scopes:
-            wow.profile: wow profile
-    oAuthAuthorizationCodeCN:
-      type: oauth2
-      description: This API uses OAuth 2 with the authorization code grant flow (CN).
-      flows:
-        authorizationCode:
-          authorizationUrl: 'https://cn.battle.net/oauth/authorize'
-          tokenUrl: 'https://cn.battle.net/oauth/token'
           scopes:
             wow.profile: wow profile
   schemas:
