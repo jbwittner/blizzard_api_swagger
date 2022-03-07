@@ -22,10 +22,10 @@ To install lerna use : `npm install -g lerna`
 Launch `lerna run delete`
 Change version on swagger specification.
 Change version in package.json
-Launch `lerna boostratp`
+Launch `lerna bootstrap`
 Launch `lerna run generate`
 Launch `lerna run build`
-Launch `lerna run deploy`
+Launch `lerna run`
 
 ## NPM
 
