@@ -4,3 +4,33 @@ wow_retail/wow_api_java/.travis.yml
 wow_retail/wow_api_java/*gradle*
 wow_retail/wow_api_java/build.sbt
 wow_retail/wow_api_java/git_push.sh
+
+wow_retail/wow_api_typescript-axios/git_push.sh
+wow_retail/wow_api_typescript-node/git_push.sh
+
+wwwroot/*.js
+node_modules
+typings
+dist
+
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# exclude jar for gradle wrapper
+!gradle/wrapper/*.jar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# build files
+**/target
+target
+.gradle
+build
