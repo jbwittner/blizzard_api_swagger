@@ -2,7 +2,7 @@
   "name": "@jbwittner/blizzardswagger_wow-retail-api_typescript-node",
   "description": "",
   "main": "api.js",
-  "version": "0.5.8",
+  "version": "0.5.3",
   "scripts": {
     "generate": "openapi-generator-cli generate -i ../wow_game_data.yaml -g typescript-node",
     "clean": "rimraf dist && rimraf node_modules",

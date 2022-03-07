@@ -3,7 +3,7 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.5.6
+  version: 0.5.3
 servers:
 - url: https://eu.api.blizzard.com/
 security:
