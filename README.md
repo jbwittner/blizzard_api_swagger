@@ -25,7 +25,7 @@ Change version in package.json
 Launch `lerna bootstrap`
 Launch `lerna run generate`
 Launch `lerna run build`
-Launch `lerna run`
+Launch `lerna run deploy`
 
 ## NPM
 
