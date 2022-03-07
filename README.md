@@ -19,6 +19,14 @@ To install lerna use : `npm install -g lerna`
 
 # Publish
 
+Launch `lerna run delete`
+Change version on swagger specification.
+Change version in package.json
+Launch `lerna boostratp`
+Launch `lerna run generate`
+Launch `lerna run build`
+Launch `lerna run deploy`
+
 ## NPM
 
 To publish a npm package you need to register with `npm adduser --registry=https://npm.pkg.github.com --scope=@jbwittner`
