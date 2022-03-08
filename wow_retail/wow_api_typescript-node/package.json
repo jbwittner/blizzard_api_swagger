@@ -1,0 +1,27 @@
+{
+  "name": "@jbwittner/blizzardswagger_wow-retail-api_typescript-node",
+  "description": "",
+  "main": "api.js",
+  "version": "0.6.0",
+  "scripts": {
+    "generate": "openapi-generator-cli generate -i ../wow_game_data.yaml -g typescript-node",
+    "clean": "rimraf dist && rimraf node_modules",
+    "delete": "npm run clean && rimraf *.ts && rimraf .npmignore && rimraf .openapi-generator-ignore && rimraf .openapi-generator && rimraf .gitignore && rimraf api && rimraf model",
+    "build": "tsc",
+    "deploy": "npm publish"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@types/request": "^2.48.8"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/jbwittner/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbwittner/blizzard_api_swagger"
+  }
+}

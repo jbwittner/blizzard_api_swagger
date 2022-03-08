@@ -3,21 +3,11 @@ info:
   contact:
     email: jeanbaptiste.wittner@outlook.com
   title: Swagger BLIZZARD Api
-  version: 0.5.3
+  version: 0.6.0
 servers:
 - url: https://eu.api.blizzard.com/
-- url: https://us.api.blizzard.com/
-- url: https://kr.api.blizzard.com/
-- url: https://tw.api.blizzard.com/
-- url: https://cn.api.blizzard.com/
 security:
-- oAuthAuthorizationCodeEU:
-  - wow.profile
-- oAuthAuthorizationCodeUS:
-  - wow.profile
-- oAuthAuthorizationCodeAPAC:
-  - wow.profile
-- oAuthAuthorizationCodeCN:
+- oAuthAuthorizationCode:
   - wow.profile
 tags:
 - name: Covenant
@@ -3725,40 +3715,13 @@ components:
       - zh_TW
       type: object
   securitySchemes:
-    oAuthAuthorizationCodeEU:
-      description: This API uses OAuth 2 with the authorization code grant flow (eu).
+    oAuthAuthorizationCode:
+      description: This API uses OAuth 2 with the authorization code grant flow.
       flows:
         authorizationCode:
           authorizationUrl: https://eu.battle.net/oauth/authorize
           scopes:
             wow.profile: wow profile
           tokenUrl: https://eu.battle.net/oauth/token
-      type: oauth2
-    oAuthAuthorizationCodeUS:
-      description: This API uses OAuth 2 with the authorization code grant flow (us).
-      flows:
-        authorizationCode:
-          authorizationUrl: https://us.battle.net/oauth/authorize
-          scopes:
-            wow.profile: wow profile
-          tokenUrl: https://us.battle.net/oauth/token
-      type: oauth2
-    oAuthAuthorizationCodeAPAC:
-      description: This API uses OAuth 2 with the authorization code grant flow (apac).
-      flows:
-        authorizationCode:
-          authorizationUrl: https://apac.battle.net/oauth/authorize
-          scopes:
-            wow.profile: wow profile
-          tokenUrl: https://apac.battle.net/oauth/token
-      type: oauth2
-    oAuthAuthorizationCodeCN:
-      description: This API uses OAuth 2 with the authorization code grant flow (CN).
-      flows:
-        authorizationCode:
-          authorizationUrl: https://cn.battle.net/oauth/authorize
-          scopes:
-            wow.profile: wow profile
-          tokenUrl: https://cn.battle.net/oauth/token
       type: oauth2
 

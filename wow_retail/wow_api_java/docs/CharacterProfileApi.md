@@ -30,21 +30,9 @@ public class Example {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://eu.api.blizzard.com");
     
-    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeAPAC
-    OAuth oAuthAuthorizationCodeAPAC = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeAPAC");
-    oAuthAuthorizationCodeAPAC.setAccessToken("YOUR ACCESS TOKEN");
-
-    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeCN
-    OAuth oAuthAuthorizationCodeCN = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeCN");
-    oAuthAuthorizationCodeCN.setAccessToken("YOUR ACCESS TOKEN");
-
-    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeEU
-    OAuth oAuthAuthorizationCodeEU = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeEU");
-    oAuthAuthorizationCodeEU.setAccessToken("YOUR ACCESS TOKEN");
-
-    // Configure OAuth2 access token for authorization: oAuthAuthorizationCodeUS
-    OAuth oAuthAuthorizationCodeUS = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCodeUS");
-    oAuthAuthorizationCodeUS.setAccessToken("YOUR ACCESS TOKEN");
+    // Configure OAuth2 access token for authorization: oAuthAuthorizationCode
+    OAuth oAuthAuthorizationCode = (OAuth) defaultClient.getAuthentication("oAuthAuthorizationCode");
+    oAuthAuthorizationCode.setAccessToken("YOUR ACCESS TOKEN");
 
     CharacterProfileApi apiInstance = new CharacterProfileApi(defaultClient);
     String namespace = "profile-eu"; // String | The namespace to use to locate this document.
@@ -82,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oAuthAuthorizationCodeAPAC](../README.md#oAuthAuthorizationCodeAPAC), [oAuthAuthorizationCodeCN](../README.md#oAuthAuthorizationCodeCN), [oAuthAuthorizationCodeEU](../README.md#oAuthAuthorizationCodeEU), [oAuthAuthorizationCodeUS](../README.md#oAuthAuthorizationCodeUS)
+[oAuthAuthorizationCode](../README.md#oAuthAuthorizationCode)
 
 ### HTTP request headers
 
