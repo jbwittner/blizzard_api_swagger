@@ -34,3 +34,5 @@ hs_err_pid*
 target
 .gradle
 build
+
+wow_retail/wow_api_java/api

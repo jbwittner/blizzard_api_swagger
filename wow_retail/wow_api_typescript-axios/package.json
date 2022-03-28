@@ -1,23 +1,37 @@
 {
-  "name": "@jbwittner/blizzardswagger_wow-retail-api_typescript-axios",
-  "description": "",
-  "main": "index.js",
-  "version": "0.6.0",
-  "scripts": {
-    "generate": "openapi-generator-cli generate -i ../wow_game_data.yaml -g typescript-axios",
-    "clean": "rimraf dist && rimraf node_modules",
-    "delete": "npm run clean && rimraf *.ts && rimraf .npmignore && rimraf .openapi-generator-ignore && rimraf .openapi-generator && rimraf .gitignore",
-    "build": "tsc",
-    "deploy": "npm publish"
-  },
-  "files": [
-    "dist/**/*"
-  ],
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/jbwittner/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jbwittner/blizzard_api_swagger"
+    "name": "@jbwittner/blizzardswagger_wow-retail-api_typescript-axios",
+    "version": "0.7.0",
+    "description": "The axios client for WoW Companion application",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+      "generate": "openapi-generator-cli generate -i ../wow_game_data.yaml -g typescript-axios --additional-properties=withSeparateModelsAndApi=true --additional-properties=apiPackage=api --additional-properties=modelPackage=model --additional-properties=supportsES6=true --additional-properties=withInterfaces=true",
+      "postgenerate" : "rimraf git_push.sh && rimraf .openapi-generator-ignore && rimraf .gitignore && rimraf .openapi-generator && rimraf openapitools.json",
+      "clean": "rimraf dist",
+      "delete": "npm run clean && rimraf *.ts && rimraf .npmignore",
+      "build": "tsc",
+      "deploy": "npm publish"
+    },
+    "author": "WITTNER Jean-Baptiste",
+    "license": "ISC",
+    "keywords": [
+      "axios",
+      "typescript",
+      "openapi-client",
+      "openapi-generator",
+      "wow-companion"
+    ],
+    "dependencies": {
+      "axios": "^0.21.4"
+    },
+    "devDependencies": {
+      "@openapitools/openapi-generator-cli": "^2.3.2",
+      "@types/node": "^12.11.5",
+      "rimraf": "^3.0.2",
+      "typescript": "^4.6.2"
+    },
+    "publishConfig": {
+      "registry": "https://npm.pkg.github.com"
+    },
+    "repository": "https://github.com/jbwittner/blizzard_api_swagger"
   }
-}
