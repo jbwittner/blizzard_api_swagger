@@ -1,39 +1,20 @@
 # BlizzardAPISwagger
 A repository where have a swagger specification and where code is generated for the Blizzard API
 
-# Requirements
-
-We use [lerna](https://github.com/lerna/lerna) to manage the generation of code.
-
-To install lerna use : `npm install -g lerna`
-
-# Commands
-
-`lerna run` to tun a npm script
-
-`lerna clean` to clean target
-
-`lerna bootstrap` to launch npm install
-
-`lerna run deploy` to deploy package
-
 # Publish
 
-## Update source
+To update source, modify the openapi specification.
 
-Launch `lerna run delete`
-Change version on swagger specification.
-Change version in package.json
-Launch `lerna run generate`
+Change version of openapi specification.
 
-## Build
+Change version in package.json (for wow_retail/wow_api_typescript-axios)
 
-Launch `lerna bootstrap`
-Launch `lerna run build`
-
-## Publish
-
-Launch `lerna run deploy`
+In each part, launch :
+   - `npm ci`
+   - `npm run delete`
+   - `npm run generate`
+   - `npm run build`
+   - `npm run deploy`
 
 # NPM
 
