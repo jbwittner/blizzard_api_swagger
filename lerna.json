@@ -1,7 +1,0 @@
-{
-  "version": "0.5.8",
-  "npmClient": "npm",
-  "packages": [
-    "wow_retail/*"
-  ]
-}
