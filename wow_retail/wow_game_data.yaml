@@ -581,6 +581,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/indexData'
+      required:
+        - covenants
     arrayClassesIndexData:
       type: object
       description: Array of classes index
