@@ -13,8 +13,8 @@
  */
 
 
+import { IndexData } from './index-data';
 import { PvpSpellDescritpionData } from './pvp-spell-descritpion-data';
-import { TalentData } from './talent-data';
 
 /**
  * PVP Talent tiers data
@@ -24,15 +24,15 @@ import { TalentData } from './talent-data';
 export interface PvpTalentTiersData {
     /**
      * 
-     * @type {TalentData}
+     * @type {IndexData}
      * @memberof PvpTalentTiersData
      */
-    'talent'?: TalentData;
+    'talent': IndexData;
     /**
      * 
      * @type {PvpSpellDescritpionData}
      * @memberof PvpTalentTiersData
      */
-    'spell_tooltip'?: PvpSpellDescritpionData;
+    'spell_tooltip': PvpSpellDescritpionData;
 }
 

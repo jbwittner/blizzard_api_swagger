@@ -31,37 +31,37 @@ export interface PlayableSpecializationData {
      * @type {number}
      * @memberof PlayableSpecializationData
      */
-    'id'?: number;
+    'id': number;
     /**
      * 
      * @type {IndexData}
      * @memberof PlayableSpecializationData
      */
-    'playable_class'?: IndexData;
+    'playable_class': IndexData;
     /**
      * 
      * @type {NameData}
      * @memberof PlayableSpecializationData
      */
-    'name'?: NameData;
+    'name': NameData;
     /**
      * 
      * @type {GenderData}
      * @memberof PlayableSpecializationData
      */
-    'gender_description'?: GenderData;
+    'gender_description': GenderData;
     /**
      * 
      * @type {TypeData}
      * @memberof PlayableSpecializationData
      */
-    'role'?: TypeData;
+    'role': TypeData;
     /**
      * 
      * @type {Array<PveTalentTiersData>}
      * @memberof PlayableSpecializationData
      */
-    'talent_tiers'?: Array<PveTalentTiersData>;
+    'talent_tiers': Array<PveTalentTiersData>;
     /**
      * 
      * @type {Array<PvpTalentTiersData>}

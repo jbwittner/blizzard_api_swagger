@@ -26,18 +26,18 @@ export interface PveTalentTiersData {
      * @type {number}
      * @memberof PveTalentTiersData
      */
-    'level'?: number;
+    'level': number;
     /**
      * 
      * @type {Array<PveTalentData>}
      * @memberof PveTalentTiersData
      */
-    'talents'?: Array<PveTalentData>;
+    'talents': Array<PveTalentData>;
     /**
      * Id of the talent
      * @type {number}
      * @memberof PveTalentTiersData
      */
-    'tier_index'?: number;
+    'tier_index': number;
 }
 

@@ -13,8 +13,8 @@
  */
 
 
+import { IndexData } from './index-data';
 import { PveSpellDescritpionData } from './pve-spell-descritpion-data';
-import { TalentData } from './talent-data';
 
 /**
  * PVE Talent data
@@ -27,18 +27,18 @@ export interface PveTalentData {
      * @type {number}
      * @memberof PveTalentData
      */
-    'column_index'?: number;
+    'column_index': number;
     /**
      * 
-     * @type {TalentData}
+     * @type {IndexData}
      * @memberof PveTalentData
      */
-    'talent'?: TalentData;
+    'talent': IndexData;
     /**
      * 
      * @type {PveSpellDescritpionData}
      * @memberof PveTalentData
      */
-    'spell_tooltip'?: PveSpellDescritpionData;
+    'spell_tooltip': PveSpellDescritpionData;
 }
 

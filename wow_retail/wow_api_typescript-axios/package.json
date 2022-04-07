@@ -8,9 +8,10 @@
       "generate": "openapi-generator-cli generate -i ../wow_game_data.yaml -g typescript-axios --additional-properties=withSeparateModelsAndApi=true --additional-properties=apiPackage=api --additional-properties=modelPackage=model --additional-properties=supportsES6=true --additional-properties=withInterfaces=true",
       "postgenerate" : "rimraf git_push.sh && rimraf .openapi-generator-ignore && rimraf .gitignore && rimraf .openapi-generator && rimraf openapitools.json",
       "clean": "rimraf dist",
-      "delete": "npm run clean && rimraf *.ts && rimraf .npmignore",
+      "delete": "npm run clean && rimraf *.ts && rimraf api && rimraf model && rimraf .npmignore",
       "build": "tsc",
-      "deploy": "npm publish"
+      "deploy": "npm publish",
+      "all": "npm run delete && npm run generate && npm run build"
     },
     "author": "WITTNER Jean-Baptiste",
     "license": "ISC",

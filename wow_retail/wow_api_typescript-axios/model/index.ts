@@ -26,7 +26,6 @@ export * from './pvp-spell-descritpion-data';
 export * from './pvp-talent-tiers-data';
 export * from './realm-data';
 export * from './realm-index-data';
-export * from './talent-data';
 export * from './title-data';
 export * from './type-data';
 export * from './wow-account-data';
