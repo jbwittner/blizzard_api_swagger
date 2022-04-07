@@ -439,6 +439,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/pvpTalentTiersData'
+      required:
+        - id
+        - playable_class
+        - name
+        - gender_description
+        - role
+        - talent_tiers
+        - type
     pveTalentTiersData:
       type: object
       description: PVE Talent tiers data
@@ -453,14 +461,21 @@ components:
         tier_index:
           description: Id of the talent
           type: integer
+      required:
+        - level
+        - talents
+        - tier_index
     pvpTalentTiersData:
       type: object
       description: PVP Talent tiers data
       properties:
         talent:
-          $ref: '#/components/schemas/talentData'
+          $ref: '#/components/schemas/indexData'
         spell_tooltip:
           $ref: '#/components/schemas/pvpSpellDescritpionData'
+      required:
+        - talent
+        - spell_tooltip
     pveTalentData:
       type: object
       description: PVE Talent data
@@ -469,18 +484,13 @@ components:
           description: Id of the talent
           type: integer
         talent:
-          $ref: '#/components/schemas/talentData'
+          $ref: '#/components/schemas/indexData'
         spell_tooltip:
           $ref: '#/components/schemas/pveSpellDescritpionData'
-    talentData:
-      type: object
-      description: Talent data
-      properties:
-        id:
-          description: Id of the talent
-          type: integer
-        name:
-          $ref: '#/components/schemas/nameData'
+      required:
+        - column_index
+        - talent
+        - spell_tooltip
     pveSpellDescritpionData:
       type: object
       description: Description of the pve spell
