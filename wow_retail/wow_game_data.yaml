@@ -879,6 +879,8 @@ components:
         - name
     nameData:
       type: object
+    nameObjectData:
+      type: object
       description: Different translations
       properties:
         en_US:
