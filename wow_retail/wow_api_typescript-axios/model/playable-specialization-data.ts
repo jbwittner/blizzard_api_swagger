@@ -15,7 +15,6 @@
 
 import { GenderData } from './gender-data';
 import { IndexData } from './index-data';
-import { NameData } from './name-data';
 import { PveTalentTiersData } from './pve-talent-tiers-data';
 import { PvpTalentTiersData } from './pvp-talent-tiers-data';
 import { TypeData } from './type-data';
@@ -40,10 +39,10 @@ export interface PlayableSpecializationData {
     'playable_class': IndexData;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof PlayableSpecializationData
      */
-    'name': NameData;
+    'name': object;
     /**
      * 
      * @type {GenderData}

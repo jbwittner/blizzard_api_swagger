@@ -14,7 +14,6 @@
 
 
 import { IndexData } from './index-data';
-import { NameData } from './name-data';
 import { TypeData } from './type-data';
 
 /**
@@ -37,16 +36,16 @@ export interface RealmData {
     'region': IndexData;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof RealmData
      */
-    'name': NameData;
+    'name': object;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof RealmData
      */
-    'category': NameData;
+    'category': object;
     /**
      * Locale of the realm
      * @type {string}

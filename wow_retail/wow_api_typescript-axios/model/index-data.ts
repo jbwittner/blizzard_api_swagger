@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 
 /**
  * Index of data
@@ -29,9 +28,9 @@ export interface IndexData {
     'id': number;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof IndexData
      */
-    'name': NameData;
+    'name': object;
 }
 

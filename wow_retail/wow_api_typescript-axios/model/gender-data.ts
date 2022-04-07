@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 
 /**
  * Gender data
@@ -23,15 +22,15 @@ import { NameData } from './name-data';
 export interface GenderData {
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof GenderData
      */
-    'male': NameData;
+    'male': object;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof GenderData
      */
-    'female': NameData;
+    'female': object;
 }
 

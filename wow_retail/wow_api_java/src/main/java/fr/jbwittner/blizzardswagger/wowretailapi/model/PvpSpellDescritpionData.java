@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -33,16 +32,16 @@ import java.io.IOException;
 public class PvpSpellDescritpionData {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  private NameData description;
+  private Object description;
 
   public static final String SERIALIZED_NAME_CAST_TIME = "cast_time";
   @SerializedName(SERIALIZED_NAME_CAST_TIME)
-  private NameData castTime;
+  private Object castTime;
 
   public PvpSpellDescritpionData() { 
   }
 
-  public PvpSpellDescritpionData description(NameData description) {
+  public PvpSpellDescritpionData description(Object description) {
     
     this.description = description;
     return this;
@@ -52,20 +51,20 @@ public class PvpSpellDescritpionData {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public NameData getDescription() {
+  public Object getDescription() {
     return description;
   }
 
 
-  public void setDescription(NameData description) {
+  public void setDescription(Object description) {
     this.description = description;
   }
 
 
-  public PvpSpellDescritpionData castTime(NameData castTime) {
+  public PvpSpellDescritpionData castTime(Object castTime) {
     
     this.castTime = castTime;
     return this;
@@ -75,15 +74,15 @@ public class PvpSpellDescritpionData {
    * Get castTime
    * @return castTime
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public NameData getCastTime() {
+  public Object getCastTime() {
     return castTime;
   }
 
 
-  public void setCastTime(NameData castTime) {
+  public void setCastTime(Object castTime) {
     this.castTime = castTime;
   }
 

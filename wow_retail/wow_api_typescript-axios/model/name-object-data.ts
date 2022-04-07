@@ -17,79 +17,79 @@
 /**
  * Different translations
  * @export
- * @interface NameData
+ * @interface NameObjectData
  */
-export interface NameData {
+export interface NameObjectData {
     /**
      * The locale of English (U.S.)
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'en_US': string;
     /**
      * The locale of mexican Spanish (Mexican)
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'es_MX': string;
     /**
      * The locale of Portuguese (Brazilian)
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'pt_BR': string;
     /**
      * The locale of German
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'de_DE': string;
     /**
      * The locale of English (U.K.)
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'en_GB': string;
     /**
      * The locale of Spanish (Modern)
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'es_ES': string;
     /**
      * The locale of French
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'fr_FR': string;
     /**
      * The locale of Italian
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'it_IT': string;
     /**
      * The locale of Russian
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'ru_RU': string;
     /**
      * The locale of Korean
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'ko_KR': string;
     /**
      * The locale of Chinese (Taiwan/Traditional)
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'zh_TW': string;
     /**
      * The locale of Chinese (Simplified)
      * @type {string}
-     * @memberof NameData
+     * @memberof NameObjectData
      */
     'zh_CN': string;
 }

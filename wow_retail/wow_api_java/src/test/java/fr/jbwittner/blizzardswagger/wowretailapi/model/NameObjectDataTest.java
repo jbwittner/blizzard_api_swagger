@@ -27,17 +27,17 @@ import org.junit.Test;
 
 
 /**
- * Model tests for NameData
+ * Model tests for NameObjectData
  */
-public class NameDataTest {
-    private final NameData model = new NameData();
+public class NameObjectDataTest {
+    private final NameObjectData model = new NameObjectData();
 
     /**
-     * Model tests for NameData
+     * Model tests for NameObjectData
      */
     @Test
-    public void testNameData() {
-        // TODO: test NameData
+    public void testNameObjectData() {
+        // TODO: test NameObjectData
     }
 
     /**

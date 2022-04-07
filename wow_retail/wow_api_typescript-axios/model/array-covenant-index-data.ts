@@ -26,6 +26,6 @@ export interface ArrayCovenantIndexData {
      * @type {Array<IndexData>}
      * @memberof ArrayCovenantIndexData
      */
-    'covenants'?: Array<IndexData>;
+    'covenants': Array<IndexData>;
 }
 

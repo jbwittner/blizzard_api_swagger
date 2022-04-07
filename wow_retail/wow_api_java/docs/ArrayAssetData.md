@@ -8,7 +8,7 @@ Array of media asset
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**assets** | [**List&lt;AssetData&gt;**](AssetData.md) |  |  [optional]
+**assets** | [**List&lt;AssetData&gt;**](AssetData.md) |  | 
 
 
 

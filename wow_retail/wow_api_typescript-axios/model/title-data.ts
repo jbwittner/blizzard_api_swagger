@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 
 /**
  * Data of character title
@@ -23,10 +22,10 @@ import { NameData } from './name-data';
 export interface TitleData {
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof TitleData
      */
-    'name': NameData;
+    'name': object;
     /**
      * 
      * @type {number}
@@ -35,9 +34,9 @@ export interface TitleData {
     'id': number;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof TitleData
      */
-    'display_string': NameData;
+    'display_string': object;
 }
 

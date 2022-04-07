@@ -26,6 +26,6 @@ export interface ArrayAssetData {
      * @type {Array<AssetData>}
      * @memberof ArrayAssetData
      */
-    'assets'?: Array<AssetData>;
+    'assets': Array<AssetData>;
 }
 

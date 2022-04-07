@@ -9,7 +9,7 @@ Index of data
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | Id of the index | 
-**name** | [**NameData**](NameData.md) |  | 
+**name** | **Object** |  | 
 
 
 

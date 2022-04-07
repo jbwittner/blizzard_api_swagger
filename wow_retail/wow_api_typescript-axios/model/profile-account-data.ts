@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 import { WowAccountData } from './wow-account-data';
 
 /**
@@ -36,9 +35,9 @@ export interface ProfileAccountData {
     'wow_accounts': Array<WowAccountData>;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof ProfileAccountData
      */
-    'name'?: NameData;
+    'name'?: object;
 }
 

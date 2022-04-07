@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 
 /**
  * Faction data
@@ -29,9 +28,9 @@ export interface TypeData {
     'type': string;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof TypeData
      */
-    'name': NameData;
+    'name': object;
 }
 

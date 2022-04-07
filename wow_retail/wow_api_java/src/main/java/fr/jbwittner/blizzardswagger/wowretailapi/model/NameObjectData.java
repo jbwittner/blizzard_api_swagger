@@ -29,7 +29,7 @@ import java.io.IOException;
  */
 @ApiModel(description = "Different translations")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen")
-public class NameData {
+public class NameObjectData {
   public static final String SERIALIZED_NAME_EN_U_S = "en_US";
   @SerializedName(SERIALIZED_NAME_EN_U_S)
   private String enUS;
@@ -78,10 +78,10 @@ public class NameData {
   @SerializedName(SERIALIZED_NAME_ZH_C_N)
   private String zhCN;
 
-  public NameData() { 
+  public NameObjectData() { 
   }
 
-  public NameData enUS(String enUS) {
+  public NameObjectData enUS(String enUS) {
     
     this.enUS = enUS;
     return this;
@@ -104,7 +104,7 @@ public class NameData {
   }
 
 
-  public NameData esMX(String esMX) {
+  public NameObjectData esMX(String esMX) {
     
     this.esMX = esMX;
     return this;
@@ -127,7 +127,7 @@ public class NameData {
   }
 
 
-  public NameData ptBR(String ptBR) {
+  public NameObjectData ptBR(String ptBR) {
     
     this.ptBR = ptBR;
     return this;
@@ -150,7 +150,7 @@ public class NameData {
   }
 
 
-  public NameData deDE(String deDE) {
+  public NameObjectData deDE(String deDE) {
     
     this.deDE = deDE;
     return this;
@@ -173,7 +173,7 @@ public class NameData {
   }
 
 
-  public NameData enGB(String enGB) {
+  public NameObjectData enGB(String enGB) {
     
     this.enGB = enGB;
     return this;
@@ -196,7 +196,7 @@ public class NameData {
   }
 
 
-  public NameData esES(String esES) {
+  public NameObjectData esES(String esES) {
     
     this.esES = esES;
     return this;
@@ -219,7 +219,7 @@ public class NameData {
   }
 
 
-  public NameData frFR(String frFR) {
+  public NameObjectData frFR(String frFR) {
     
     this.frFR = frFR;
     return this;
@@ -242,7 +242,7 @@ public class NameData {
   }
 
 
-  public NameData itIT(String itIT) {
+  public NameObjectData itIT(String itIT) {
     
     this.itIT = itIT;
     return this;
@@ -265,7 +265,7 @@ public class NameData {
   }
 
 
-  public NameData ruRU(String ruRU) {
+  public NameObjectData ruRU(String ruRU) {
     
     this.ruRU = ruRU;
     return this;
@@ -288,7 +288,7 @@ public class NameData {
   }
 
 
-  public NameData koKR(String koKR) {
+  public NameObjectData koKR(String koKR) {
     
     this.koKR = koKR;
     return this;
@@ -311,7 +311,7 @@ public class NameData {
   }
 
 
-  public NameData zhTW(String zhTW) {
+  public NameObjectData zhTW(String zhTW) {
     
     this.zhTW = zhTW;
     return this;
@@ -334,7 +334,7 @@ public class NameData {
   }
 
 
-  public NameData zhCN(String zhCN) {
+  public NameObjectData zhCN(String zhCN) {
     
     this.zhCN = zhCN;
     return this;
@@ -365,19 +365,19 @@ public class NameData {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    NameData nameData = (NameData) o;
-    return Objects.equals(this.enUS, nameData.enUS) &&
-        Objects.equals(this.esMX, nameData.esMX) &&
-        Objects.equals(this.ptBR, nameData.ptBR) &&
-        Objects.equals(this.deDE, nameData.deDE) &&
-        Objects.equals(this.enGB, nameData.enGB) &&
-        Objects.equals(this.esES, nameData.esES) &&
-        Objects.equals(this.frFR, nameData.frFR) &&
-        Objects.equals(this.itIT, nameData.itIT) &&
-        Objects.equals(this.ruRU, nameData.ruRU) &&
-        Objects.equals(this.koKR, nameData.koKR) &&
-        Objects.equals(this.zhTW, nameData.zhTW) &&
-        Objects.equals(this.zhCN, nameData.zhCN);
+    NameObjectData nameObjectData = (NameObjectData) o;
+    return Objects.equals(this.enUS, nameObjectData.enUS) &&
+        Objects.equals(this.esMX, nameObjectData.esMX) &&
+        Objects.equals(this.ptBR, nameObjectData.ptBR) &&
+        Objects.equals(this.deDE, nameObjectData.deDE) &&
+        Objects.equals(this.enGB, nameObjectData.enGB) &&
+        Objects.equals(this.esES, nameObjectData.esES) &&
+        Objects.equals(this.frFR, nameObjectData.frFR) &&
+        Objects.equals(this.itIT, nameObjectData.itIT) &&
+        Objects.equals(this.ruRU, nameObjectData.ruRU) &&
+        Objects.equals(this.koKR, nameObjectData.koKR) &&
+        Objects.equals(this.zhTW, nameObjectData.zhTW) &&
+        Objects.equals(this.zhCN, nameObjectData.zhCN);
   }
 
   @Override
@@ -388,7 +388,7 @@ public class NameData {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class NameData {\n");
+    sb.append("class NameObjectData {\n");
     sb.append("    enUS: ").append(toIndentedString(enUS)).append("\n");
     sb.append("    esMX: ").append(toIndentedString(esMX)).append("\n");
     sb.append("    ptBR: ").append(toIndentedString(ptBR)).append("\n");

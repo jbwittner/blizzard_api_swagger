@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -33,7 +32,7 @@ import java.io.IOException;
 public class TitleData {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private NameData name;
+  private Object name;
 
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -41,12 +40,12 @@ public class TitleData {
 
   public static final String SERIALIZED_NAME_DISPLAY_STRING = "display_string";
   @SerializedName(SERIALIZED_NAME_DISPLAY_STRING)
-  private NameData displayString;
+  private Object displayString;
 
   public TitleData() { 
   }
 
-  public TitleData name(NameData name) {
+  public TitleData name(Object name) {
     
     this.name = name;
     return this;
@@ -59,12 +58,12 @@ public class TitleData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getName() {
+  public Object getName() {
     return name;
   }
 
 
-  public void setName(NameData name) {
+  public void setName(Object name) {
     this.name = name;
   }
 
@@ -92,7 +91,7 @@ public class TitleData {
   }
 
 
-  public TitleData displayString(NameData displayString) {
+  public TitleData displayString(Object displayString) {
     
     this.displayString = displayString;
     return this;
@@ -105,12 +104,12 @@ public class TitleData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getDisplayString() {
+  public Object getDisplayString() {
     return displayString;
   }
 
 
-  public void setDisplayString(NameData displayString) {
+  public void setDisplayString(Object displayString) {
     this.displayString = displayString;
   }
 

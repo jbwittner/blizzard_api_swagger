@@ -154,7 +154,7 @@ Class | Method | HTTP request | Description
  - [GenderData](docs/GenderData.md)
  - [GuildCharacterIndexData](docs/GuildCharacterIndexData.md)
  - [IndexData](docs/IndexData.md)
- - [NameData](docs/NameData.md)
+ - [NameObjectData](docs/NameObjectData.md)
  - [PlayableClassData](docs/PlayableClassData.md)
  - [PlayableClassRaceMediaData](docs/PlayableClassRaceMediaData.md)
  - [PlayableRaceData](docs/PlayableRaceData.md)

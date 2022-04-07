@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -33,16 +32,16 @@ import java.io.IOException;
 public class GenderData {
   public static final String SERIALIZED_NAME_MALE = "male";
   @SerializedName(SERIALIZED_NAME_MALE)
-  private NameData male;
+  private Object male;
 
   public static final String SERIALIZED_NAME_FEMALE = "female";
   @SerializedName(SERIALIZED_NAME_FEMALE)
-  private NameData female;
+  private Object female;
 
   public GenderData() { 
   }
 
-  public GenderData male(NameData male) {
+  public GenderData male(Object male) {
     
     this.male = male;
     return this;
@@ -55,17 +54,17 @@ public class GenderData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getMale() {
+  public Object getMale() {
     return male;
   }
 
 
-  public void setMale(NameData male) {
+  public void setMale(Object male) {
     this.male = male;
   }
 
 
-  public GenderData female(NameData female) {
+  public GenderData female(Object female) {
     
     this.female = female;
     return this;
@@ -78,12 +77,12 @@ public class GenderData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getFemale() {
+  public Object getFemale() {
     return female;
   }
 
 
-  public void setFemale(NameData female) {
+  public void setFemale(Object female) {
     this.female = female;
   }
 

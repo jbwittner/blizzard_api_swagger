@@ -35,7 +35,7 @@ import java.util.List;
 public class ArrayAssetData {
   public static final String SERIALIZED_NAME_ASSETS = "assets";
   @SerializedName(SERIALIZED_NAME_ASSETS)
-  private List<AssetData> assets = null;
+  private List<AssetData> assets = new ArrayList<>();
 
   public ArrayAssetData() { 
   }
@@ -47,9 +47,6 @@ public class ArrayAssetData {
   }
 
   public ArrayAssetData addAssetsItem(AssetData assetsItem) {
-    if (this.assets == null) {
-      this.assets = new ArrayList<>();
-    }
     this.assets.add(assetsItem);
     return this;
   }
@@ -58,8 +55,8 @@ public class ArrayAssetData {
    * Get assets
    * @return assets
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public List<AssetData> getAssets() {
     return assets;

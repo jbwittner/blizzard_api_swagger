@@ -15,7 +15,6 @@
 
 import { GenderData } from './gender-data';
 import { IndexData } from './index-data';
-import { NameData } from './name-data';
 
 /**
  * Playable class data
@@ -31,10 +30,10 @@ export interface PlayableClassData {
     'id': number;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof PlayableClassData
      */
-    'name': NameData;
+    'name': object;
     /**
      * 
      * @type {GenderData}

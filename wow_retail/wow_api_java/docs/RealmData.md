@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | Id of the realm | 
 **region** | [**IndexData**](IndexData.md) |  | 
-**name** | [**NameData**](NameData.md) |  | 
-**category** | [**NameData**](NameData.md) |  | 
+**name** | **Object** |  | 
+**category** | **Object** |  | 
 **locale** | **String** | Locale of the realm | 
 **timezone** | **String** | Timezone of the realm | 
 **type** | [**TypeData**](TypeData.md) |  | 

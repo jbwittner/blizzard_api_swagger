@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -37,7 +36,7 @@ public class TypeData {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private NameData name;
+  private Object name;
 
   public TypeData() { 
   }
@@ -65,7 +64,7 @@ public class TypeData {
   }
 
 
-  public TypeData name(NameData name) {
+  public TypeData name(Object name) {
     
     this.name = name;
     return this;
@@ -78,12 +77,12 @@ public class TypeData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getName() {
+  public Object getName() {
     return name;
   }
 
 
-  public void setName(NameData name) {
+  public void setName(Object name) {
     this.name = name;
   }
 

@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.GenderData;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.IndexData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -41,7 +40,7 @@ public class PlayableClassData {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private NameData name;
+  private Object name;
 
   public static final String SERIALIZED_NAME_GENDER_NAME = "gender_name";
   @SerializedName(SERIALIZED_NAME_GENDER_NAME)
@@ -81,7 +80,7 @@ public class PlayableClassData {
   }
 
 
-  public PlayableClassData name(NameData name) {
+  public PlayableClassData name(Object name) {
     
     this.name = name;
     return this;
@@ -94,12 +93,12 @@ public class PlayableClassData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getName() {
+  public Object getName() {
     return name;
   }
 
 
-  public void setName(NameData name) {
+  public void setName(Object name) {
     this.name = name;
   }
 

@@ -19,7 +19,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.IndexData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.TypeData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

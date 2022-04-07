@@ -13,7 +13,7 @@ export * from './covenant-progress-data';
 export * from './gender-data';
 export * from './guild-character-index-data';
 export * from './index-data';
-export * from './name-data';
+export * from './name-object-data';
 export * from './playable-class-data';
 export * from './playable-class-race-media-data';
 export * from './playable-race-data';

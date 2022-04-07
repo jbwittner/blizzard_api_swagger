@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 
 /**
  * Description of the pve spell
@@ -23,21 +22,21 @@ import { NameData } from './name-data';
 export interface PveSpellDescritpionData {
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof PveSpellDescritpionData
      */
-    'description'?: NameData;
+    'description': object;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof PveSpellDescritpionData
      */
-    'cast_time'?: NameData;
+    'cast_time': object;
     /**
      * Index of the spell
      * @type {number}
      * @memberof PveSpellDescritpionData
      */
-    'column_index'?: number;
+    'column_index': number;
 }
 

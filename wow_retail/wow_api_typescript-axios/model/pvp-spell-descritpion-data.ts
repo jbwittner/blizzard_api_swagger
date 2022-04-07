@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 
 /**
  * Description of the pvp spell
@@ -23,15 +22,15 @@ import { NameData } from './name-data';
 export interface PvpSpellDescritpionData {
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof PvpSpellDescritpionData
      */
-    'description'?: NameData;
+    'description': object;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof PvpSpellDescritpionData
      */
-    'cast_time'?: NameData;
+    'cast_time': object;
 }
 

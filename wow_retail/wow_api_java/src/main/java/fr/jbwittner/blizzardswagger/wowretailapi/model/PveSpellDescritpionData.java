@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -33,11 +32,11 @@ import java.io.IOException;
 public class PveSpellDescritpionData {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  private NameData description;
+  private Object description;
 
   public static final String SERIALIZED_NAME_CAST_TIME = "cast_time";
   @SerializedName(SERIALIZED_NAME_CAST_TIME)
-  private NameData castTime;
+  private Object castTime;
 
   public static final String SERIALIZED_NAME_COLUMN_INDEX = "column_index";
   @SerializedName(SERIALIZED_NAME_COLUMN_INDEX)
@@ -46,7 +45,7 @@ public class PveSpellDescritpionData {
   public PveSpellDescritpionData() { 
   }
 
-  public PveSpellDescritpionData description(NameData description) {
+  public PveSpellDescritpionData description(Object description) {
     
     this.description = description;
     return this;
@@ -56,20 +55,20 @@ public class PveSpellDescritpionData {
    * Get description
    * @return description
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public NameData getDescription() {
+  public Object getDescription() {
     return description;
   }
 
 
-  public void setDescription(NameData description) {
+  public void setDescription(Object description) {
     this.description = description;
   }
 
 
-  public PveSpellDescritpionData castTime(NameData castTime) {
+  public PveSpellDescritpionData castTime(Object castTime) {
     
     this.castTime = castTime;
     return this;
@@ -79,15 +78,15 @@ public class PveSpellDescritpionData {
    * Get castTime
    * @return castTime
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public NameData getCastTime() {
+  public Object getCastTime() {
     return castTime;
   }
 
 
-  public void setCastTime(NameData castTime) {
+  public void setCastTime(Object castTime) {
     this.castTime = castTime;
   }
 
@@ -102,8 +101,8 @@ public class PveSpellDescritpionData {
    * Index of the spell
    * @return columnIndex
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Index of the spell")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Index of the spell")
 
   public Integer getColumnIndex() {
     return columnIndex;

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **Integer** | Id of the specilization | 
 **playableClass** | [**IndexData**](IndexData.md) |  | 
-**name** | [**NameData**](NameData.md) |  | 
+**name** | **Object** |  | 
 **genderDescription** | [**GenderData**](GenderData.md) |  | 
 **role** | [**TypeData**](TypeData.md) |  | 
 **talentTiers** | [**List&lt;PveTalentTiersData&gt;**](PveTalentTiersData.md) |  | 

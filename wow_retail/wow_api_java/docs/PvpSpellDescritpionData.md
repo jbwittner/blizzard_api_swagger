@@ -8,8 +8,8 @@ Description of the pvp spell
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**description** | [**NameData**](NameData.md) |  |  [optional]
-**castTime** | [**NameData**](NameData.md) |  |  [optional]
+**description** | **Object** |  | 
+**castTime** | **Object** |  | 
 
 
 

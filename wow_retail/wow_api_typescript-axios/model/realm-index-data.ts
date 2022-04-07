@@ -13,7 +13,6 @@
  */
 
 
-import { NameData } from './name-data';
 
 /**
  * Index of realm
@@ -35,9 +34,9 @@ export interface RealmIndexData {
     'slug': string;
     /**
      * 
-     * @type {NameData}
+     * @type {object}
      * @memberof RealmIndexData
      */
-    'name': NameData;
+    'name': object;
 }
 

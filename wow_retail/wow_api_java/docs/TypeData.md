@@ -9,7 +9,7 @@ Faction data
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | 
-**name** | [**NameData**](NameData.md) |  | 
+**name** | **Object** |  | 
 
 
 

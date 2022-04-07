@@ -8,8 +8,8 @@ Gender data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**male** | [**NameData**](NameData.md) |  | 
-**female** | [**NameData**](NameData.md) |  | 
+**male** | **Object** |  | 
+**female** | **Object** |  | 
 
 
 

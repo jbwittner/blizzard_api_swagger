@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.IndexData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.NameData;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.TypeData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -43,11 +42,11 @@ public class RealmData {
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  private NameData name;
+  private Object name;
 
   public static final String SERIALIZED_NAME_CATEGORY = "category";
   @SerializedName(SERIALIZED_NAME_CATEGORY)
-  private NameData category;
+  private Object category;
 
   public static final String SERIALIZED_NAME_LOCALE = "locale";
   @SerializedName(SERIALIZED_NAME_LOCALE)
@@ -118,7 +117,7 @@ public class RealmData {
   }
 
 
-  public RealmData name(NameData name) {
+  public RealmData name(Object name) {
     
     this.name = name;
     return this;
@@ -131,17 +130,17 @@ public class RealmData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getName() {
+  public Object getName() {
     return name;
   }
 
 
-  public void setName(NameData name) {
+  public void setName(Object name) {
     this.name = name;
   }
 
 
-  public RealmData category(NameData category) {
+  public RealmData category(Object category) {
     
     this.category = category;
     return this;
@@ -154,12 +153,12 @@ public class RealmData {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NameData getCategory() {
+  public Object getCategory() {
     return category;
   }
 
 
-  public void setCategory(NameData category) {
+  public void setCategory(Object category) {
     this.category = category;
   }
 

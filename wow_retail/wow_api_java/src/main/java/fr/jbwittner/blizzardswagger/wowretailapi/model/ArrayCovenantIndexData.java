@@ -35,7 +35,7 @@ import java.util.List;
 public class ArrayCovenantIndexData {
   public static final String SERIALIZED_NAME_COVENANTS = "covenants";
   @SerializedName(SERIALIZED_NAME_COVENANTS)
-  private List<IndexData> covenants = null;
+  private List<IndexData> covenants = new ArrayList<>();
 
   public ArrayCovenantIndexData() { 
   }
@@ -47,9 +47,6 @@ public class ArrayCovenantIndexData {
   }
 
   public ArrayCovenantIndexData addCovenantsItem(IndexData covenantsItem) {
-    if (this.covenants == null) {
-      this.covenants = new ArrayList<>();
-    }
     this.covenants.add(covenantsItem);
     return this;
   }
@@ -58,8 +55,8 @@ public class ArrayCovenantIndexData {
    * Get covenants
    * @return covenants
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public List<IndexData> getCovenants() {
     return covenants;

@@ -8,9 +8,9 @@ Data of character title
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | [**NameData**](NameData.md) |  | 
+**name** | **Object** |  | 
 **id** | **Integer** |  | 
-**displayString** | [**NameData**](NameData.md) |  | 
+**displayString** | **Object** |  | 
 
 
 
