@@ -8,12 +8,12 @@ Playable specilization data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **Integer** | Id of the specilization |  [optional]
-**playableClass** | [**IndexData**](IndexData.md) |  |  [optional]
-**name** | [**NameData**](NameData.md) |  |  [optional]
-**genderDescription** | [**GenderData**](GenderData.md) |  |  [optional]
-**role** | [**TypeData**](TypeData.md) |  |  [optional]
-**talentTiers** | [**List&lt;PveTalentTiersData&gt;**](PveTalentTiersData.md) |  |  [optional]
+**id** | **Integer** | Id of the specilization | 
+**playableClass** | [**IndexData**](IndexData.md) |  | 
+**name** | [**NameData**](NameData.md) |  | 
+**genderDescription** | [**GenderData**](GenderData.md) |  | 
+**role** | [**TypeData**](TypeData.md) |  | 
+**talentTiers** | [**List&lt;PveTalentTiersData&gt;**](PveTalentTiersData.md) |  | 
 **pvpTalents** | [**List&lt;PvpTalentTiersData&gt;**](PvpTalentTiersData.md) |  |  [optional]
 
 

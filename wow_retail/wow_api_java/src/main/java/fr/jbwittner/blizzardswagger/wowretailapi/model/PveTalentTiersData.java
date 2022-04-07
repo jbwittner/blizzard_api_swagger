@@ -39,7 +39,7 @@ public class PveTalentTiersData {
 
   public static final String SERIALIZED_NAME_TALENTS = "talents";
   @SerializedName(SERIALIZED_NAME_TALENTS)
-  private List<PveTalentData> talents = null;
+  private List<PveTalentData> talents = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIER_INDEX = "tier_index";
   @SerializedName(SERIALIZED_NAME_TIER_INDEX)
@@ -58,8 +58,8 @@ public class PveTalentTiersData {
    * Level where the talents are obtained
    * @return level
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Level where the talents are obtained")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Level where the talents are obtained")
 
   public Integer getLevel() {
     return level;
@@ -78,9 +78,6 @@ public class PveTalentTiersData {
   }
 
   public PveTalentTiersData addTalentsItem(PveTalentData talentsItem) {
-    if (this.talents == null) {
-      this.talents = new ArrayList<>();
-    }
     this.talents.add(talentsItem);
     return this;
   }
@@ -89,8 +86,8 @@ public class PveTalentTiersData {
    * Get talents
    * @return talents
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public List<PveTalentData> getTalents() {
     return talents;
@@ -112,8 +109,8 @@ public class PveTalentTiersData {
    * Id of the talent
    * @return tierIndex
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Id of the talent")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Id of the talent")
 
   public Integer getTierIndex() {
     return tierIndex;

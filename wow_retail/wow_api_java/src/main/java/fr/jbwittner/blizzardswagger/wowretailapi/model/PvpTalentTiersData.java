@@ -20,8 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.IndexData;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.PvpSpellDescritpionData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.TalentData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -34,7 +34,7 @@ import java.io.IOException;
 public class PvpTalentTiersData {
   public static final String SERIALIZED_NAME_TALENT = "talent";
   @SerializedName(SERIALIZED_NAME_TALENT)
-  private TalentData talent;
+  private IndexData talent;
 
   public static final String SERIALIZED_NAME_SPELL_TOOLTIP = "spell_tooltip";
   @SerializedName(SERIALIZED_NAME_SPELL_TOOLTIP)
@@ -43,7 +43,7 @@ public class PvpTalentTiersData {
   public PvpTalentTiersData() { 
   }
 
-  public PvpTalentTiersData talent(TalentData talent) {
+  public PvpTalentTiersData talent(IndexData talent) {
     
     this.talent = talent;
     return this;
@@ -53,15 +53,15 @@ public class PvpTalentTiersData {
    * Get talent
    * @return talent
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public TalentData getTalent() {
+  public IndexData getTalent() {
     return talent;
   }
 
 
-  public void setTalent(TalentData talent) {
+  public void setTalent(IndexData talent) {
     this.talent = talent;
   }
 
@@ -76,8 +76,8 @@ public class PvpTalentTiersData {
    * Get spellTooltip
    * @return spellTooltip
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public PvpSpellDescritpionData getSpellTooltip() {
     return spellTooltip;

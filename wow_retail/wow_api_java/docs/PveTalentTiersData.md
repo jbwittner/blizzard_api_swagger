@@ -8,9 +8,9 @@ PVE Talent tiers data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**level** | **Integer** | Level where the talents are obtained |  [optional]
-**talents** | [**List&lt;PveTalentData&gt;**](PveTalentData.md) |  |  [optional]
-**tierIndex** | **Integer** | Id of the talent |  [optional]
+**level** | **Integer** | Level where the talents are obtained | 
+**talents** | [**List&lt;PveTalentData&gt;**](PveTalentData.md) |  | 
+**tierIndex** | **Integer** | Id of the talent | 
 
 
 

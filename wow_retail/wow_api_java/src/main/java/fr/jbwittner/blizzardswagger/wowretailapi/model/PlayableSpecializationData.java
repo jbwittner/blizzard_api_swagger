@@ -60,7 +60,7 @@ public class PlayableSpecializationData {
 
   public static final String SERIALIZED_NAME_TALENT_TIERS = "talent_tiers";
   @SerializedName(SERIALIZED_NAME_TALENT_TIERS)
-  private List<PveTalentTiersData> talentTiers = null;
+  private List<PveTalentTiersData> talentTiers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PVP_TALENTS = "pvp_talents";
   @SerializedName(SERIALIZED_NAME_PVP_TALENTS)
@@ -79,8 +79,8 @@ public class PlayableSpecializationData {
    * Id of the specilization
    * @return id
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Id of the specilization")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Id of the specilization")
 
   public Integer getId() {
     return id;
@@ -102,8 +102,8 @@ public class PlayableSpecializationData {
    * Get playableClass
    * @return playableClass
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public IndexData getPlayableClass() {
     return playableClass;
@@ -125,8 +125,8 @@ public class PlayableSpecializationData {
    * Get name
    * @return name
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public NameData getName() {
     return name;
@@ -148,8 +148,8 @@ public class PlayableSpecializationData {
    * Get genderDescription
    * @return genderDescription
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public GenderData getGenderDescription() {
     return genderDescription;
@@ -171,8 +171,8 @@ public class PlayableSpecializationData {
    * Get role
    * @return role
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public TypeData getRole() {
     return role;
@@ -191,9 +191,6 @@ public class PlayableSpecializationData {
   }
 
   public PlayableSpecializationData addTalentTiersItem(PveTalentTiersData talentTiersItem) {
-    if (this.talentTiers == null) {
-      this.talentTiers = new ArrayList<>();
-    }
     this.talentTiers.add(talentTiersItem);
     return this;
   }
@@ -202,8 +199,8 @@ public class PlayableSpecializationData {
    * Get talentTiers
    * @return talentTiers
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public List<PveTalentTiersData> getTalentTiers() {
     return talentTiers;

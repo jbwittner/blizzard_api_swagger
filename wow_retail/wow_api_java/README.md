@@ -167,7 +167,6 @@ Class | Method | HTTP request | Description
  - [PvpTalentTiersData](docs/PvpTalentTiersData.md)
  - [RealmData](docs/RealmData.md)
  - [RealmIndexData](docs/RealmIndexData.md)
- - [TalentData](docs/TalentData.md)
  - [TitleData](docs/TitleData.md)
  - [TypeData](docs/TypeData.md)
  - [WowAccountData](docs/WowAccountData.md)

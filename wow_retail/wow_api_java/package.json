@@ -6,7 +6,8 @@
       "clean": "rimraf target",
       "delete": "npm run clean && rimraf src && rimraf pom.xml && rimraf docs && rimraf README.md",
       "build": "mvn package",
-      "deploy": "mvn deploy -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/jbwittner/blizzard_api_swagger"
+      "deploy": "mvn deploy -DaltDeploymentRepository=github::default::https://maven.pkg.github.com/jbwittner/blizzard_api_swagger",
+      "all": "npm ci && npm run delete && npm run generate && npm run build"
     },
     "devDependencies": {
         "@openapitools/openapi-generator-cli": "^2.3.2",

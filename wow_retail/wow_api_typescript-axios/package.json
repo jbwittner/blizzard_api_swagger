@@ -11,7 +11,7 @@
       "delete": "npm run clean && rimraf *.ts && rimraf api && rimraf model && rimraf .npmignore",
       "build": "tsc",
       "deploy": "npm publish",
-      "all": "npm run delete && npm run generate && npm run build"
+      "all": "npm ci && npm run delete && npm run generate && npm run build"
     },
     "author": "WITTNER Jean-Baptiste",
     "license": "ISC",

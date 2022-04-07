@@ -8,8 +8,8 @@ PVP Talent tiers data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**talent** | [**TalentData**](TalentData.md) |  |  [optional]
-**spellTooltip** | [**PvpSpellDescritpionData**](PvpSpellDescritpionData.md) |  |  [optional]
+**talent** | [**IndexData**](IndexData.md) |  | 
+**spellTooltip** | [**PvpSpellDescritpionData**](PvpSpellDescritpionData.md) |  | 
 
 
 

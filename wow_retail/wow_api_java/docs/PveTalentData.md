@@ -8,9 +8,9 @@ PVE Talent data
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**columnIndex** | **Integer** | Id of the talent |  [optional]
-**talent** | [**TalentData**](TalentData.md) |  |  [optional]
-**spellTooltip** | [**PveSpellDescritpionData**](PveSpellDescritpionData.md) |  |  [optional]
+**columnIndex** | **Integer** | Id of the talent | 
+**talent** | [**IndexData**](IndexData.md) |  | 
+**spellTooltip** | [**PveSpellDescritpionData**](PveSpellDescritpionData.md) |  | 
 
 
 

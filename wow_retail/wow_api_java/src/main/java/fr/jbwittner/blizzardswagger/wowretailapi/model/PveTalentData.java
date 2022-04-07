@@ -20,8 +20,8 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import fr.jbwittner.blizzardswagger.wowretailapi.model.IndexData;
 import fr.jbwittner.blizzardswagger.wowretailapi.model.PveSpellDescritpionData;
-import fr.jbwittner.blizzardswagger.wowretailapi.model.TalentData;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -38,7 +38,7 @@ public class PveTalentData {
 
   public static final String SERIALIZED_NAME_TALENT = "talent";
   @SerializedName(SERIALIZED_NAME_TALENT)
-  private TalentData talent;
+  private IndexData talent;
 
   public static final String SERIALIZED_NAME_SPELL_TOOLTIP = "spell_tooltip";
   @SerializedName(SERIALIZED_NAME_SPELL_TOOLTIP)
@@ -57,8 +57,8 @@ public class PveTalentData {
    * Id of the talent
    * @return columnIndex
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Id of the talent")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Id of the talent")
 
   public Integer getColumnIndex() {
     return columnIndex;
@@ -70,7 +70,7 @@ public class PveTalentData {
   }
 
 
-  public PveTalentData talent(TalentData talent) {
+  public PveTalentData talent(IndexData talent) {
     
     this.talent = talent;
     return this;
@@ -80,15 +80,15 @@ public class PveTalentData {
    * Get talent
    * @return talent
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
-  public TalentData getTalent() {
+  public IndexData getTalent() {
     return talent;
   }
 
 
-  public void setTalent(TalentData talent) {
+  public void setTalent(IndexData talent) {
     this.talent = talent;
   }
 
@@ -103,8 +103,8 @@ public class PveTalentData {
    * Get spellTooltip
    * @return spellTooltip
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
 
   public PveSpellDescritpionData getSpellTooltip() {
     return spellTooltip;
