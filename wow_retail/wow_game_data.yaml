@@ -502,6 +502,10 @@ components:
         column_index:
           description: Index of the spell
           type: integer
+      required:
+        - description
+        - cast_time
+        - column_index
     pvpSpellDescritpionData:
       type: object
       description: Description of the pvp spell
@@ -510,6 +514,9 @@ components:
           $ref: '#/components/schemas/nameData'
         cast_time:
           $ref: '#/components/schemas/nameData'
+      required:
+        - description
+        - cast_time
     arrayAssetData:
       type: object
       description: Array of media asset
@@ -518,6 +525,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/assetData'
+      required:
+        - assets
     assetData:
       type: object
       description: Asset of media
