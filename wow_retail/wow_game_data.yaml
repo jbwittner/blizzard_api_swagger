@@ -791,7 +791,6 @@ components:
         - average_item_level
         - equipped_item_level
         - active_title
-        - covenant_progress
     covenantProgressData:
       type: object
       description: Covenant progress data
