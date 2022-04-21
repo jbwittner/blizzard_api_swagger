@@ -1,6 +1,6 @@
 {
     "name": "@jbwittner/blizzardswagger_wow-retail-api_typescript-axios",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "description": "The axios client for WoW Companion application",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **averageItemLevel** | **Integer** |  | 
 **equippedItemLevel** | **Integer** |  | 
 **activeTitle** | [**TitleData**](TitleData.md) |  | 
-**covenantProgress** | [**CovenantProgressData**](CovenantProgressData.md) |  | 
+**covenantProgress** | [**CovenantProgressData**](CovenantProgressData.md) |  |  [optional]
 
 
 
